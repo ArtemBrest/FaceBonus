@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+<div class="loading" id="progress">
+    <a href="index.html" class="loading__logo">
+        <img src="./img/png/FaceBonus.png" alt="" width="280" height="160">
+    </a>
+    <div class="loading__wrapper">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+@@include('./global/header.html')
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        @@include('./global/aside-menu.html')
+        <div class="content">
+           <section class="error-page df df-ai-center df-jc-center df-ff-column">
+               <div class="error-page__content">
+                   <h1 class="error-page__title">404</h1>
+                   <div class="error-page__title-sub h1">Sorry, the page you are looking for could not be found</div>
+                   <div class="error-page__text p1">Did you know that each operator in Stakersland has been examined and researched in detail, from the famous global brands right through to the up-and-coming challengers. Our unique ranking system has been designed to allow you to make quick and easy decisions. Decisions that let you pick out the right bookmaker for you and your betting style and budget.</div>
+                   <a href="/" class="error-page__btn btn-main blue">Back</a>
+               </div>
+           </section>
+        </div>
+    </div>
+</div>
+@@include('./global/footer.html')
+<script src="./js/index.js"></script>
+</body>
+</html>
