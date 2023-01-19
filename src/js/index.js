@@ -53,13 +53,31 @@ const anchorLinks = (e) => {
         });
     }
 }
-const bonusRedirect = (el) => {
+/*const bonusRedirect = (el) => {
     let link = el[0].dataset.external_link;
     if (link) {
         setTimeout(() => {
             window.location.href = link;
         }, 3000)
     }
+};*/
+const bonusRedirect = (el) => {
+    const link = el.getAttribute("data-external_link");
+    if (!link) return;
+
+    const progressBar = el.querySelector("#review-bonus-line");
+    const start = Date.now();
+    let percentage = 0;
+
+    const interval = setInterval(() => {
+        percentage = ((Date.now() - start) / 3000) * 100;
+        progressBar.style.width = `${percentage}%`;
+
+        if (percentage >= 100) {
+            clearInterval(interval);
+            window.location.href = link;
+        }
+    }, 10);
 };
 window.addEventListener("load", function () {
     let header = document.getElementById("header");
@@ -67,23 +85,21 @@ window.addEventListener("load", function () {
     const scrollUp = "scroll-up";
     const scrollDown = "scroll-down";
     let lastScroll = 0;
+    let currentDirection;
+
     window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset;
         if (currentScroll <= 0) {
-            body.classList.remove(scrollUp);
+            body.classList.remove(scrollUp, scrollDown);
             header.classList.remove("active");
             return;
         }
-        if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
-            // down
-            body.classList.remove(scrollUp);
-            body.classList.add(scrollDown);
+        const direction = currentScroll > lastScroll ? scrollDown : scrollUp;
+        if (direction !== currentDirection) {
+            body.classList.remove(scrollUp, scrollDown);
+            body.classList.add(direction);
             header.classList.add("active");
-        } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
-            // up
-            body.classList.remove(scrollDown);
-            body.classList.add(scrollUp);
-            header.classList.add("active");
+            currentDirection = direction;
         }
         lastScroll = currentScroll;
     });
@@ -402,5 +418,8 @@ window.addEventListener("load", function () {
         countdownTimer();
         timerId = setInterval(countdownTimer, 1000);
     }
-
+    const singleBonus = document.querySelector('.review-bonus__wrapper');
+    if (singleBonus !== null) {
+        bonusRedirect(singleBonus);
+    }
 })

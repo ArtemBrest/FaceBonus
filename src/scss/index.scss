@@ -514,7 +514,7 @@ table{
   tbody{
     tr{
       td{
-        padding: 8px 16px;
+        padding: 8px 14px;
         background: $white;
         font-size: 15px;
         line-height: 145%;
@@ -544,6 +544,7 @@ table{
         & a{
           font-weight: 600;
           color: $blue;
+          text-transform: none;
         }
         & p{
           color: $grayText;
@@ -599,7 +600,7 @@ table{
 }
 .cms-description-text{
   & > * {
-    margin: 10px 0;
+    margin-bottom: 10px;
   }
   & > *:not(div):first-child,
   & > *.d-none:first-child + *:nth-child(2) {
