@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+<div class="loading" id="progress">
+    <a href="index.html" class="loading__logo">
+        <img src="./img/png/FaceBonus.png" alt="" width="280" height="160">
+    </a>
+    <div class="loading__wrapper">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+@@include('./global/header.html')
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        @@include('./global/aside-menu.html')
+        <div class="content">
+            <div class="grid-columns grid-columns--right">
+                <div class="content">
+                    <section class="online-slots-bonuses">
+                        <div class="block-description block pd-20 mb-20">
+                            <h2 class="block-description__title h1 mb-10">Top Slot Machines of September 2022</h2>
+                            <div class="block-description__top cms-description-text m-15">
+                                <p>All your virtual gaming desires are invented, developed, and then launched directly from the giant iGaming Gigafactory to the millions of casino subscribers across Europe and the UK. If there was one game that dominated the factory’s digital assembly then it would have to be the online slot machine. The increase in popularity for slot gaming never ever seems to slow down.</p>
+                            </div>
+                        </div>
+                        <div class="casino-list">
+                            <div class="bonus bonus--first block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__stiker bg-image" style="background-image:url(./img/svg/stiker/top-1.svg);"></div>
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main red">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-description block pd-20 mt-20">
+                            <div class="block-description__bottom cms-description-text">
+                                <p>But while many of you may still think that these online slots represent real casino gaming, you would be mistaken due to recent inventions such as the Theoretical RTP. Long gone are the days when the slot machine needed ‘feeding’ with money before it started to pay out. Nowadays, various mathematical models have replaced the physical cash side of things which helps to add a lot fun to the story of online slots.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="online-slots-catalog block-description block pd-20 m-20">
+                        <h2 class="online-slots-catalog__title h1 mb-10">We have a full list of <span>17k online</span> slots Get attention about new slots in our catalog</h2>
+                        <div class="online-slots-catalog__cards">
+                            <div class="slot-card">
+                                <a href="#" class="slot-card__logo df df-ai-stretch">
+                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                </a>
+                                <div class="slot-card__content">
+                                    <div class="slot-card__title h5">Starburst</div>
+                                    <div class="slot-card__rtp df df-ai-center">
+                                        <div class="name p4">RTP</div>
+                                        <div class="value p3 p3--semi-bold">96.55%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slot-card">
+                                <a href="#" class="slot-card__logo df df-ai-stretch">
+                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                </a>
+                                <div class="slot-card__content">
+                                    <div class="slot-card__title h5">Gonzo's Quest</div>
+                                    <div class="slot-card__rtp df df-ai-center">
+                                        <div class="name p4">RTP</div>
+                                        <div class="value p3 p3--semi-bold">96.55%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slot-card">
+                                <a href="#" class="slot-card__logo df df-ai-stretch">
+                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                </a>
+                                <div class="slot-card__content">
+                                    <div class="slot-card__title h5">Starburst</div>
+                                    <div class="slot-card__rtp df df-ai-center">
+                                        <div class="name p4">RTP</div>
+                                        <div class="value p3 p3--semi-bold">96.55%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slot-card">
+                                <a href="#" class="slot-card__logo df df-ai-stretch">
+                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                </a>
+                                <div class="slot-card__content">
+                                    <div class="slot-card__title h5">Gonzo's Quest</div>
+                                    <div class="slot-card__rtp df df-ai-center">
+                                        <div class="name p4">RTP</div>
+                                        <div class="value p3 p3--semi-bold">96.55%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="online-slots-catalog__btn btn-main mt-20">
+                            <svg width="18" height="18">
+                                <use xlink:href="./img/sprites.svg#icon-plus"></use>
+                            </svg>
+                            show more
+                        </a>
+                        <div class="block-description__top cms-description-text m-15">
+                            <p>While some of you may still remember the simple one-armed bandits of times gone by, the online slot machine of today has taken on a life of its own with multiple features that only a virtual gaming experience can deliver. Make your way into any online casino lobby across Stakersland and you will come across dedicated areas that resemble huge libraries of slot titles that have been developed throughout the history of gaming. Nowadays, the 5x3 slot grid layout is the go-to design and the appeal here is that it sits nicely in between the older slot design and the modern-day multi-ways pay configuration, but there are many more slot designs out there that you will come across in the park.</p>
+                        </div>
+                        <div class="exclusive-bonuses m-15">
+                            <a href="#" class="card df df-ai-center" target="_blank" style="background: #222121;">
+                                <div class="card__stiker bg-image" style="width: 109px; height: 31px; background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="card__logo df df-ai-center df-jc-center">
+                                    <img width="70" height="24" src="./img/png/casino-logo.png" class="" alt="">
+                                </div>
+                                <div class="card__title h6">Enter MAGIC50 and Get 100% up to £50 + 50 Free Spins</div>
+                            </a>
+                            <a href="#" class="card df df-ai-center" target="_blank" style="background: #142A5B;">
+                                <div class="card__stiker bg-image" style="width: 109px; height: 31px; background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="card__logo df df-ai-center df-jc-center">
+                                    <img width="70" height="24" src="./img/png/casino-logo.png" class="" alt="">
+                                </div>
+                                <div class="card__title h6">Enter MAGIC50 and Get 100% up to £50 + 50 Free Spins</div>
+                            </a>
+                            <a href="#" class="card df df-ai-center" target="_blank" style="background: #1F294A;">
+                                <div class="card__stiker bg-image" style="width: 109px; height: 31px; background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="card__logo df df-ai-center df-jc-center">
+                                    <img width="70" height="24" src="./img/png/casino-logo.png" class="" alt="">
+                                </div>
+                                <div class="card__title h6">Enter MAGIC50 and Get 100% up to £50</div>
+                            </a>
+                        </div>
+                        <div class="block-description__bottom cms-description-text m-15">
+                            <p>The iGaming Gigafactory is where all your favourite multiplier, wild, scatter, and free spin features are designed, fine-tuned, and fitted into newly built slot games. The betting limit feature is also a large part of the design process, as well as now a being a protective regulatory measure that helps to give you more gaming time in the casino. Playing the right games that fit your budget is one of the many ways in which you can boost your casino entertainment here at Stakersland. You can often spin the reels for as little as €0.10 and up to as much as €100 per spin for the High Rollers out there. However, you can also find many other slot games out there that come with micro limits such as €0.01 per spin, and on the extreme end of the scale some slots even give you the chance to play upwards of €200 per spin and more.</p>
+                            <p>The theme of a slot game is another important feature that stakers use to pick out their next online slot experience. What some of you may not know though is that you are essentially playing the same virtual game each time, only with slightly modified algorithms and unique branded graphics. Game designers simply follow the current culture trends and then create ‘themes’ to match the gaming preferences of the casino community across Stakersland. Some of the most common and popular themes include Egyptian, Asian, Irish, Sci-Fi, and seasonal games get a lot of spins when the big holidays and events come around each year, such as Christmas, Easter, and Halloween. The iGaming Gigafactory is at the forefront of online casino technology and so you will often find new and interesting ways to enjoy the slots experience. Take the Cluster Pays feature which is a modern idea that removes the old way of paying prizes via paylines. Instead, you need to spin a cluster of symbols to win and then those winning symbols disappear with new symbols falling in their place, giving you multiple chances of winning on every spin. </p>
+                            <img src="./img/png/icon-122.png" alt="" class="float-right" width="100" height="100">
+                            <p>Online slots not only look great fun, but they are extremely entertaining to play as well and this is all down to the challenge accepted by the designer and marketing teams. However, behind every slot game is a complicated setup of mathematical equations that helps to determine how much a game pays out. This is known as the RTP and understanding this will help you find what we like to call the ‘Hot and Cold’ online slots. We will explain all in a short while, but first let us explain the basics of playing a slot game so that we are all on the same page.</p>
+                        </div>
+                        <div class="online-slots-steps">
+                            <div class="online-slots-steps__description cms-description-text mb-20">
+                                <h2>How Can I bet On an Online Slot Game?</h2>
+                                <p>If you are new to the online gaming world of Stakers then playing slot games does not get much easier. The paytable and information buttons are there to help and guide you with all the features and prizes, but this is the general process of how to spin the reels:</p>
+                            </div>
+                            <div class="online-slots-steps__list">
+                                <div class="item df df-ai-start">
+                                    <div class="item__num h3 bg-image" style="background-image: url(./img/png/icon-21.2.png);"></div>
+                                    <div class="item__info p1">Step up to the lobby, pick your slot game, and choose the number of credits that you want to play with, or sometimes your whole bankroll will be transferred into the game. All of this money will come from your online wallet if you are playing on real money slots.</div>
+                                </div>
+                                <div class="item df df-ai-start">
+                                    <div class="item__num h3 bg-image" style="background-image: url(./img/png/icon-22.2.png);"></div>
+                                    <div class="item__info p1">Select your ‘bet per spin’ amount and the number of paylines if the option is available. The Max Bet button is there for those who are looking to reap the rewards with the biggest possible payouts. Bet small and extend your gaming session. Bet big and you could soon be splashing out on your own boat to cruise into the bay of Monte Carlo with your winnings.</div>
+                                </div>
+                                <div class="item df df-ai-start">
+                                    <div class="item__num h3 bg-image" style="background-image: url(./img/png/icon-23.2.png);"></div>
+                                    <div class="item__info p1">Monte Carlo awaits and your ticket there depends on if you can match up winning symbol combinations across the slot reels. Hit the ‘Spin’ button and see how the symbols land, and you will soon find out if you have hit a winning combo. Bonus rounds and feature symbols all help to boost your winnings as you aim to hit the maximum winning prize of the game.</div>
+                                </div>
+                                <div class="item df df-ai-start">
+                                    <div class="item__num h3 bg-image" style="background-image: url(./img/png/icon-24.2.png);"></div>
+                                    <div class="item__info p1">Prizes and payouts will be in line with the paytable in the Rules section, but technically, you will be hoping that the Actual RTP of the game is low when you start playing. You can then hope to hit some lucky spins and claim some of the top prize winnings as the Actual RTP would be expected to grow.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="top-10-comparison block m-20">
+                        <img src="./img/png/top-10.png" alt="" class="top-10-comparison__banner">
+                        <div class="top-10-comparison__content df df-jc-between">
+                            <table class="top-10-comparison__table">
+                                <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>criterion</td>
+                                    <td>Casino</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="straightforward-to-page">
+                                    <td>1</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>2</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Ladbrokes</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>3</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Paddy Power</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>4</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>5</td>
+                                    <td>🏆 Laudest Super League Promotions</td>
+                                    <td><a href="#">Slotsmillion</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>6</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>7</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>8</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>9</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                <tr class="straightforward-to-page">
+                                    <td>10</td>
+                                    <td>🎁 Top Sports Welcome Offers</td>
+                                    <td><a href="#">Bet365</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="top-10-comparison__description cms-description-text">
+                                <h2 class="h4">🎰 Top 10 Neue Online Casinos im Vergleich</h2>
+                                <p>🔥 Alle brandneuen Onine Casinos 2022 in der Zusammenfassung: 🕵️ gefunden und getestet von professionellen Insidern. The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly, and that comes down to not understanding that these bonuses are worded to make you feel like you have a strong chance of making a profit.</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="how-to block pd-20 m-20 content-focus" id="how-to">
+                        <h2 class="how-to__title h1 mb-10">How to Benefit from Online Casino Bonuses?</h2>
+                        <div class="how-to__description cms-description-text mb-15">
+                            <p>Receiving gifts is always a pleasure for many people, that's why almost every online casino offers its customers a wide range of casino bonuses and promotions. In our guide, we introduce you to all the important types of bonuses and their advantages. Follow our recommendations and tips to make the most of the casino promotions.</p>
+                        </div>
+                        <div class="how-to__cards">
+                            <div class="how-to__card how-to-card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-1.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">1. Find a Bonus You Like</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                            <div class="how-to__card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-2.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">2. Read Terms and Check Codes</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                            <div class="how-to__card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-3.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">3. Deposit and Claim the Bonus</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                            <div class="how-to__card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-4.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">4. Play the Games You Enjoy</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                            <div class="how-to__card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-5.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">5. Find a Bonus You Like</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                            <div class="how-to__card">
+                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-6.png);"></div>
+                                <div class="how-to-card__content">
+                                    <p class="how-to-card__title h4">6. Find a Bonus You Like</p>
+                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="block-description block pd-20 m-20">
+                        <h2 class="block-description__title h1 mb-10">Identify reputable casinos</h2>
+                        <div class="block-description__top cms-description-text m-15">
+                            <p>Reviewing an online casino correctly takes a lot of time and research and so this is not a job that anyone can carry out. It is exactly why we task the experts here at Stakers HQ with that very job. The reason why we perform each review is that it helps stakers to fully understand what to expect from each online casino. This knowledge is vital if you want to find the right casino and enjoy the best online gaming experiences.</p>
+                            <p>Important aspects of a typical casino review include bonuses and promotions that help boost your bankroll, the software used and all the games that can be found in the lobby, the range of payment methods available to you when depositing and withdrawing, and all the security measures that make your Stakersland casino experience a safe one. All this helps our stakers to discover the right casino that best fits their own personal gaming desires. </p>
+                        </div>
+                        <div class="block-description__group m-15 block">
+                            <div class="cms-description-text mb-20">
+                                <h2 class="h4">How do you recognize reputable online casinos?</h2>
+                            </div>
+                            <div class="block-description__list">
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-11.1.png);"></div>
+                                    <div class="text p1">Speed of deposit and withdrawal</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-14.1.png);"></div>
+                                    <div class="text p1">Level of payout percentages</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-17.1.png);"></div>
+                                    <div class="text p1">Security and fairness</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-12.1.png);"></div>
+                                    <div class="text p1">Welcome Bonus and Terms</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-15.1.png);"></div>
+                                    <div class="text p1">Quality of customer service</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-1.2.png);"></div>
+                                    <div class="text p1">Mobile functionality and apps</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-13.1.png);"></div>
+                                    <div class="text p1">Number of games</div>
+                                </div>
+                                <div class="block-description__item block-description__item--img df df-ai-center">
+                                    <div class="img bg-image" style="background-image: url(./img/png/icon-16.1.png);"></div>
+                                    <div class="text p1">Live dealer games</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-description__bottom cms-description-text m-15">
+                            <h2 class="h3">How do we review online casinos</h2>
+                            <div class="block-description__cards df df-ff-row-wrap">
+                                <div class="cms-description-text">
+                                    <p>Reviewing an online casino correctly takes a lot of time and research and so this is not a job that anyone can carry out. It is exactly why we task the experts here at Stakers HQ with that very job. The reason why we perform each review is that it helps stakers to fully understand what to expect from each online casino. This knowledge is vital if you want to find the right casino and enjoy the best online gaming experiences.</p>
+                                </div>
+                                <div class="cms-description-text">
+                                    <p>Important aspects of a typical casino review include bonuses and promotions that help boost your bankroll, the software used and all the games that can be found in the lobby, the range of payment methods available to you when depositing and withdrawing, and all the security measures that make your Stakersland casino experience a safe one. All this helps our stakers to discover the right casino that best fits their own personal gaming desires. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+
+
+                    <section class="top-tips block pd-20 m-20 content-focus">
+                        <h2 class="top-tips__title h1 mb-10">5 Top Tips Before Playing At The Best Online Casinos</h2>
+                        <div class="top-tips__description cms-description-text mb-15">
+                            <p>The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly, and that comes down to not understanding that these bonuses are worded to make you feel like you have a strong chance of making a profit.</p>
+                        </div>
+                        <div class="top-tips__cards">
+                            <div class="top-tips__card top-tips-card block pd-15">
+                                <div class="top-tips-card__row df df-ai-center">
+                                    <div class="top-tips-card__step bg-image" style="background-image: url(./img/png/icon-21.png);"></div>
+                                    <p class="top-tips-card__title h4">Pick Preapproved Casinos Listed In The Winners Casino Lounge</p>
+                                </div>
+                                <div class="faq-card__description cms-description-text">
+                                    <p>The Winners Casino Lounge makes your decision a lot easier due to the list of preapproved casinos we recommend. Finding your next online casino doesn’t have to be complicated, as long as you know what you want from your gaming site and the budget you have to spend. Of course, our members then must make the final decision, but we like to make that as straightforward as possible. Trust and safety are what we expect from every online casino, but that is not always going to happen in the world we live in today. </p>
+                                    <p>Exploitation through unfair games and unlawful casino management are real-life issues but using our preapproved casino list takes that straight off the table. Even so, understanding that every online casino is set up to win via a ‘mathematical advantage’ needs to be accepted by all our winner friends. It’s not to say no one ever wins. People win every day but losing is also a part of the journey. First and foremost, our experts ensure that all the online casinos listed here are set up the right way and operate by focusing on player safety and responsible gambling.</p>
+                                </div>
+                            </div>
+                            <div class="top-tips__card top-tips-card block pd-15">
+                                <div class="top-tips-card__row df df-ai-center">
+                                    <div class="top-tips-card__step bg-image" style="background-image: url(./img/png/icon-22.png);"></div>
+                                    <p class="top-tips-card__title h4">Pick Preapproved Casinos Listed In The Winners Casino Lounge</p>
+                                </div>
+                                <div class="faq-card__description cms-description-text">
+                                    <p>The Winners Casino Lounge makes your decision a lot easier due to the list of preapproved casinos we recommend. Finding your next online casino doesn’t have to be complicated, as long as you know what you want from your gaming site and the budget you have to spend. Of course, our members then must make the final decision, but we like to make that as straightforward as possible. Trust and safety are what we expect from every online casino, but that is not always going to happen in the world we live in today. </p>
+                                    <p>Exploitation through unfair games and unlawful casino management are real-life issues but using our preapproved casino list takes that straight off the table. Even so, understanding that every online casino is set up to win via a ‘mathematical advantage’ needs to be accepted by all our winner friends. It’s not to say no one ever wins. People win every day but losing is also a part of the journey. First and foremost, our experts ensure that all the online casinos listed here are set up the right way and operate by focusing on player safety and responsible gambling.</p>
+                                </div>
+                            </div>
+                            <div class="top-tips__card top-tips-card block pd-15">
+                                <div class="top-tips-card__row df df-ai-center">
+                                    <div class="top-tips-card__step bg-image" style="background-image: url(./img/png/icon-23.png);"></div>
+                                    <p class="top-tips-card__title h4">Pick Preapproved Casinos Listed In The Winners Casino Lounge</p>
+                                </div>
+                                <div class="faq-card__description cms-description-text">
+                                    <p>The Winners Casino Lounge makes your decision a lot easier due to the list of preapproved casinos we recommend. Finding your next online casino doesn’t have to be complicated, as long as you know what you want from your gaming site and the budget you have to spend. Of course, our members then must make the final decision, but we like to make that as straightforward as possible. Trust and safety are what we expect from every online casino, but that is not always going to happen in the world we live in today. </p>
+                                    <p>Exploitation through unfair games and unlawful casino management are real-life issues but using our preapproved casino list takes that straight off the table. Even so, understanding that every online casino is set up to win via a ‘mathematical advantage’ needs to be accepted by all our winner friends. It’s not to say no one ever wins. People win every day but losing is also a part of the journey. First and foremost, our experts ensure that all the online casinos listed here are set up the right way and operate by focusing on player safety and responsible gambling.</p>
+                                </div>
+                            </div>
+                            <div class="top-tips__card top-tips-card block pd-15">
+                                <div class="top-tips-card__row df df-ai-center">
+                                    <div class="top-tips-card__step bg-image" style="background-image: url(./img/png/icon-24.png);"></div>
+                                    <p class="top-tips-card__title h4">Pick Preapproved Casinos Listed In The Winners Casino Lounge</p>
+                                </div>
+                                <div class="faq-card__description cms-description-text">
+                                    <p>The Winners Casino Lounge makes your decision a lot easier due to the list of preapproved casinos we recommend. Finding your next online casino doesn’t have to be complicated, as long as you know what you want from your gaming site and the budget you have to spend. Of course, our members then must make the final decision, but we like to make that as straightforward as possible. Trust and safety are what we expect from every online casino, but that is not always going to happen in the world we live in today. </p>
+                                    <p>Exploitation through unfair games and unlawful casino management are real-life issues but using our preapproved casino list takes that straight off the table. Even so, understanding that every online casino is set up to win via a ‘mathematical advantage’ needs to be accepted by all our winner friends. It’s not to say no one ever wins. People win every day but losing is also a part of the journey. First and foremost, our experts ensure that all the online casinos listed here are set up the right way and operate by focusing on player safety and responsible gambling.</p>
+                                </div>
+                            </div>
+                            <div class="top-tips__card top-tips-card block pd-15">
+                                <div class="top-tips-card__row df df-ai-center">
+                                    <div class="top-tips-card__step bg-image" style="background-image: url(./img/png/icon-25.png);"></div>
+                                    <p class="top-tips-card__title h4">Pick Preapproved Casinos Listed In The Winners Casino Lounge</p>
+                                </div>
+                                <div class="faq-card__description cms-description-text">
+                                    <p>The Winners Casino Lounge makes your decision a lot easier due to the list of preapproved casinos we recommend. Finding your next online casino doesn’t have to be complicated, as long as you know what you want from your gaming site and the budget you have to spend. Of course, our members then must make the final decision, but we like to make that as straightforward as possible. Trust and safety are what we expect from every online casino, but that is not always going to happen in the world we live in today. </p>
+                                    <p>Exploitation through unfair games and unlawful casino management are real-life issues but using our preapproved casino list takes that straight off the table. Even so, understanding that every online casino is set up to win via a ‘mathematical advantage’ needs to be accepted by all our winner friends. It’s not to say no one ever wins. People win every day but losing is also a part of the journey. First and foremost, our experts ensure that all the online casinos listed here are set up the right way and operate by focusing on player safety and responsible gambling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="block-description block pd-20 m-20">
+                        <h2 class="block-description__title h1 mb-10">What makes a good online casino bonus</h2>
+                        <div class="block-description__top cms-description-text m-15">
+                            <p>An exclusive welcome bonus plays another important role in choosing a good online casino, because it determines which bonus payments or free spins your first deposits will be rewarded with. If you choose wisely here, you will enter the game with an advantage and can help your luck a bit. It is an extensive topic and especially for players who have not yet had any online casino experience, they should first deal with it in detail.</p>
+                            <div class="float-right float-right-table">
+                                <table class="table-offer">
+                                    <thead>
+                                    <tr>
+                                        <td>Best Casino	</td>
+                                        <td>Bonus Offer</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>❤ VIPSlotClub</td>
+                                        <td>£100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🎁 CasinoBuck</td>
+                                        <td>£1,850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>💥 Big5Casino</td>
+                                        <td>£550</td>
+                                    </tr>
+                                    <tr>
+                                        <td>❤ Hejgo</td>
+                                        <td>£1,850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>👍 Spin247</td>
+                                        <td>£100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>💥 Slotsmillion</td>
+                                        <td>£1,850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🎁 Beem Casino</td>
+                                        <td>£550</td>
+                                    </tr>
+                                    <tr>
+                                        <td>❤ Wolfy Casino</td>
+                                        <td>£100</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p>An exclusive welcome bonus plays another important role in choosing a good online casino, because it determines which bonus payments or free spins your first deposits will be rewarded with. If you choose wisely here, you will enter the game with an advantage and can help your luck a bit. It is an extensive topic and especially for players who have not yet had any online casino experience, they should first deal with it in detail. You may hear stakers talking about being ‘ripped off’ or that some casinos are ‘fraudsters’, but what it really comes down to is that the staker has not taken in all the expert casino bonus information at the Stakersland official website. Yes, the terms and conditions are lengthy, but a lot of this can be avoided by looking through our casino ratings and taking more informed decisions.</p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    <section class="criteria-choose block pd-20 m-20">
+                        <h2 class="criteria-choose__title h1 mb-15">Criterias For Choosing New Online Casino</h2>
+                        <table class="criteria-choose__table">
+                            <thead>
+                            <tr>
+                                <td>criterias</td>
+                                <td>Details</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>🎁 Beste Casino-Bonus Angebote</td>
+                                <td><p>Choosing the best online casino that suits your playing style and your personal budget is an important step, and one that requires the right line of thought. You want a reputable casino when you play online with your own money and many of the casinos are reputable and trustworthy.</p></td>
+                            </tr>
+                            <tr>
+                                <td>🎰 Top Spielauswahl</td>
+                                <td><p>It should be self-explanatory but this one is linked in with the second point that we mentioned earlier. You should only ever use payment methods that are in your name. </p></td>
+                            </tr>
+                            <tr>
+                                <td>📲 Mobile Casino-Erfahrung</td>
+                                <td><p>As soon as the casino even think that you may be using a bank card or e-wallet in someone else’s name, your account will be frozen along with any money in the account as well. If you cannot prove that you are the owner of the payment method you wish to use, then it could end up with your account getting permanently closed and your winnings kept by the casino.</p></td>
+                            </tr>
+                            <tr>
+                                <td>📝 Casino Registrierung</td>
+                                <td><p>Some of the most important elements of any online casino bonus include the wagering requirements, the maximum winnings limit, the maximum bet limit, and which games you can actually use the bonus on. Not all casino bonuses are bad and many of them will enhance your bankroll and gaming sessions.</p></td>
+                            </tr>
+                            <tr>
+                                <td>💳 Zahlungen</td>
+                                <td><p>We just want to emphasize the fact that sometimes you would be better off playing without the bonus.</p></td>
+                            </tr>
+                            <tr>
+                                <td>🚀 Originelle Funktionen</td>
+                                <td><p>You may have already heard of the Know Your Customer (KYC) checks from your time at Stakersland. This check is carried out by each casino using various identity documents such as passports and driver’s licenses, and other address and banking-based documents to ensure that you are the true owner of the account.</p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section class="faq block pd-20 m-20 content-focus" id="faq">
+                        <h2 class="faq__title h1 mb-10">FAQ Best Casino Sites</h2>
+                        <div class="faq__description cms-description-text mb-15">
+                            <p>The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member somewhere. Similar to the welcome bonus, this offer again matches your deposit up to a certain amount when you make a deposit. Bonus codes are often used in relation to these offers but not all the time, so check the promotion details before you make your deposit else you may not receive any casino bonus at all, and that can be annoying.</p>
+                        </div>
+                        <div class="faq__cards">
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                            <div class="faq__card faq-card">
+                                <p class="faq-card__title h4">🎁  What bonuses are offered at online casinos?</p>
+                                <div class="faq-card__description p1">The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly. The deposit casino bonus is one of the more traditional casino offers out there, and one that you will come across time and time again once you become a full casino member.</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div>
+                    <aside class="expert-card block pd-15">
+                        <div class="expert-card__stiker" style="background-image: url(./img/svg/stiker/recommend.svg);"></div>
+                        <div class="expert-card__head df df-ai-center mb-15">
+                            <div class="expert-card__logo bg-image" style="background-image: url(./img/png/expert-img-1.png);">
+                                <svg width="18" height="18">
+                                    <use xlink:href="./img/sprites.svg#icon-verified"></use>
+                                </svg>
+                            </div>
+                            <div class="expert-card__info">
+                                <div class="expert-card__name h5 fw700 df df-ai-center">
+                                    Mark Seibert
+                                    <svg width="12" height="12">
+                                        <use xlink:href="./img/sprites.svg#icon-i"></use>
+                                    </svg>
+                                </div>
+                                <div class="expert-card__tag p4 p4--medium">Expert in gambling</div>
+                            </div>
+                        </div>
+                        <div class="expert-card__text p3">With a career leap made from the media expert to a betting advisor worldwide, I do believe I owe this success to the Stakers team. The synergy of working together fosters.</div>
+                        <div class="expert-card__footer">
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">Playing experience:</span>
+                                <span class="expert-card__value p3 p3--bold">6 years</span>
+                            </div>
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">casino reviews:</span>
+                                <span class="expert-card__value p3 p3--bold">320</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="sticky-wrapper">
+                        <aside class="block navigation">
+                            <div class="navigation__banner bg-image" style="background-image: url(./img/png/aside-banner/aside-banner-1.png);"></div>
+                            <div class="navigation__title h5">Know-how from Mark</div>
+                            <ol class="navigation__list p2">
+                                <li data-id="" class="navigation__item active">Deposit Bonus without deposit- is it possible?</li>
+                                <li data-id="" class="navigation__item">Welcome Bonuses</li>
+                                <li data-id="" class="navigation__item">Deposit Bonuses</li>
+                                <li data-id="" class="navigation__item">No Deposit Bonuses</li>
+                                <li data-id="" class="navigation__item">Reload Bonuses</li>
+                                <li data-id="" class="navigation__item">UK Casino Events 2022</li>
+                                <li data-id="" class="navigation__item">How do you test casino bonus?</li>
+                                <li data-id="" class="navigation__item">Top New Online Casinos</li>
+                                <li data-id="" class="navigation__item">Development &amp; Innovation</li>
+                                <li data-id="" class="navigation__item">Online Casino FAQ</li>
+                            </ol>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./global/footer.html')
+<script src="./js/index.js"></script>
+</body>
+</html>
