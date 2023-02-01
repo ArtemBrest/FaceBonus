@@ -422,4 +422,151 @@ window.addEventListener("load", function () {
     if (singleBonus !== null) {
         bonusRedirect(singleBonus);
     }
+
+
+    let itemFirst = document.getElementById("online-slots-first");
+    let itemSecond = document.getElementById("online-slots-second");
+    let itemThird = document.getElementById("online-slots-third");
+    if (itemFirst !== null) {
+        itemFirst = itemFirst.querySelectorAll(".online-slots-slide");
+        itemSecond = itemSecond.querySelectorAll(".online-slots-slide");
+        itemThird = itemThird.querySelectorAll(".online-slots-slide");
+        let deadline;
+        let date = new Date(Date.now());
+        for (let i = 0, k = 1; i < itemFirst.length; i++, k++) {
+            let durationTime = itemFirst[i].getAttribute("data-delay");
+            let elMinutesFirst = itemFirst[i].querySelector(".minutes");
+            let elSecondsFirst = itemFirst[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
+            if (i == 0) {
+                nextTime = Number(600000 - durationTime);
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            } else {
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            }
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesFirst.textContent = minutes;
+                elSecondsFirst.textContent = timer.seconds;
+            }, () => {
+                itemFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+            });
+            durationTime = Number(durationTime);
+            let barFirst = new ProgressBar.Circle(itemFirst[i].querySelector('.online-slots-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#F0284A',
+                trailColor: '#5A5C5E',
+                trailWidth: 3,
+                svgStyle: {width: '69px', height: '69px'},
+
+            });
+            barFirst.animate(1.0);
+        }
+        for (let i = 0, k = 1; i < itemSecond.length; i++, k++) {
+            let durationTime = itemFirst[i].getAttribute("data-delay");
+            let elMinutesSecond = itemSecond[i].querySelector(".minutes");
+            let elSecondsSecond = itemSecond[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
+            if (i == 0) {
+                nextTime = Number(600000 - durationTime);
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            } else {
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            }
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesSecond.textContent = minutes;
+                elSecondsSecond.textContent = timer.seconds;
+            }, () => {
+                itemSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+            });
+            durationTime = Number(durationTime);
+            let barSecond = new ProgressBar.Circle(itemSecond[i].querySelector('.online-slots-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#FFC700',
+                trailColor: '#5A5C5E',
+                trailWidth: 3,
+                svgStyle: {width: '69px', height: '69px'},
+            });
+            barSecond.animate(1.0);
+        }
+        for (let i = 0, k = 3; i < itemThird.length; i++, k++) {
+            let durationTime = itemFirst[i].getAttribute("data-delay");
+            let elMinutesThird = itemThird[i].querySelector(".minutes");
+            let elSecondsThird = itemThird[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + ((k - 2) * 600000 - durationTime));
+            deadline = new Date(Number(date.valueOf()) + nextTime);
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesThird.textContent = minutes;
+                elSecondsThird.textContent = timer.seconds;
+            }, () => {
+                itemThird[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+            });
+            durationTime = Number(durationTime);
+            let barThird = new ProgressBar.Circle(itemThird[i].querySelector('.online-slots-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#3750D7',
+                trailColor: '#5A5C5E',
+                trailWidth: 3,
+                svgStyle: {width: '69px', height: '69px'},
+            });
+            barThird.animate(1.0);
+        }
+    }
+
+    let swiperFirst = new Swiper(document.getElementById("online-slots-first"), {
+        effect: "fade",
+        //loop: true,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 600000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    let swiperSecond = new Swiper(document.getElementById("online-slots-second"), {
+        effect: "fade",
+        //loop: true,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 600000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    let swiperThird = new Swiper(document.getElementById("online-slots-third"), {
+        effect: "fade",
+        //loop: true,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 600000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 })
