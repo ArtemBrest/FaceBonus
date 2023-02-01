@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+<div class="loading" id="progress">
+    <a href="index.html" class="loading__logo">
+        <img src="./img/png/FaceBonus.png" alt="" width="280" height="160">
+    </a>
+    <div class="loading__wrapper">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+<header class="header block df" id="header">
+    <div class="container">
+        <div class="header__menu">
+            <ul class="header__list df df-ai-center">
+                <li class="header__item active">
+                    <a href="#" class="header__link header-menu-link df df-ai-center">
+                        <div class="header-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-1"></use>
+                            </svg>
+                        </div>
+                        <span class="header-menu-link__info">
+                            <span class="header-menu-link__title h6 fw600">Online casino</span>
+                            <span class="header-menu-link__text p3">Exclusive deals</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="#" class="header__link header-menu-link df df-ai-center">
+                        <div class="header-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-2"></use>
+                            </svg>
+                        </div>
+                        <span class="header-menu-link__info">
+                            <span class="header-menu-link__title h6 fw600">ONLINE SlOTS</span>
+                            <span class="header-menu-link__text p3">Exclusive deals</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="#" class="header__link header-menu-link df df-ai-center">
+                        <div class="header-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-3"></use>
+                            </svg>
+                        </div>
+                        <span class="header-menu-link__info">
+                            <span class="header-menu-link__title h6 fw600">BEST TIPS</span>
+                            <span class="header-menu-link__text p3">Exclusive deals</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="#" class="header__link header-menu-link df df-ai-center">
+                        <div class="header-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-4"></use>
+                            </svg>
+                        </div>
+                        <span class="header-menu-link__info">
+                            <span class="header-menu-link__title h6 fw600">Predictions</span>
+                            <span class="header-menu-link__text p3">Today’s Predictions</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header__buttons df df-jc-end">
+        <a href="#" class="header__login-btn btn-main">log in</a>
+        <a href="#" class="header__registration-btn btn-main blue">Join Now</a>
+    </div>
+</header>
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        <div class="sticky-menu">
+    <aside class="aside-menu">
+        <a href="index.html" class="aside-menu__logo df df-ai-stretch df-jc-center">
+            <img src="./img/png/FaceBonus.png" alt="" width="140" height="80" class="aside-menu__img">
+        </a>
+        <ul class="aside-menu__list">
+            <li class="aside-menu__item">
+                <a href="best-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-1"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Best Casinos</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="bonus-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-2"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Casino Bonuses</span>
+                </a>
+            </li>
+            <li class="aside-menu__item active" style="--active-color: #824CDB; --active-color-rgb: 130, 76, 219;">
+                <a href="highroller-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-3"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">For Highroller</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="new-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-4"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">New Casinos</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="mobile-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-5"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Mobile Casino</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="paypal-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-6"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Paypal Casino</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="jackpot-casino.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-7"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Jackpot Casino</span>
+                </a>
+            </li>
+            <li class="aside-menu__item">
+                <a href="fraud-test.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                    <div class="aside-menu-link__icon">
+                        <svg width="22" height="22">
+                            <use xlink:href="./img/sprites.svg#casino-menu-8"></use>
+                        </svg>
+                    </div>
+                    <span class="aside-menu-link__name">Fraud Test</span>
+                </a>
+            </li>
+        </ul>
+        <div class="aside-menu__bottom">
+            <ul class="aside-menu__list df df-ff-column">
+                <li class="aside-menu__item">
+                    <a href="about.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                        <div class="aside-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-5"></use>
+                            </svg>
+                        </div>
+                        <span class="aside-menu-link__name">About</span>
+                    </a>
+                </li>
+                <li class="aside-menu__item">
+                    <a href="contact.html" class="aside-menu__link aside-menu-link df df-ai-center">
+                        <div class="aside-menu-link__icon">
+                            <svg width="22" height="22">
+                                <use xlink:href="./img/sprites.svg#menu-6"></use>
+                            </svg>
+                        </div>
+                        <span class="aside-menu-link__name">Contact</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="aside-menu__helps df df-ff-row-wrap">
+                <a href="#" class="aside-menu__help p5">Cookies Policy</a>
+                <a href="#" class="aside-menu__help p5">Privacy Policy</a>
+                <a href="#" class="aside-menu__help p5">Terms & Conditions</a>
+            </div>
+        </div>
+    </aside>
+</div>
+        <div class="content">
+            <section class="review-bonus block pd-20 df df-ff-column">
+                <div class="review-bonus__wrapper df df-ai-center df-jc-center df-ff-column" data-external_link="https://facebonus.co.uk/">
+                    <div class="review-bonus__loader bg-image df df-ai-center df-jc-center" style="background-image: url(./img/png/loader.png);">
+                    </div>
+                    <a href="#" class="review-bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                        <img src="./img/png/casino-logo.png" alt="" width="80" height="27">
+                    </a>
+                    <div class="review-bonus__title h1">You are going to win!</div>
+                    <h1 class="review-bonus__title-sub h5">CHECKING BONUS AVAILABILITY AT 10 BET WEB SITE</h1>
+                    <div class="review-bonus__text p1">Please hold for a while, we are making your experience secure</div>
+                    <div class="review-bonus__bottom">
+                        <div class="review-bonus__progress">
+                            <div class="line" style="width: 0" id="review-bonus-line"></div>
+                        </div>
+                        <div class="review-bonus__row df df-ai-center df-jc-between">
+                            <div class="text">Loading...</div>
+                            <div class="text">100%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-bonus-other">
+                    <div class="review-bonus-other__cards">
+                        <div class="bonus-mobile block pd-15 straightforward-to-page">
+                            <div class="bonus-mobile__top df df-ai-center mb-15">
+                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                </a>
+                                <div class="bonus-mobile__info">
+                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
+                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile__middle df df-ai-center mb-10">
+                                <div class="bonus-mobile__tags tags df df-ai-center">
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Turnover</div>
+                                        <div class="tags__value p2">35X</div>
+                                    </div>
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Days valid</div>
+                                        <div class="tags__value p2">21</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                            </div>
+                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                        </div>
+                        <div class="bonus-mobile block pd-15 straightforward-to-page">
+                            <div class="bonus-mobile__top df df-ai-center mb-15">
+                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                </a>
+                                <div class="bonus-mobile__info">
+                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
+                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile__middle df df-ai-center mb-10">
+                                <div class="bonus-mobile__tags tags df df-ai-center">
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Turnover</div>
+                                        <div class="tags__value p2">35X</div>
+                                    </div>
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Days valid</div>
+                                        <div class="tags__value p2">21</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                            </div>
+                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                        </div>
+                        <div class="bonus-mobile block pd-15 straightforward-to-page">
+                            <div class="bonus-mobile__top df df-ai-center mb-15">
+                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                </a>
+                                <div class="bonus-mobile__info">
+                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
+                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile__middle df df-ai-center mb-10">
+                                <div class="bonus-mobile__tags tags df df-ai-center">
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Turnover</div>
+                                        <div class="tags__value p2">35X</div>
+                                    </div>
+                                    <div class="tags__item">
+                                        <div class="tags__title p3">Days valid</div>
+                                        <div class="tags__value p2">21</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                            </div>
+                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer m-20">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__top df df-ai-center df-jc-between mb-20">
+                <a href="/" class="footer__logo">
+                    <img width="40" height="40" src="./img/png/FaceBonus-footer.png" class="logo__img" alt="">
+                </a>
+                <div class="footer__company df df-ai-center df-ff-row-wrap">
+                    <a class="footer__item">
+                        <img width="30" height="30" src="./img/png//plus-18.png" class="footer__img" alt="">
+                    </a>
+                    <a href="https://www.gamblingcommission.gov.uk/" class="footer__item">
+                        <img width="73" height="29" src="./img/png//gambling-theraphy.png" class="footer__img" alt="" >
+                    </a>
+                    <a href="https://www.gamblersanonymous.org.uk/" class="footer__item">
+                        <img width="29" height="32" src="./img/png//gamecare.png" class="footer__img" alt="">
+                    </a>
+                    <a href="https://www.begambleaware.org/" class="footer__item">
+                        <img width="160" height="22" src="./img/png//begambleaware.png" class="footer__img" alt="">
+                    </a>
+                    <a href="http://www.gamcare.org.uk/" class="footer__item">
+                        <img width="46" height="28" src="./img/png//responsible-gambling.png" class="footer__img" alt="">
+                    </a>
+                    <a href="https://www.gamblingtherapy.org/" class="footer__item">
+                        <img width="91" height="25" src="./img/png//gambling.png" class="footer__img" alt="">
+                    </a>
+                    <a href="https://www.gamstop.co.uk/" class="footer__item">
+                        <img width="109" height="19" src="./img/png//gamstop.png" class="footer__img" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__middle df df-ai-center mb-20">
+                <div class="footer__column">
+                    <div class="footer__title p2 p2--semi-bold">disclaimer</div>
+                    <div class="footer__text p3">All bonuses, promotions, and free bet offers listed on the site are subject to the specific terms and conditions and the individual requirements of the operators promoting them. Stakers does not provide any type of customer service or support for any of the betting incentives and offers that are to be found on this site. This site and all the offers listed on this site are related to gambling and are only suitable for those at or above the legal age
+                        within those jurisdictions that permit online gambling. Furthermore, all logos, images, and third-party trademarks are the sole property of their individual owners. All trademarks and all references to trademarks themselves are made solely under the intention of fair promotion of all the services and betting operators mentioned on this site.
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__title p2 p2--semi-bold">cookie use</div>
+                    <div class="footer__text p3">Stakers.com operates both first and also third-party cookies on your computer. These are specifically used to improve the site and provide personalised functionality. We will assume that you accept our use cookies, as explained, by continuing to use our site. More details.</div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__title p2 p2--semi-bold">help</div>
+                <ul class="footer__menu df df-ai-center df-ff-row-wrap">
+                    <li class="footer__li"><a href="#" class="footer__link p3 fw500">Cookies Policy</a></li>
+                    <li class="footer__li"><a href="#" class="footer__link p3 fw500">Privacy Policy</a></li>
+                    <li class="footer__li"><a href="#" class="footer__link p3 fw500">Terms &amp; Conditions</a></li>
+                    <li class="footer__li"><a href="mailto:hey@wcasino.com" class="footer__link p3 fw500">Have a question? Write to us hey@wcasino.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<input type="hidden" id="progress_width" value="0">
+<div id="fade"></div>
+<div class="registration-popup" id="registration-popup">
+    <div class="registration-popup__wrapper">
+        <button class="registration-popup__close">
+            <svg width="13" height="13">
+                <use xlink:href="./img/sprites.svg#icon-close"></use>
+            </svg>
+        </button>
+        <div class="registration-popup__icon bg-image" style="background-image: url(./img/png/registration-icon.png);"></div>
+        <form class="registration-popup__form registration-popup-form" id="registration-popup-form">
+            <p class="registration-popup-form__title h2">Join The Adventure To <b>Exclusive Offers!</b> </p>
+            <p class="registration-popup-form__text p2">Unlock the secrets of casino bonuses and promotions from leading sites. </p>
+            <div class="registration-popup-form__item">
+                <input class="registration-popup-form__input p3" placeholder="Email*" name="email" id="register-email">
+                <label for="register-email" class="registration-popup-form__label p5">Email*</label>
+            </div>
+            <label for="register-agree" class="registration-popup-form__accept df df-ai-start">
+                <input type="checkbox" name="register-agree" id="register-agree" required>
+                <span class="df df-jc-center df-ai-center registration-popup-form__bg">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                    </svg>
+                </span>
+                <span class="text p5">I certify that I am at least 18 years old and I agree to receive casino promotions and news from stakers.com</span>
+            </label>
+            <button class="registration-popup-form__btn btn-main blue">Claim Exclusive Rewards</button>
+        </form>
+        <div class="registration-popup__thanks registration-popup-thanks" id="registration-popup-thanks">
+            <p class="registration-popup-thanks__title h2">Thank You, <br> <b>Welcome Aboard!</b></p>
+            <p class="registration-popup-thanks__text p3">Unlock the secrets of casino bonuses and promotions from leading sites. </p>
+        </div>
+    </div>
+</div>
+<div class="exit-popup" id="exit-popup">
+    <div class="exit-popup__wrapper">
+        <div class="exit-popup__banner bg-image" style="width: 390px; height: 420px; background-image: url(./img/png/exclusive-offers-banner.png);"></div>
+        <div class="exit-popup__list">
+            <div class="exit-popup__content align-center">
+                <div class="exit-popup__title-sub h4">Exclusive Offers From Wcasino</div>
+                <div class="exit-popup__title h1">No Deposit Bonuses</div>
+                <div class="exit-popup__text p1">Don't just take our word for it – simply join us now to put the stack of Stakers online casino no-deposit bonuses to the test</div>
+            </div>
+            <div class="bonus block pd-15 m-10 df df-ai-center straightforward-to-page">
+                <div class="bonus__left">
+                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                    </a>
+                </div>
+                <div class="bonus__right df df-ff-column">
+                    <div class="bonus__top df df-ai-center df-jc-between">
+                        <div class="bonus__info">
+                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                        </div>
+                        <div class="bonus__row df df-ai-center">
+                            <div class="bonus__tags tags df df-ai-center">
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Turnover</div>
+                                    <div class="tags__value p2">35X</div>
+                                </div>
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Max w</div>
+                                    <div class="tags__value p2">∞</div>
+                                </div>
+                            </div>
+                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus block pd-15 m-10 df df-ai-center straightforward-to-page">
+                <div class="bonus__left">
+                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                    </a>
+                </div>
+                <div class="bonus__right df df-ff-column">
+                    <div class="bonus__top df df-ai-center df-jc-between">
+                        <div class="bonus__info">
+                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                        </div>
+                        <div class="bonus__row df df-ai-center">
+                            <div class="bonus__tags tags df df-ai-center">
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Turnover</div>
+                                    <div class="tags__value p2">35X</div>
+                                </div>
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Max w</div>
+                                    <div class="tags__value p2">∞</div>
+                                </div>
+                            </div>
+                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus block pd-15 m-10 df df-ai-center straightforward-to-page">
+                <div class="bonus__left">
+                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                    </a>
+                </div>
+                <div class="bonus__right df df-ff-column">
+                    <div class="bonus__top df df-ai-center df-jc-between">
+                        <div class="bonus__info">
+                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                        </div>
+                        <div class="bonus__row df df-ai-center">
+                            <div class="bonus__tags tags df df-ai-center">
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Turnover</div>
+                                    <div class="tags__value p2">35X</div>
+                                </div>
+                                <div class="tags__item">
+                                    <div class="tags__title p3">Max w</div>
+                                    <div class="tags__value p2">∞</div>
+                                </div>
+                            </div>
+                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="exit-popup__close">
+            <svg width="13" height="13">
+                <use xlink:href="./img/sprites.svg#icon-close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+<script src="./js/index.js"></script>
+</body>
+</html>
