@@ -91,14 +91,14 @@ window.addEventListener("load", function () {
         const currentScroll = window.pageYOffset;
         if (currentScroll <= 0) {
             body.classList.remove(scrollUp, scrollDown);
-            header.classList.remove("active");
+            //header.classList.remove("active");
             return;
         }
         const direction = currentScroll > lastScroll ? scrollDown : scrollUp;
         if (direction !== currentDirection) {
             body.classList.remove(scrollUp, scrollDown);
             body.classList.add(direction);
-            header.classList.add("active");
+            //header.classList.add("active");
             currentDirection = direction;
         }
         lastScroll = currentScroll;
@@ -424,19 +424,19 @@ window.addEventListener("load", function () {
     }
 
 
-    let itemFirst = document.getElementById("online-slots-first");
-    let itemSecond = document.getElementById("online-slots-second");
-    let itemThird = document.getElementById("online-slots-third");
-    if (itemFirst !== null) {
-        itemFirst = itemFirst.querySelectorAll(".online-slots-slide");
-        itemSecond = itemSecond.querySelectorAll(".online-slots-slide");
-        itemThird = itemThird.querySelectorAll(".online-slots-slide");
+    let onlineSlotsSliderFirst = document.getElementById("online-slots-first");
+    let onlineSlotsSliderSecond = document.getElementById("online-slots-second");
+    let onlineSlotsSliderThird = document.getElementById("online-slots-third");
+    if (onlineSlotsSliderFirst !== null) {
+        onlineSlotsSliderFirst = onlineSlotsSliderFirst.querySelectorAll(".online-slots-slide");
+        onlineSlotsSliderSecond = onlineSlotsSliderSecond.querySelectorAll(".online-slots-slide");
+        onlineSlotsSliderThird = onlineSlotsSliderThird.querySelectorAll(".online-slots-slide");
         let deadline;
         let date = new Date(Date.now());
-        for (let i = 0, k = 1; i < itemFirst.length; i++, k++) {
-            let durationTime = itemFirst[i].getAttribute("data-delay");
-            let elMinutesFirst = itemFirst[i].querySelector(".minutes");
-            let elSecondsFirst = itemFirst[i].querySelector(".seconds");
+        for (let i = 0, k = 1; i < onlineSlotsSliderFirst.length; i++, k++) {
+            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
+            let elMinutesFirst = onlineSlotsSliderFirst[i].querySelector(".minutes");
+            let elSecondsFirst = onlineSlotsSliderFirst[i].querySelector(".seconds");
             let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
             if (i == 0) {
                 nextTime = Number(600000 - durationTime);
@@ -452,10 +452,10 @@ window.addEventListener("load", function () {
                 elMinutesFirst.textContent = minutes;
                 elSecondsFirst.textContent = timer.seconds;
             }, () => {
-                itemFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+                onlineSlotsSliderFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
             });
             durationTime = Number(durationTime);
-            let barFirst = new ProgressBar.Circle(itemFirst[i].querySelector('.online-slots-slide__logo'), {
+            let barFirst = new ProgressBar.Circle(onlineSlotsSliderFirst[i].querySelector('.online-slots-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
@@ -467,10 +467,10 @@ window.addEventListener("load", function () {
             });
             barFirst.animate(1.0);
         }
-        for (let i = 0, k = 1; i < itemSecond.length; i++, k++) {
-            let durationTime = itemFirst[i].getAttribute("data-delay");
-            let elMinutesSecond = itemSecond[i].querySelector(".minutes");
-            let elSecondsSecond = itemSecond[i].querySelector(".seconds");
+        for (let i = 0, k = 1; i < onlineSlotsSliderSecond.length; i++, k++) {
+            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
+            let elMinutesSecond = onlineSlotsSliderSecond[i].querySelector(".minutes");
+            let elSecondsSecond = onlineSlotsSliderSecond[i].querySelector(".seconds");
             let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
             if (i == 0) {
                 nextTime = Number(600000 - durationTime);
@@ -486,10 +486,10 @@ window.addEventListener("load", function () {
                 elMinutesSecond.textContent = minutes;
                 elSecondsSecond.textContent = timer.seconds;
             }, () => {
-                itemSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+                onlineSlotsSliderSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
             });
             durationTime = Number(durationTime);
-            let barSecond = new ProgressBar.Circle(itemSecond[i].querySelector('.online-slots-slide__logo'), {
+            let barSecond = new ProgressBar.Circle(onlineSlotsSliderSecond[i].querySelector('.online-slots-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
@@ -500,11 +500,11 @@ window.addEventListener("load", function () {
             });
             barSecond.animate(1.0);
         }
-        for (let i = 0, k = 3; i < itemThird.length; i++, k++) {
-            let durationTime = itemFirst[i].getAttribute("data-delay");
-            let elMinutesThird = itemThird[i].querySelector(".minutes");
-            let elSecondsThird = itemThird[i].querySelector(".seconds");
-            let nextTime = Number(((k - 1) * 600000) + ((k - 2) * 600000 - durationTime));
+        for (let i = 0, k = 2; i < onlineSlotsSliderThird.length; i++, k++) {
+            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
+            let elMinutesThird = onlineSlotsSliderThird[i].querySelector(".minutes");
+            let elSecondsThird = onlineSlotsSliderThird[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + ((k - 1) * 600000 - durationTime));
             deadline = new Date(Number(date.valueOf()) + nextTime);
             new CountdownTimer(deadline, (timer) => {
                 let minutes = timer.minutes;
@@ -514,10 +514,10 @@ window.addEventListener("load", function () {
                 elMinutesThird.textContent = minutes;
                 elSecondsThird.textContent = timer.seconds;
             }, () => {
-                itemThird[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+                onlineSlotsSliderThird[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
             });
             durationTime = Number(durationTime);
-            let barThird = new ProgressBar.Circle(itemThird[i].querySelector('.online-slots-slide__logo'), {
+            let barThird = new ProgressBar.Circle(onlineSlotsSliderThird[i].querySelector('.online-slots-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
@@ -528,45 +528,562 @@ window.addEventListener("load", function () {
             });
             barThird.animate(1.0);
         }
+        let swiperFirst = new Swiper(document.getElementById("online-slots-first"), {
+            effect: "fade",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        let swiperSecond = new Swiper(document.getElementById("online-slots-second"), {
+            effect: "fade",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        let swiperThird = new Swiper(document.getElementById("online-slots-third"), {
+            effect: "fade",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+    let bestSlotsSitesSliderFirst = document.getElementById("best-slot-sites-first");
+    let bestSlotsSitesSliderSecond = document.getElementById("best-slot-sites-second");
+    let bestSlotsSitesSliderThumb = document.getElementById("best-slot-sites-sub");
+    if (bestSlotsSitesSliderFirst !== null) {
+        bestSlotsSitesSliderFirst = bestSlotsSitesSliderFirst.querySelectorAll(".best-slot-sites-slide");
+        bestSlotsSitesSliderSecond = bestSlotsSitesSliderSecond.querySelectorAll(".best-slot-sites-slide");
+        bestSlotsSitesSliderThumb = bestSlotsSitesSliderThumb.querySelectorAll(".best-slot-sites-slide");
+        let deadline;
+        let date = new Date(Date.now());
+        for (let i = 0, k = 1; i < bestSlotsSitesSliderFirst.length; i++, k++) {
+            let durationTime = bestSlotsSitesSliderFirst[i].getAttribute("data-delay");
+            let elMinutesFirst = bestSlotsSitesSliderFirst[i].querySelector(".minutes");
+            let elSecondsFirst = bestSlotsSitesSliderFirst[i].querySelector(".seconds");
+            let elMinutesThumb = bestSlotsSitesSliderThumb[i].querySelector(".minutes");
+            let promoTimer = document.getElementById("promo-timer");
+            let elMinutesPromo = promoTimer.querySelector(".minutes");
+            let elSecondsPromo = promoTimer.querySelector(".seconds");
+            //let elSecondsThumb = bestSlotsSitesSliderThumb[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
+            if (i == 0) {
+                nextTime = Number(600000 - durationTime);
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            } else {
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            }
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesFirst.textContent = minutes;
+                elSecondsFirst.textContent = timer.seconds;
+            }, () => {
+                bestSlotsSitesSliderFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+
+                let durationTimePromo = bestSlotsSitesSliderFirst[i+1].getAttribute("data-delay");
+                let deadlinePromo;
+                let nextTimePromo = Number(((i+1) * 600000) + (((i+2) * 600000) - durationTimePromo));
+                deadlinePromo = new Date(Number(date.valueOf()) + nextTimePromo);
+                new CountdownTimer(deadlinePromo, (timer) => {
+                    let minutes = timer.minutes;
+                    if(timer.hours > 0){
+                        minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                    }
+                    elMinutesPromo.textContent = minutes;
+                    elSecondsPromo.textContent = timer.seconds;
+                });
+            });
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                if(i == 0){
+                    elMinutesPromo.textContent = minutes;
+                    elSecondsPromo.textContent = timer.seconds;
+                }
+            });
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesThumb.textContent = minutes;
+                //elSecondsThumb.textContent = timer.seconds;
+            }, () => {
+                bestSlotsSitesSliderThumb[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+            });
+            durationTime = Number(durationTime);
+            let barFirst = new ProgressBar.Circle(bestSlotsSitesSliderFirst[i].querySelector('.best-slot-sites-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#F0284A',
+                trailColor: '#5A5C5E',
+                trailWidth: 3,
+                svgStyle: {width: '69px', height: '69px'},
+
+            });
+            barFirst.animate(1.0);
+            let barSub = new ProgressBar.Circle(bestSlotsSitesSliderThumb[i].querySelector('.best-slot-sites-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#1876F0',
+                trailColor: '#eee',
+                trailWidth: 3,
+                svgStyle: {width: '48px', height: '48px'},
+            });
+            barSub.animate(1.0);
+
+        }
+        for (let i = 0, k = 1; i < bestSlotsSitesSliderSecond.length; i++, k++) {
+            let durationTime = bestSlotsSitesSliderFirst[i].getAttribute("data-delay");
+            let elMinutesSecond = bestSlotsSitesSliderSecond[i].querySelector(".minutes");
+            let elSecondsSecond = bestSlotsSitesSliderSecond[i].querySelector(".seconds");
+            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
+            if (i == 0) {
+                nextTime = Number(600000 - durationTime);
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            } else {
+                deadline = new Date(Number(date.valueOf()) + nextTime);
+            }
+            new CountdownTimer(deadline, (timer) => {
+                let minutes = timer.minutes;
+                if(timer.hours > 0){
+                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
+                }
+                elMinutesSecond.textContent = minutes;
+                elSecondsSecond.textContent = timer.seconds;
+            }, () => {
+                bestSlotsSitesSliderSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+            });
+            durationTime = Number(durationTime);
+            let barSecond = new ProgressBar.Circle(bestSlotsSitesSliderSecond[i].querySelector('.best-slot-sites-slide__logo'), {
+                strokeWidth: 3,
+                easing: 'linear',
+                duration: nextTime,
+                color: '#FFC700',
+                trailColor: '#5A5C5E',
+                trailWidth: 3,
+                svgStyle: {width: '69px', height: '69px'},
+            });
+            barSecond.animate(1.0);
+        }
+        let swiperFirst = new Swiper(document.getElementById("best-slot-sites-first"), {
+            effect: "fade",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        let swiperThumb = new Swiper(document.getElementById("best-slot-sites-sub"), {
+            spaceBetween: 16,
+            slidesPerView: "auto",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        let swiperSecond = new Swiper(document.getElementById("best-slot-sites-second"), {
+            effect: "fade",
+            loop: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 600000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     }
 
-    let swiperFirst = new Swiper(document.getElementById("online-slots-first"), {
-        effect: "fade",
-        //loop: true,
-        allowTouchMove: false,
-        autoplay: {
-            delay: 600000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-    let swiperSecond = new Swiper(document.getElementById("online-slots-second"), {
-        effect: "fade",
-        //loop: true,
-        allowTouchMove: false,
-        autoplay: {
-            delay: 600000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-    let swiperThird = new Swiper(document.getElementById("online-slots-third"), {
-        effect: "fade",
-        //loop: true,
-        allowTouchMove: false,
-        autoplay: {
-            delay: 600000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+    let slotsWrap = document.getElementById('slots-wrapper');
+    let slotsPagination = document.getElementById("slots-pagination");
+    let slotsFilter = document.getElementById('filterForm');
+    let inputsFilter;
+    if(slotsFilter !== null){ //slotsWrap !== null && slotsPagination !== null &&
+        async function slotsAll(query) {
+            let response = await fetch('/wp-admin/admin-ajax.php', {
+                method: 'post',
+                headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+                body: `action=fetchSlots&data=${query}`
+            });
+            let data = await response.json();
+            slotsWrap.innerHTML = data.result;
+            /*if( data.pagination == ""){
+                fadeOut(slotsPagination)
+            }
+            else{
+                fadeIn(slotsPagination, "flex");
+                slotsPagination.innerHTML = data.pagination;
+            }*/
+        }
+        let allData = {
+            slotsRtp: [0, 100],
+            slotsRelease: [1999, 2023],
+            slotsBetMin: [0, 5000],
+            slotsBetMax: [0, 6000000],
+            slotsMaxWin: [0, 25000],
+            checked: [],
+            query: [],
+        };
+        let createData = () => {
+            let nodeList = slotsFilter.querySelectorAll('input:checked');
+            let checked = {
+                slotsProvider: [],
+                slotsType: [],
+                slotsVolatility: [],
+                slotsThemes: [],
+                slotsLayout: [],
+                slotsFeatures: [],
+            };
+            nodeList.forEach((node) => {
+                if(node.name == "slots-provider[]"){
+                    checked.slotsProvider.push(node.value);
+                }
+                if(node.name == "slots-type[]"){
+                    checked.slotsType.push(node.value);
+                }
+                if(node.name == "slots-volatility[]"){
+                    checked.slotsVolatility.push(node.value);
+                }
+                if(node.name == "slots-themes[]"){
+                    checked.slotsThemes.push(node.value);
+                }
+                if(node.name == "slots-layout[]"){
+                    checked.slotsLayout.push(node.value);
+                }
+                if(node.name == "slots-features[]"){
+                    checked.slotsFeatures.push(node.value);
+                }
+            });
+            allData.checked.push(checked);
+        }
+        if(slotsFilter !== null){
+            inputsFilter = slotsFilter.querySelectorAll('input');
+            inputsFilter.forEach(input => {
+                input.addEventListener('change', createData);
+            })
+            slotsFilter.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if(allData.checked.length > 1){
+                    allData.checked = [allData.checked.pop()];
+                }
+                //slotsWrap.innerHTML = template;
+                //slotsAll(JSON.stringify(allData));
+            });
+        }
+        let filterSearchInput = document.querySelector('.search-form__input');
+        filterSearchInput.addEventListener('input', function() {
+            document.querySelector('.slots-filter--aside input[name="q"]').value = this.value;
+            allData.query = this.value;
+            //slotsAll(JSON.stringify(allData));
+        });
+        function filterSelect(el) {
+            const label = el.closest('label').getAttribute('aria-label'),
+                parent = el.closest('.select'),
+                modal = parent.querySelector('div[aria-label="' + label + '"]'),
+                arr = modal.querySelectorAll('label'),
+                arrNumber = el.parentNode.querySelector('.slots-filter-range__slider--two_rtp-top'),
+                placeholder = el.querySelector('.text'), //placeholder__text
+                //input = el.querySelector('input'),
+                reset = modal.querySelector('.slots-filter__btn-clear');
+            let activeCheckboxes = [];
+            toggleModal();
+            function toggleModal() {
+                if(document.querySelectorAll(".select__content") !== null){
+                    document.querySelectorAll(".select__content").forEach(function (el){
+                        let parentElement = el.closest('.select')
+                        let element = el.closest('.select').querySelector('div[aria-label="' + el.closest('label').getAttribute('aria-label') + '"]');
+                        if(modal != element){
+                            element.classList.remove("filter__modal--active");
+                            parentElement.classList.remove("select--active");
+                        }
+                    })
+                }
+                modal.classList.toggle("filter__modal--active");
+                parent.classList.toggle("select--active");
+                let action = false;
+                if (modal.classList.contains('filter__modal--active')) action = true;
+                //focusInput(action);
+            }
+            /*function focusInput(action) {
+                if (action === true) {
+                    if (input !== null) {
+                        input.focus({
+                            preventScroll: true
+                        });
+                    }
+                } else {
+                    if (input !== null) {
+                        input.blur();
+                    }
+                }
+            }*/
+            /*input.oninput = e => {
+                e.target.value = ''; // не важно, что ввели, значение всегда пустое будет
+            }*/
+            /*input.addEventListener("input", function (e) {
+                let val = this.value;
+                if (val.length > 0) {
+                    placeholder.classList.add('text_disabled');
+                } else {
+                    placeholder.classList.remove('text_disabled');
+                }
+                for (i = 0; i < arr.length; i++) {
+                    const el = arr[i]
+                    const str = el.getAttribute('data-item_title');
+                    if (str.substr(0, val.length).toUpperCase() != val.toUpperCase()) {
+                        el.classList.add('filter-checkbox_hide');
+                    } else {
+                        el.classList.remove('filter-checkbox_hide');
+                    }
+                }
+            })*/
+            function selectActive() {
+                if (activeCheckboxes.length > 0) {
+                    placeholder.innerText = activeCheckboxes.toString();
+                } else {
+                    placeholder.innerText = placeholder.getAttribute('data-placeholder');
+                }
+            }
+            let title;
+            if(arrNumber !== null){
+                let parentNum = arrNumber.closest('.filter__modal');
+                if (parentNum) {
+                    let placeholder = parentNum.closest('.range').querySelector('.text');
+                    arrNumber.noUiSlider.on('update', function (values, handle) {
+                        let value = Math.floor(values[handle]);
+                        title = Math.floor(values[0]) + '-' + Math.floor(values[1]) + '%';
+                        placeholder.innerText = title;
+                        activeCheckboxes[0] = title;
+                        selectActive();
+                    });
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].querySelector('input').checked) {
+                    title = arr[i].getAttribute('data-item_title');
+                    activeCheckboxes.push(title);
+                }
+                arr[i].onchange = function () {
+                    title = arr[i].getAttribute('data-item_title');
+                    if (arr[i].querySelector('input').checked) {
+                        activeCheckboxes.push(title);
+                    } else {
+                        activeCheckboxes.splice(activeCheckboxes.indexOf(title), 1);
+                    }
+                    selectActive();
+                }
+            }
+            selectActive();
+            if (reset) {
+                reset.onclick = function (e) {
+                    e.preventDefault();
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i].querySelector('input').checked) {
+                            arr[i].querySelector('input').click();
+                        }
+                        activeCheckboxes = [];
+                    }
+                    selectActive();
+                }
+            }
+        }
+        function updateSliderRangeTwo(arr) {
+            arr.forEach(el => {
+                let inputs = el.closest('.range-slider').querySelectorAll('input[type="number"]');
+                el.noUiSlider.on('update', function (values, handle) {
+                    let value = Math.floor(values[handle]);
+                    if (el.getAttribute('data-id') === 'aside-rtp') {
+                        document.querySelector('.slots-filter-range__slider--two_rtp-top').noUiSlider.setHandle(handle, value, true, true);
+                        //document.querySelector('.slots-filter-range__slider_two_rtp-aside').noUiSlider.setHandle(handle, value, true, true);
+                    }
+                    if (el.getAttribute('data-id') === 'top-rtp') {}
+                    if(inputs[handle].name == "rtp_min"){
+                        allData.slotsRtp[0] = value;
+                    }
+                    if(inputs[handle].name == "rtp_max"){
+                        allData.slotsRtp[1] = value;
+                    }
+                    if(inputs[handle].name == "release_min"){
+                        allData.slotsRelease[0] = value;
+                    }
+                    if(inputs[handle].name == "release_max"){
+                        allData.slotsRelease[1] = value;
+                    }
+
+                    if(inputs[handle].name == "min_bet_min"){
+                        allData.slotsBetMin[0] = value;
+                    }
+                    if(inputs[handle].name == "min_bet_max"){
+                        allData.slotsBetMin[1] = value;
+                    }
+
+                    if(inputs[handle].name == "max_bet_min"){
+                        allData.slotsBetMax[0] = value;
+                    }
+                    if(inputs[handle].name == "max_bet_max"){
+                        allData.slotsBetMax[1] = value;
+                    }
+
+                    if(inputs[handle].name == "max_win_min"){
+                        allData.slotsMaxWin[0] = value;
+                    }
+                    if(inputs[handle].name == "max_win_max"){
+                        allData.slotsMaxWin[1] = value;
+                    }
+                });
+                inputs.forEach((input, handle) => {
+                    input.oninput = function () {
+                        el.noUiSlider.setHandle(handle, this.value);
+                    };
+                });
+            })
+        }
+        function initSliderRangeTwo(arr) {
+            arr.forEach(el => {
+                let min = parseInt(el.getAttribute('data-min')),
+                    max = parseInt(el.getAttribute('data-max')),
+                    sMin = parseInt(el.getAttribute('data-start')),
+                    sMax = parseInt(el.getAttribute('data-end')),
+                    inputs = el.closest('.range-slider').querySelectorAll('input[type="number"]');
+                parent = el.closest('.filter__modal');
+
+                noUiSlider.create(el, {
+                    start: [sMin, sMax],
+                    connect: [false, true, false],
+                    range: {
+                        'min': min,
+                        'max': max
+                    }
+                });
+                el.noUiSlider.on('update', function (values, handle) {
+                    let value = Math.floor(values[handle]);
+                    inputs[handle].value = value;
+                })
+            });
+        }
+
+        let modalBlockHandlers = document.querySelectorAll('.select__content');
+        if (modalBlockHandlers) {
+            modalBlockHandlers.forEach(i => {
+                (i.onclick = function (e) {
+                    e.preventDefault();
+                    filterSelect(i);
+                });
+            })
+        }
+
+        let sliderRangeTwo = document.querySelectorAll('.slots-filter-range__slider--two');
+        if (!isEmptyObject(sliderRangeTwo)) {
+            if (sliderRangeTwo !== null) {
+                initSliderRangeTwo(sliderRangeTwo);
+                updateSliderRangeTwo(sliderRangeTwo)
+            }
+        }
+        let slotsFilterGroupItem = document.querySelector(".slots-filter--aside").querySelectorAll(".slots-filter-group");
+        if (!isEmptyObject(slotsFilterGroupItem)) {
+            slotsFilterGroupItem.forEach(el => {
+                let header = el.querySelector(".slots-filter-group__title");
+                header.addEventListener("click", function (e) {
+                    el.classList.toggle("slots-filter-group--active");
+                })
+            })
+        }
+        function updateSecondCheckbox(el) {
+            const parent = el.closest('.select');
+            if (parent) {
+                const label = parent.querySelector('.select__content');
+                label.click();
+                label.click();
+            }
+        };
+        let checkboxList = this.document.querySelectorAll('input[type="checkbox"]');
+        if (!isEmptyObject(checkboxList)){
+            checkboxList.forEach(checkbox => {
+                checkbox.addEventListener('change', function change(e) {
+                    const valueCheckbox = this.value;
+                    if (this.checked) {
+                        const secondCheckboxAll = document.querySelectorAll('input[value="' + valueCheckbox + '"]:not(:checked)');
+                        if (!isEmptyObject(secondCheckboxAll)) {
+                            secondCheckboxAll.forEach(function (secondCheckbox){
+                                secondCheckbox.checked = true;
+                                updateSecondCheckbox(secondCheckbox);
+                            })
+                        }
+                    } else {
+                        const secondCheckboxAll = document.querySelectorAll('input[value="' + valueCheckbox + '"]:checked');
+                        if (!isEmptyObject(secondCheckboxAll)) {
+                            secondCheckboxAll.forEach(function (secondCheckbox){
+                                secondCheckbox.checked = false;
+                                updateSecondCheckbox(secondCheckbox);
+                            })
+                        }
+                    }
+                });
+            });
+        }
+        function updateSecond(el) {
+            const parent = el;
+            if (parent) {
+                const label = parent.querySelector('.select__content');
+                label.click();
+                label.click();
+            }
+        };
+        document.querySelectorAll(".select").forEach(function (el){
+            updateSecond(el);
+        })
+    }
+
+    let popularSlotsSwiper = document.getElementById("popular-slots-swiper");
+    if(popularSlotsSwiper !== null){
+        var swiper = new Swiper(popularSlotsSwiper, {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
 })
