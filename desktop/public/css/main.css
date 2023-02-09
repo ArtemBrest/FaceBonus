@@ -649,7 +649,6 @@
 
 .bonus {
   position: relative;
-  /*gap: 15px;*/
   border: 2px solid transparent;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -728,7 +727,7 @@
   box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
   border-radius: 6px;
   padding: 2px 8px;
-  margin: -12px 0 0;
+  margin: -12px auto 0;
   position: relative;
 }
 
@@ -791,6 +790,66 @@
   margin-top: 8px;
 }
 
+.bonus-aside {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.bonus-aside__top {
+  margin-bottom: 12px;
+}
+
+.bonus-aside__logo {
+  margin-right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.bonus-aside__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.bonus-aside__logo img {
+  width: auto;
+  height: auto;
+}
+
+.bonus-aside__title {
+  margin-bottom: 2px;
+}
+
+.bonus-aside__title b {
+  color: #F0284A;
+}
+
+.bonus-aside__text {
+  color: #888888;
+}
+
+.bonus-aside__btn {
+  width: 100%;
+}
+
 .bonus-mobile {
   position: relative;
   -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
@@ -803,6 +862,14 @@
   right: -10px;
   width: 109px;
   height: 31px;
+}
+
+.bonus-mobile__top-left {
+  margin-right: 15px;
+}
+
+.bonus-mobile__top-left .bonus-mobile__logo {
+  margin: 0 auto;
 }
 
 .bonus-mobile__logo {
@@ -835,8 +902,36 @@
   height: auto;
 }
 
+.bonus-mobile-rating {
+  margin-top: 12px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.bonus-mobile-rating svg:nth-child(1),
+.bonus-mobile-rating svg:nth-child(5) {
+  margin-top: -12px;
+}
+
+.bonus-mobile-rating svg:nth-child(2),
+.bonus-mobile-rating svg:nth-child(4) {
+  margin-top: -6px;
+}
+
+.bonus-mobile__info .bonus-mobile__btn {
+  margin: 8px 0 0;
+}
+
+.bonus-mobile__title.p1 b {
+  color: #222222;
+}
+
 .bonus-mobile__title b {
   color: #F0284A;
+}
+
+.bonus-mobile__text {
+  margin-top: 4px;
 }
 
 .bonus-mobile__available {
@@ -1398,7 +1493,7 @@
   --main-color: #0056BD;
 }
 
-.top-10-comparison--even {
+.top-10-comparison.top-10-comparison--even {
   --main-color: #F0284A;
 }
 
@@ -1863,6 +1958,158 @@
   text-align: center;
   color: #888888;
   margin: 0 6px;
+}
+
+.block-description .free-spins-pros-or-cons {
+  width: 380px;
+  margin: 0 0 0 20px;
+  float: right;
+}
+
+.block-description .free-spins-pros-or-cons .pros ul li:before {
+  background: url(../img/png/icon-99.png) no-repeat center/cover;
+}
+
+.block-description .free-spins-pros-or-cons .cons ul li:before {
+  background: url(../img/png/icon-100.png) no-repeat center/cover;
+}
+
+.block-description .free-spins-pros-or-cons ul li {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.block-description .free-spins-pros-or-cons ul li:before {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.block-description .gaming-provider-blue__title {
+  background: #1876F0;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  color: #FFFFFF;
+}
+
+.block-description .gaming-provider-blue__title .icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+  -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.block-description .types-variations {
+  width: 380px;
+  float: right;
+  margin: 0 0 0 20px;
+}
+
+.block-description .types-variations__head {
+  border: 3px solid #FFFFFF;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  padding: 25px 12px;
+  margin-bottom: 16px;
+}
+
+.block-description .types-variations__title {
+  text-shadow: -1px 2px 0px rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
+}
+
+.block-description .types-variations__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.block-description .types-variations__cards .card {
+  background: #FFFFFF;
+  border: 1px solid #EAEEF0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.block-description .types-variations__cards .card__icon {
+  margin: 0 0 2px auto;
+  width: 42px;
+  height: 42px;
+  -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.block-description .types-variations__cards .card__title {
+  margin-bottom: 2px;
+  color: var(--main-color);
+}
+
+.block-description .new-online-slots-info__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.block-description .new-online-slots-info__cards .card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(1) {
+  background: rgba(24, 118, 240, 0.05);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(1) .card__head {
+  background: rgb(24, 118, 240);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(2) {
+  background: rgba(240, 40, 74, 0.05);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(2) .card__head {
+  background: rgb(240, 40, 74);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(3) {
+  background: rgba(15, 151, 94, 0.05);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(3) .card__head {
+  background: rgb(15, 151, 94);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(4) {
+  background: rgba(255, 181, 38, 0.05);
+}
+
+.block-description .new-online-slots-info__cards .card:nth-child(4) .card__head {
+  background: rgb(255, 181, 38);
+}
+
+.block-description .new-online-slots-info__cards .card__head {
+  text-align: center;
+  color: #FFFFFF;
+  padding: 8px 16px;
+}
+
+.block-description .new-online-slots-info__cards .card__description {
+  padding: 16px;
 }
 
 .front-page-slots__btn {
@@ -4608,6 +4855,21 @@
   border-radius: 8px;
 }
 
+.terms-conditions__wrapper.terms-conditions__wrapper--free-spins {
+  background: transparent;
+}
+
+.terms-conditions__wrapper.terms-conditions__wrapper--free-spins .terms-conditions__cards {
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.terms-conditions__wrapper.terms-conditions__wrapper--free-spins .terms-conditions__cards .card {
+  background: #F1F5F8;
+  border-radius: 8px;
+  padding: 16px;
+}
+
 .terms-conditions__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -6226,6 +6488,36 @@
   margin-right: 12px;
 }
 
+.slots-tabs .card__logo {
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slots-tabs .card__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.slots-tabs .card__logo img {
+  width: auto;
+  height: auto;
+}
+
 .slots-tabs .card__img {
   width: 100%;
   height: 100%;
@@ -6285,8 +6577,16 @@
   border-radius: 8px;
 }
 
+.slots-table.align-left thead tr td:not(:first-child) {
+  text-align: left;
+}
+
+.slots-table.align-left tbody tr td:not(:first-child) {
+  text-align: left;
+}
+
 .slots-table thead tr td {
-  background: rgba(var(--color-table), 1);
+  background: rgba(var(--color-table, 34, 34, 34), 1);
   color: #FFFFFF;
 }
 
@@ -6295,14 +6595,14 @@
 }
 
 .slots-table tbody tr:nth-child(even) td {
-  background: rgba(var(--color-table), 0.05);
+  background: rgba(var(--color-table, 192, 203, 214), 0.05);
 }
 
 .slots-table tbody tr td:not(:first-child) {
   text-align: right;
 }
 
-.slots-table tbody tr td .logo {
+.slots-table tbody tr td.column-1 .logo {
   width: 70px;
   height: 40px;
   border-radius: 6px;
@@ -6312,7 +6612,7 @@
   margin-right: 12px;
 }
 
-.slots-table tbody tr td .logo img {
+.slots-table tbody tr td.column-1 .logo img {
   width: 100%;
   height: 100%;
   border-radius: 6px;
@@ -6331,6 +6631,89 @@
   font-size: 15px;
   line-height: 145%;
   color: #888888;
+}
+
+.provider-slots-category {
+  position: relative;
+}
+
+.provider-slots-category__form {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.provider-slots-category__head {
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 80px 20px 20px 80px;
+  background: var(--main-color-category);
+  padding: 18px 12px 18px 80px;
+  height: 64px;
+  position: relative;
+  cursor: pointer;
+}
+
+.provider-slots-category__logo {
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+
+.provider-slots-category__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.provider-slots-category__logo img {
+  width: auto;
+  height: auto;
+}
+
+.provider-slots-category__title {
+  color: #FFFFFF;
+  position: relative;
+  z-index: 9;
+}
+
+.provider-slots-category__title svg {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.provider-slots-category__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}
+
+.provider-slots-category__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
 }
 
 .online-slots-slider {
@@ -7523,6 +7906,1738 @@
 
 .best-slot-sites-offer__bonuses .card__btn {
   width: 100%;
+}
+
+.banner-fs {
+  background: #0F975E;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.banner-fs__wrapper {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.banner-fs__left {
+  color: #FFFFFF;
+  max-width: 165px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.banner-fs__title {
+  margin-bottom: 8px;
+}
+
+.banner-fs__text {
+  margin-bottom: 12px;
+}
+
+.banner-fs__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  background: #FFB526;
+  border: 1px solid #FFB526;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: #222222;
+}
+
+.banner-fs__btn:hover {
+  background: #222222;
+  border: 1px solid #222222;
+  color: #FFB526;
+}
+
+.banner-fs__placeholder-text {
+  margin-top: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+.banner-fs__center {
+  position: relative;
+}
+
+.banner-fs__center:after {
+  background: url(../img/png/free-spins-drum-btn.png) no-repeat center/cover;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+.banner-fs__center-image {
+  display: block;
+  -webkit-transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.banner-fs__center-image .img {
+  display: block;
+}
+
+.banner-fs__status {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  max-width: 516px;
+  margin: 0 0 0 auto;
+}
+
+.banner-fs__status.fadeOut {
+  display: none;
+}
+
+.banner-fs__status .card-placeholder {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-fs__status .card-placeholder__top {
+  margin-bottom: 12px;
+}
+
+.banner-fs__status .card-placeholder__left {
+  background: #F1F5F8;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.banner-fs__status .card-placeholder__name {
+  border-radius: 6px;
+  background: #F1F5F8;
+  margin-bottom: 5px;
+}
+
+.banner-fs__status .card-placeholder__rating {
+  border-radius: 6px;
+  background: #F1F5F8;
+}
+
+.banner-fs__status .card-placeholder__title {
+  width: 100%;
+  background: #F1F5F8;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.banner-fs__status .card-placeholder__tags {
+  margin-bottom: 12px;
+}
+
+.banner-fs__status .card-placeholder__item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  background: #F1F5F8;
+  border-radius: 6px;
+}
+
+.banner-fs__status .card-placeholder__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.banner-fs__status .card-placeholder__bottom {
+  background: #F1F5F8;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.banner-fs__status .card-placeholder .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg);
+  left: -150%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.4)));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  -webkit-animation: flareAnimation 1s infinite linear;
+  animation: flareAnimation 1s infinite linear;
+}
+
+.banner-fs__bonuses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  max-width: 516px;
+  margin: 0 0 0 auto;
+}
+
+.banner-fs__bonuses.fadeOut {
+  display: none;
+}
+
+.banner-fs__bonuses .bonus-mobile {
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-fs__bonuses .bonus-mobile__logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 15px;
+  position: relative;
+}
+
+.banner-fs__bonuses .bonus-mobile__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.banner-fs__bonuses .bonus-mobile__logo img {
+  width: auto;
+  height: auto;
+}
+
+.banner-fs__bonuses .bonus-mobile__name {
+  margin-bottom: 4px;
+}
+
+.banner-fs__bonuses .bonus-mobile__tags {
+  margin: 0;
+  width: 100%;
+}
+
+.banner-fs__bonuses .bonus-mobile__tags .tags__item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.banner-fs__bonuses .bonus-mobile__btn {
+  width: 100%;
+}
+
+.section-fs-column {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.section-fs-column > * {
+  margin: 0 10px;
+}
+
+.section-fs-column > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 49%;
+  flex: 1 1 49%;
+}
+
+.deposit-fs {
+  padding: 16px;
+}
+
+.deposit-fs__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.deposit-fs__wrapper .card {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.deposit-fs__wrapper .card__top {
+  margin-bottom: 12px;
+}
+
+.deposit-fs__wrapper .card__logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 16px;
+  position: relative;
+}
+
+.deposit-fs__wrapper .card__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.deposit-fs__wrapper .card__logo img {
+  width: auto;
+  height: auto;
+}
+
+.deposit-fs__wrapper .card__info {
+  width: 100%;
+}
+
+.deposit-fs__wrapper .card__value {
+  background: #1876F0;
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  margin-bottom: 5px;
+  padding: 4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.deposit-fs__wrapper .card__tag {
+  background: rgba(15, 151, 94, 0.1);
+  border: 1px solid rgba(15, 151, 94, 0.2);
+  border-radius: 4px;
+  padding: 5px;
+  color: #0F975E;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.deposit-fs__wrapper .card__description {
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+.deposit-fs__wrapper .card__bottom {
+  margin: auto 0 12px;
+}
+
+.deposit-fs__wrapper .card__slots-title {
+  margin-bottom: 6px;
+}
+
+.deposit-fs__wrapper .card__slots-item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.deposit-offers {
+  padding: 16px;
+}
+
+.deposit-offers__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.deposit-offers__wrapper .bonus-mobile__logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+  position: relative;
+}
+
+.deposit-offers__wrapper .bonus-mobile__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.deposit-offers__wrapper .bonus-mobile__logo img {
+  width: auto;
+  height: auto;
+}
+
+.deposit-offers__wrapper .bonus-mobile__description {
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+.claim-fs-bonuses__list {
+  padding: 10px 0 0;
+}
+
+.claim-fs-bonuses__list .item {
+  position: relative;
+}
+
+.claim-fs-bonuses__list .item:not(:last-child) {
+  padding: 0 0 16px;
+}
+
+.claim-fs-bonuses__list .item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  bottom: -19px;
+  left: 15px;
+  display: block;
+  width: 1px;
+  background: #EAEEF0;
+}
+
+.claim-fs-bonuses__list .item:first-child {
+  padding: 0 0 20px;
+}
+
+.claim-fs-bonuses__list .item:first-child:after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  bottom: -24px;
+  left: 15px;
+  display: block;
+  width: 1px;
+  background: #EAEEF0;
+}
+
+.claim-fs-bonuses__list .item:first-child .item__icon {
+  width: 30px;
+  height: 30px;
+  margin: -8px 12px 0 0;
+}
+
+.claim-fs-bonuses__list .item__icon {
+  color: #FFFFFF;
+  width: 25px;
+  height: 25px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-shadow: 0px 0px 0.819512px rgba(0, 0, 0, 0.08), 0px 1.63902px 1.63902px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 0.819512px rgba(0, 0, 0, 0.08), 0px 1.63902px 1.63902px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  margin: -8px 14px 0 4px;
+}
+
+.claim-fs-bonuses__list .item__info {
+  margin: -8px 0 0;
+}
+
+.claim-fs-bonuses .pick-bonus {
+  width: 285px;
+  height: 180px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.04), 0px 2px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.04), 0px 2px 24px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  margin: 0 0 0 20px;
+}
+
+.claim-fs-bonuses .pick-bonus__title {
+  color: #FFFFFF;
+  max-width: 210px;
+}
+
+.claim-fs-bonuses .pick-bonus__btn {
+  color: #1876F0;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.04), 0px 2px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.04), 0px 2px 24px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+}
+
+.experts-choice {
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experts-choice:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100px;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 82, 180, 0.5)), to(rgba(0, 82, 180, 0)));
+  background: -o-linear-gradient(right, rgba(0, 82, 180, 0.5) 0%, rgba(0, 82, 180, 0) 100%);
+  background: linear-gradient(270deg, rgba(0, 82, 180, 0.5) 0%, rgba(0, 82, 180, 0) 100%);
+  z-index: 3;
+}
+
+.experts-choice__title {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.experts-choice__wrapper {
+  position: relative;
+}
+
+.experts-choice__wrapper .swiper-button-next,
+.experts-choice__wrapper .swiper-button-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2.33333px 2.33333px rgba(0, 0, 0, 0.12), 0px 0px 1.16667px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2.33333px 2.33333px rgba(0, 0, 0, 0.12), 0px 0px 1.16667px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  color: #222222;
+}
+
+.experts-choice__wrapper .swiper-button-next:after,
+.experts-choice__wrapper .swiper-button-next:before,
+.experts-choice__wrapper .swiper-button-prev:after,
+.experts-choice__wrapper .swiper-button-prev:before {
+  display: none;
+}
+
+.experts-choice__wrapper .swiper-button-disabled {
+  opacity: 0;
+}
+
+.experts-choice__wrapper .swiper-button-prev {
+  left: -12px;
+}
+
+.experts-choice__wrapper .swiper-button-prev svg {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.experts-choice__wrapper .swiper-button-next {
+  right: -12px;
+}
+
+.experts-choice__wrapper .swiper-button-next svg {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.experts-choice__swiper {
+  max-width: 760px;
+  padding-bottom: 30px;
+}
+
+.experts-choice__swiper .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  bottom: 0;
+}
+
+.experts-choice__swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  opacity: 0.5;
+  background: #FFFFFF;
+}
+
+.experts-choice__swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+
+.experts-choice-slide {
+  width: 335px;
+  height: auto !important;
+}
+
+.experts-choice-slide:nth-child(3n+1) .bonus-mobile__name {
+  background: #1876F0;
+}
+
+.experts-choice-slide:nth-child(3n+2) .bonus-mobile__name {
+  background: #F0284A;
+}
+
+.experts-choice-slide:nth-child(3n+3) .bonus-mobile__name {
+  background: #0F975E;
+}
+
+.experts-choice-slide .bonus-mobile__top-left {
+  margin-right: 12px;
+}
+
+.experts-choice-slide .bonus-mobile__title {
+  margin-bottom: 6px;
+}
+
+.experts-choice-slide .bonus-mobile__name {
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 6px 8px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.experts-choice-slide .bonus-mobile__btn {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.best-online-slots-banner__info {
+  max-width: 350px;
+  margin-right: 10px;
+}
+
+.best-online-slots-banner__title {
+  margin-bottom: 8px;
+}
+
+.best-online-slots-banner__text {
+  color: #888888;
+}
+
+.best-online-slots-banner__tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  width: 100%;
+}
+
+.best-online-slots-banner__tabs .card {
+  background: #FFFFFF;
+  border: 1px solid #EAEEF0;
+  border-radius: 6px;
+  padding: 12px 8px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.best-online-slots-banner__tabs .card:last-child {
+  grid-column: 1/3;
+}
+
+.best-online-slots-banner__tabs .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.best-online-slots-banner__tabs .card:hover {
+  border: 1px solid transparent;
+}
+
+.best-online-slots-banner__tabs .card:hover:before {
+  border: 2px solid #E99E0D;
+}
+
+.best-online-slots-banner__tabs .card:hover .card__title {
+  color: #E99E0D;
+}
+
+.best-online-slots-banner__tabs .card__icon {
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+}
+
+.best-online-slots-banner__tabs .card__title {
+  margin-bottom: 2px;
+}
+
+.best-online-slots-banner__tabs .card__text {
+  color: #888888;
+}
+
+.quick-steps__cards {
+  margin: 0 -8px;
+}
+
+.quick-steps__cards .card {
+  padding: 16px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 0 8px;
+}
+
+.quick-steps__cards .card:not(:first-child) {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #EAEEF0;
+}
+
+.quick-steps__cards .card:not(:first-child) .card__text {
+  color: #888888;
+}
+
+.quick-steps__cards .card:nth-child(even) .card__arrow {
+  top: -10px;
+  bottom: initial;
+  right: -40px;
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+.quick-steps__cards .card:last-child .card__arrow {
+  display: none;
+}
+
+.quick-steps__cards .card__step {
+  width: 72px;
+  height: 31px;
+  -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.quick-steps__cards .card__arrow {
+  position: absolute;
+  bottom: -10px;
+  right: -40px;
+  width: 75px;
+  height: 43px;
+  z-index: 3;
+}
+
+.best-online-slots-find {
+  overflow: hidden;
+}
+
+.best-online-slots-find .slots-find-group {
+  padding: 16px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form {
+  height: 50px;
+  width: 100%;
+  border: 1px solid #EAEEF0;
+  border-radius: 6px;
+  background: #FFFFFF;
+  padding: 0 15px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-bottom: 16px;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form:hover:before {
+  border: 2px solid #1876F0;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input {
+  width: 100%;
+  color: #222222;
+  cursor: pointer;
+  padding: 0 0 0 12px;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input::-webkit-input-placeholder {
+  color: #888888;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input::-moz-placeholder {
+  color: #888888;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input:-ms-input-placeholder {
+  color: #888888;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input::-ms-input-placeholder {
+  color: #888888;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form__input::placeholder {
+  color: #888888;
+}
+
+.best-online-slots-find .slots-find-group__wrapper .search-form svg {
+  color: #888888;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+.best-online-slots-find .slots-find-group__row .checkbox-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px 18px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.best-online-slots-find .slots-find-group__row .slots-filter-checkbox-item {
+  margin: 0;
+}
+
+.best-online-slots-find .slots-find-group__btn {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.best-online-slots-find__provider {
+  margin: 8px -8px;
+}
+
+.best-online-slots-find__provider .provider {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 12px 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 8px;
+  width: 180px;
+}
+
+.best-online-slots-find__provider .provider:nth-child(5),
+.best-online-slots-find__provider .provider:nth-child(6),
+.best-online-slots-find__provider .provider:nth-child(7),
+.best-online-slots-find__provider .provider:nth-child(8),
+.best-online-slots-find__provider .provider:nth-child(9) {
+  width: 140px;
+  height: 80px;
+}
+
+.best-online-slots-find__provider .provider:hover {
+  border: 1px solid #F2F3F6;
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.best-online-slots-find__provider .provider__logo {
+  height: auto;
+  width: auto;
+}
+
+.best-online-slots-find__description .cms-description-text {
+  max-width: 450px;
+  margin-right: 30px;
+}
+
+.best-online-slots-find__img {
+  margin: 0 0 -30px;
+}
+
+.best-online-slots-category__wrapper {
+  margin: 0 -10px 16px;
+}
+
+.best-online-slots-category__slots {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 49%;
+  flex: 1 1 49%;
+  margin: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.best-online-slots-category__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 49%;
+  flex: 1 1 49%;
+  margin: 0 10px;
+}
+
+.best-online-slots-category__title svg {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.new-online-slots-banner__info {
+  max-width: 540px;
+  margin-right: 20px;
+}
+
+.new-online-slots-banner__title {
+  margin-bottom: 8px;
+}
+
+.new-online-slots-banner__text {
+  color: #888888;
+}
+
+.new-online-slots-banner__tabs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  width: 100%;
+}
+
+.new-online-slots-banner__tabs .card {
+  background: #FFFFFF;
+  border: 1px solid #EAEEF0;
+  border-radius: 6px;
+  padding: 12px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.new-online-slots-banner__tabs .card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.new-online-slots-banner__tabs .card:hover {
+  border: 1px solid transparent;
+}
+
+.new-online-slots-banner__tabs .card:hover:before {
+  border: 2px solid #1876F0;
+}
+
+.new-online-slots-banner__tabs .card:hover .card__title,
+.new-online-slots-banner__tabs .card:hover .card__text {
+  color: #1876F0;
+}
+
+.new-online-slots-banner__tabs .card__icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 0 8px 0 0;
+}
+
+.new-online-slots-banner__tabs .card__title {
+  margin-bottom: 2px;
+}
+
+.new-online-slots-banner__tabs .card__text {
+  color: #888888;
+}
+
+.new-online-slots__wrapper {
+  padding: 12px;
+}
+
+.new-online-slots__group {
+  background: rgba(24, 118, 240, 0.15);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.new-online-slots__top .bonus {
+  padding: 4px;
+}
+
+.new-online-slots__top .bonus-timer {
+  border: 1px solid rgba(24, 118, 240, 0.1);
+  border-radius: 5px;
+  padding: 12px 20px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 200px;
+  margin-right: 15px;
+}
+
+.new-online-slots__top .bonus-timer__category {
+  margin: 0 auto 4px;
+}
+
+.new-online-slots__top .bonus-timer__title {
+  margin: 0 auto 2px;
+}
+
+.new-online-slots__top .bonus-timer__text {
+  margin: 0 auto 14px;
+}
+
+.new-online-slots__top .bonus-timer__wrapper .second {
+  background: #1876F0;
+  border: 3px solid #FFFFFF;
+  -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  margin-right: 14px;
+  min-width: 70px;
+  min-height: 60px;
+  padding: 0 10px 5px;
+  color: #FFFFFF;
+}
+
+.new-online-slots__top .bonus-timer__wrapper .second .value {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+}
+
+.new-online-slots__top .bonus-timer__wrapper .hours {
+  margin: 0 0 2px;
+}
+
+.new-online-slots__top .bonus-timer__wrapper .hours .value,
+.new-online-slots__top .bonus-timer__wrapper .mins .value {
+  margin-right: 3px;
+}
+
+.new-online-slots__top .bonus__wrapper {
+  margin: -4px -4px -4px 0;
+  padding: 16px 16px 16px 0;
+}
+
+.new-online-slots__top .bonus__logo-slots {
+  width: 105px;
+  height: 80px;
+}
+
+.new-online-slots__top .bonus__logo-slots img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.new-online-slots__top .bonus__top {
+  margin: 0 0 12px;
+}
+
+.new-online-slots__top .bonus__description {
+  margin: 0 0 12px;
+}
+
+.new-online-slots__top .bonus__btn {
+  margin: 0 20px 0 0;
+  padding: 10px 12px;
+}
+
+.new-online-slots__bottom .bonus {
+  margin-bottom: 0;
+}
+
+.new-online-slots__bottom .bonus__left {
+  margin: 0;
+}
+
+.new-online-slots__bottom .bonus__slots {
+  margin-right: 12px;
+}
+
+.new-online-slots__bottom .bonus__logo-slots {
+  width: 105px;
+  height: 80px;
+}
+
+.new-online-slots__bottom .bonus__logo-slots img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.new-online-slots__bottom .bonus__title {
+  margin-bottom: 8px;
+}
+
+.new-online-slots__bottom .bonus .tags {
+  margin-right: 15px;
+}
+
+.new-online-slots__bottom .bonus .tags:last-child {
+  margin-right: 0;
+}
+
+.new-online-slots__bottom .bonus .tags__item {
+  background: #F1F8FC;
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.new-online-slots__bottom .bonus-aside {
+  min-width: 190px;
+}
+
+.new-online-slots .bonus-list .bonus {
+  margin-bottom: 0;
+}
+
+.new-online-slots .bonus-list .bonus__left {
+  margin: 0;
+}
+
+.new-online-slots .bonus-list .bonus__slots {
+  margin-right: 12px;
+}
+
+.new-online-slots .bonus-list .bonus__logo-slots {
+  width: 105px;
+  height: 80px;
+}
+
+.new-online-slots .bonus-list .bonus__logo-slots img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.new-online-slots .bonus-list .bonus__title {
+  margin-bottom: 8px;
+}
+
+.new-online-slots .bonus-list .bonus .tags {
+  margin-right: 15px;
+}
+
+.new-online-slots .bonus-list .bonus .tags:last-child {
+  margin-right: 0;
+}
+
+.new-online-slots .bonus-list .bonus .tags__item {
+  background: #F1F8FC;
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.new-online-slots .bonus-list .bonus-aside {
+  min-width: 235px;
+}
+
+.most-played-online-slots__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.most-played-online-slots__cards .card {
+  padding: 16px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.most-played-online-slots__cards .card__head {
+  margin-bottom: 12px;
+}
+
+.most-played-online-slots__cards .card__logo {
+  margin-right: 12px;
+  width: 105px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 80px;
+}
+
+.most-played-online-slots__cards .card__logo img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.most-played-online-slots__cards .card__title {
+  margin-bottom: 8px;
+  width: 220px;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.most-played-online-slots__cards .card__row .tags__item {
+  background: #F1F8FC;
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.most-played-online-slots__cards .card__description {
+  color: #888888;
+  margin-bottom: 12px;
+}
+
+.most-played-online-slots__cards .card__bottom {
+  margin: auto 0 0;
+}
+
+.new-online-slots-category__head .icon {
+  width: 65px;
+  height: 65px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.new-online-slots-game__wrapper {
+  position: relative;
+  top: -20px;
+  background: #184191;
+  border-radius: 8px 8px 0px 0px;
+  margin: 0 -16px 0;
+  padding: 16px 16px 35px;
+  color: #FFFFFF;
+}
+
+.new-online-slots-game__wrapper .cms-description-text {
+  max-width: 470px;
+}
+
+.new-online-slots-game__wrapper .cms-description-text p {
+  color: #FFFFFF;
+}
+
+.new-online-slots-game__img {
+  position: absolute;
+  top: -12px;
+  right: 0;
+}
+
+.new-online-slots-game__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  margin: -42px 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.new-online-slots-game__cards .card {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.new-online-slots-game__cards .card:nth-child(1) .card__head {
+  background: #F0284A;
+}
+
+.new-online-slots-game__cards .card:nth-child(2) .card__head {
+  background: #0F975E;
+}
+
+.new-online-slots-game__cards .card__head {
+  padding: 10px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.new-online-slots-game__cards .card__item {
+  padding: 12px 16px;
+}
+
+.new-online-slots-game__cards .card__item:nth-child(even) {
+  background: #FBFCFD;
+}
+
+.new-online-slots-game__cards .card__item .icon {
+  margin-top: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.new-online-slots-game__cards .card__item .icon.icon--true {
+  color: #0F975E;
+}
+
+.new-online-slots-game__cards .card__item .icon.icon--false {
+  color: #F0284A;
+}
+
+.video-slots-banner {
+  padding: 16px;
+}
+
+.video-slots-banner__title {
+  margin-bottom: 8px;
+}
+
+.video-slots-banner__text {
+  color: #888888;
+  margin-bottom: 16px;
+}
+
+.video-slots-banner__left {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  width: 265px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.video-slots-banner__left .item {
+  background: #FFFFFF;
+  border: 1px solid #EAEEF0;
+  border-radius: 6px;
+  padding: 12px;
+  position: relative;
+}
+
+.video-slots-banner__left .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.video-slots-banner__left .item:hover {
+  border: 1px solid transparent;
+}
+
+.video-slots-banner__left .item:hover:before {
+  border: 2px solid var(--main-color);
+}
+
+.video-slots-banner__left .item:hover .item__title {
+  color: var(--main-color);
+}
+
+.video-slots-banner__left .item__icon {
+  width: 40px;
+  height: 40px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.video-slots-banner__left .item__title {
+  margin-bottom: 2px;
+}
+
+.video-slots-banner__left .item__text {
+  color: #888888;
+}
+
+.video-slots-banner__right {
+  margin: -6px;
+}
+
+.video-slots-banner__right .item {
+  background: #FFFFFF;
+  border: 1px solid #EAEEF0;
+  border-radius: 6px;
+  padding: 12px;
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 144px;
+  margin: 6px;
+}
+
+.video-slots-banner__right .item.df-ai-center .item__info {
+  text-align: center;
+}
+
+.video-slots-banner__right .item:not(.df-ai-center) .item__icon {
+  margin: 0 0 0 auto;
+}
+
+.video-slots-banner__right .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.video-slots-banner__right .item:hover {
+  border: 1px solid transparent;
+}
+
+.video-slots-banner__right .item:hover:before {
+  border: 2px solid var(--main-color);
+}
+
+.video-slots-banner__right .item:hover .item__title {
+  color: var(--main-color);
+}
+
+.video-slots-banner__right .item__icon {
+  width: 40px;
+  height: 40px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+}
+
+.video-slots-banner__right .item__title {
+  margin-bottom: 2px;
+}
+
+.video-slots-banner__right .item__text {
+  color: #888888;
+}
+
+.video-slots-group {
+  padding: 16px;
+  background: -o-linear-gradient(340deg, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
+  background: linear-gradient(110deg, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-slots-group__description {
+  color: #FFFFFF;
+}
+
+.video-slots-group__description p {
+  color: #FFFFFF;
+}
+
+.video-slots-group__info .item {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #FFFFFF;
+}
+
+.video-slots-group__info .item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.video-slots-group__info .item__icon {
+  margin-right: 8px;
+}
+
+.video-slots-group__info .item__title {
+  margin-right: 8px;
+}
+
+.video-slots-group__img {
+  position: relative;
+  bottom: -40px;
+  right: -10px;
+}
+
+.video-slots-table .slots-table thead tr td:not(.column-1) {
+  text-align: left;
+}
+
+.video-slots-table .slots-table tbody tr td .row__info .name {
+  width: 120px;
+}
+
+.video-slots-table .slots-table tbody tr td .row__info .provider {
+  width: 100px;
+}
+
+.video-slots-table .slots-table tbody tr td:not(.column-1) {
+  text-align: left;
+}
+
+.video-slots-table .slots-table tbody tr td.column-5 .logo {
+  margin: 0 auto;
+}
+
+.video-slots-slider {
+  position: relative;
+  padding: 15px 0;
+  margin: 0 -20px 0 0;
+  max-width: 780px;
+  overflow: hidden;
+}
+
+.video-slots-slider:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 10px;
+  display: block;
+  width: 100px;
+  height: 98%;
+  background: -webkit-gradient(linear, right top, left top, from(#FFFFFF), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(right, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 3;
+}
+
+.video-slots-slider__swiper {
+  padding-bottom: 5px;
+}
+
+.video-slots-slider__swiper .video-slots-slide {
+  width: 220px;
+  padding: 12px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-slots-slider__swiper .video-slots-slide__logo {
+  margin: -12px -12px 12px;
+  height: 140px;
+}
+
+.video-slots-slider__swiper .video-slots-slide__logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.video-slots-slider__swiper .video-slots-slide__title {
+  margin-bottom: 8px;
+}
+
+.video-slots-slider__swiper .video-slots-slide__description {
+  color: #888888;
+}
+
+.video-slots-slider .swiper-button-next,
+.video-slots-slider .swiper-button-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2.33333px 2.33333px rgba(0, 0, 0, 0.12), 0px 0px 1.16667px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2.33333px 2.33333px rgba(0, 0, 0, 0.12), 0px 0px 1.16667px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  color: #222222;
+}
+
+.video-slots-slider .swiper-button-next:after,
+.video-slots-slider .swiper-button-next:before,
+.video-slots-slider .swiper-button-prev:after,
+.video-slots-slider .swiper-button-prev:before {
+  display: none;
+}
+
+.video-slots-slider .swiper-button-disabled {
+  opacity: 0;
+}
+
+.video-slots-slider .swiper-button-prev {
+  left: -12px;
+}
+
+.video-slots-slider .swiper-button-prev svg {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.video-slots-slider .swiper-button-next {
+  right: -12px;
+}
+
+.video-slots-slider .swiper-button-next svg {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.video-slots-provider {
+  padding: 16px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-slots-provider__logo {
+  margin: 0 16px 0 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.video-slots-provider__logo:before {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.video-slots-provider__logo img {
+  width: auto;
+  height: auto;
+}
+
+.video-slots-provider__title {
+  margin-bottom: 8px;
+}
+
+.video-slots-provider__info .item {
+  background: rgba(var(--rgb-color), 0.05);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.video-slots-provider__info .item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.video-slots-provider__info .item__icon {
+  color: var(--main-color);
+  margin-right: 8px;
+}
+
+.video-slots-provider__info .item__title {
+  color: #222222;
+  margin-right: 8px;
+}
+
+.video-slots-provider__info .item__text {
+  color: #888888;
+}
+
+.video-slots-know__group {
+  background: #4D2E80;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  color: #FFFFFF;
+}
+
+.video-slots-know__group p {
+  color: #FFFFFF;
 }
 
 .slots-filter {

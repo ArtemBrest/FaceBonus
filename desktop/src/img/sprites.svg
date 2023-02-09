@@ -1,7 +1,7 @@
 <!--
 Add to HTML Code
 <svg>
-    <use xlink:href="./img/sprites.svg#icon-arrow-two"></use>
+    <use xlink:href="./img/sprites.svg#icon-check"></use>
 </svg>
 -->
 <svg>

@@ -735,6 +735,201 @@ window.addEventListener("load", function () {
         });
     }
 
+
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    function getRandomCard(item, count){
+        let child = item.querySelectorAll(".card");
+        for (let i = 0; i < child.length; i++){
+            child[i].style.display = "none";
+        }
+        for (let i = 0; i < child.length; i++){
+            if(i < 2){
+                let index = getRandomInt(count);
+                //fadeIn(child[getRandomInt(count)]);
+                if (index < child.length){
+                    child[index].style.display = "flex";
+                }
+            }
+        }
+    }
+    let x = 0;
+    let interval = 0 ;
+    let BannerFS = document.querySelector(".banner-fs");
+    if(BannerFS !== null){
+        let BannerFSBtn = BannerFS.querySelector(".banner-fs__btn");
+        let BannerImage = BannerFS.querySelector(".banner-fs__center-image");
+        let BannerBonuses = BannerFS.querySelectorAll(".banner-fs__bonuses");
+        let BannerStatus = BannerFS.querySelector(".banner-fs__status");
+        let pickBonusBtn = document.querySelector(".pick-bonus__btn");
+        if(pickBonusBtn !== null){
+            pickBonusBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+                BannerFSBtn.click();
+            })
+        }
+        if(BannerFSBtn !== null || BannerImage !== null){
+            BannerFSBtn.addEventListener("click", function() {
+                x += Math.floor(Math.random() * 250) + 800;
+                BannerImage.style.transform = 'rotate(' + x + 'deg)';
+                //BannerImage.style.transitionDuration = '2s';
+                interval = x - (360 * Math.floor(x / 360));
+                for (let i = 0; i < BannerBonuses.length; i++){
+                    if(!BannerBonuses[i].classList.contains("fadeOut")){
+                        BannerBonuses[i].classList.add("fadeOut");
+                    }
+                }
+                BannerStatus.classList.remove("fadeOut");
+                setTimeout(() => {
+                    BannerStatus.classList.add("fadeOut");
+                    console.log(interval);
+                    if(interval >= 18 && interval <= 44){ // blue - 26 console.log("CASH")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--cash")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesFirst);
+                            }
+                        }
+                    }
+                    else if(interval >= 45 && interval <= 77){ // white - 32 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+
+                        }
+                    }
+                    else if(interval >= 78 && interval <= 103){ // blue - 25 console.log("ZERO FS RED")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                    else if(interval >= 104 && interval <= 136){ // white - 32 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                    else if(interval >= 137 && interval <= 162){ //red - 25 console.log("CASH")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--cash")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesFirst);
+                            }
+                        }
+                    }
+                    else if(interval >= 163 && interval <= 195){ // white - 32 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                    else if(interval >= 196 && interval <= 223){ // red - 27 console.log("CASH")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--cash")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesFirst);
+                            }
+                        }
+                    }
+                    else if(interval >= 224 && interval <= 256){ // white - 32 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                    else if(interval >= 257 && interval <= 284){ // red - 27 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                    else if(interval >= 285 && interval <= 317){ // white - 32 console.log("ZERO CASH WHITE")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--cash")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesFirst);
+                            }
+                        }
+                    }
+                    else if(interval >= 318 && interval <= 344){ // blue - 27 console.log("CASH")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--cash")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesFirst);
+                            }
+                        }
+                    }
+                    else{ // first white 32 console.log("FS")
+                        for (let i = 0; i < BannerBonuses.length; i++){
+                            if(BannerBonuses[i].classList.contains("banner-fs__bonuses--fs")){
+                                BannerBonuses[i].classList.remove("fadeOut");
+                                getRandomCard(BannerBonuses[i], bonusesSecond);
+                            }
+                        }
+                    }
+                },2000);
+            });
+        }
+    }
+    let expertsChoiceSwiper = document.getElementById("experts-choice-swiper");
+    if(expertsChoiceSwiper !== null){
+        var swiper = new Swiper(expertsChoiceSwiper, {
+            spaceBetween: 16,
+            slidesPerView: "auto",
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+    let providerSlotsCategory = document.querySelectorAll(".provider-slots-category__head");
+    if(!isEmptyObject(providerSlotsCategory)){
+        providerSlotsCategory.forEach(function (provider){
+            provider.addEventListener("click", function (e){
+                let parent = e.target.closest(".provider-slots-category");
+                let formBtn = parent.querySelector(".providers-logo__btn");
+                formBtn.click();
+            })
+        })
+    }
+    let videoSlotsSliders = document.querySelectorAll(".video-slots-slider__swiper");
+    if(!isEmptyObject(videoSlotsSliders)){
+        videoSlotsSliders.forEach(function (slider){
+            let swiperBtnNext = slider.parentNode.querySelector(".swiper-button-next");
+            let swiperBtnPrev = slider.parentNode.querySelector(".swiper-button-prev")
+            var swiper = new Swiper(slider, {
+                spaceBetween: 16,
+                slidesPerView: "auto",
+                navigation: {
+                    nextEl: swiperBtnNext,
+                    prevEl: swiperBtnPrev,
+                },
+            });
+        })
+    }
     let slotsWrap = document.getElementById('slots-wrapper');
     let slotsPagination = document.getElementById("slots-pagination");
     let slotsFilter = document.getElementById('filterForm');
