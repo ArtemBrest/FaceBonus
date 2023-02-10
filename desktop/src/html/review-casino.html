@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+@@include('./global/header.html')
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        @@include('./global/aside-menu.html')
+        <div class="content">
+            <div class="content_for_menu_scroll" data-link="review-slots.html" data-title=""></div>
+            <section class="breadcrumbs df df-ai-center m-20 p3 p3--semi-bold">
+                <a href="#" class="df df-ai-center">
+                    <svg width="14" height="14">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                    Slot
+                </a>
+                <span class="breadcrumbs__separator">/</span>
+                <span class="breadcrumbs__last" aria-current="page">Age of the Gods Norse Gods and Giants</span>
+            </section>
+            <section class="review-slots-banner bg-image block m-20" style="background-image: url(./img/png/slots-logo-big.jpg);">
+                <div class="review-slots-banner__wrapper df df-ai-stretch">
+                    <div class="review-slots-banner__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="220" height="150">
+                    </div>
+                    <div class="review-slots-banner__info">
+                        <h1 class="review-slots-banner__title h1">Age of the Gods Norse Gods and Giants</h1>
+                        <div class="review-slots-banner__rating df df-ai-end">
+                                    <span class="stars df df-ai-center df-jc-start">
+                                        <svg width="18" height="18" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="18" height="18" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="18" height="18" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="18" height="18">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="18" height="18">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </span>
+                            <span class="h5">3.6<span class="p2">/5</span></span>
+                        </div>
+                        <div class="review-slots-banner__provider p1 df df-ai-center">
+                            Provider:
+                            <div class="name p1 p1--bold">Netent</div>
+                        </div>
+                        <a href="#" class="review-slots-banner__btn btn-main red">Play on Spin Palace Casino</a>
+                    </div>
+                </div>
+                <div class="review-slots-banner__cards df df-ai-stretch">
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Return To Player</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-140.png);"></div>
+                            <div class="card__value h4">92.00%</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Volatility</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-141.png);"></div>
+                            <div class="card__value h4">MED</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Game Type</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-142.png);"></div>
+                            <div class="card__value h4">Video Slots</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Min Bet</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-143.png);"></div>
+                            <div class="card__value h4">£10</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Max Bet</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-144.png);"></div>
+                            <div class="card__value h4">£5.000</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title p3 p3--semi-bold">Established</div>
+                        <div class="card__row df df-ai-center">
+                            <div class="card__icon bg-image" style="background-image: url(./img/png/icon-145.png);"></div>
+                            <div class="card__value h4">01.12.2000</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="grid-columns grid-columns--right">
+                <div class="content">
+                    <div class="review block pd-20 m-20">
+                        <nav class="review-nav">
+                            <ul class="review-nav__list df df-ai-center">
+                                <li data-id="review-slots-overview" class="review-nav__item review-nav__item--active h6"><span>Overview</span></li>
+                                <li data-id="review-slots-bonuses" class="review-nav__item h6"><span>Where Can You Play</span></li>
+                                <li data-id="review-slots-similar" class="review-nav__item h6"><span>players play here</span></li>
+                                <li data-id="review-slots-players" class="review-nav__item h6"><span>Similar Slots</span></li>
+                            </ul>
+                        </nav>
+                        <section class="review-overview block-description m-40 content-focus" id="review-casino-overview" data-scroll_id="review-casino-overview" data-attr_key_menu="review-casino-overview">
+                            <h2 class="block-description__title h1 mb-10">Monopoly casino review</h2>
+                            <div class="block-description__top cms-description-text m-15">
+                                <p>The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly, and that comes down to not understanding that these bonuses are worded to make you feel like you have a strong chance of making a profit. Therefore, this is why we advise on using only the recommended casinos who have a trustworthy reputation and give you a fair chance of withdrawing your winnings without all those unreasonable limits on top.</p>
+                                <h2 class="h3">Pros & Cons</h2>
+                                <div class="pros-or-cons">
+                                    <div class="pros-or-cons__column" style="--main-color: #0F975E;">
+                                        <div class="pros-or-cons__list">
+                                            <div class="pros-or-cons__item df">
+                                                <span class="pros-or-cons__icon">
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-pros"></use>
+                                                    </svg>
+                                                </span>
+                                                <span class="p1">You get more money to win more prizes</span>
+                                            </div>
+                                            <div class="pros-or-cons__item df">
+                                                <span class="pros-or-cons__icon">
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-pros"></use>
+                                                    </svg>
+                                                </span>
+                                                <span class="p1">You get more money to win more prizes</span>
+                                            </div>
+                                        </div>
+                                        <div class="review-user mt-20">
+                                            <div class="review__head df df-ai-center">
+                                                <div style="--main-color: #19C27B;" class="review-user__name h3">L</div>
+                                                <div class="review-user__info">
+                                                    <div class="review-user__title h5">Luis Akhtar</div>
+                                                    <div class="review-user__stars df df-ai-center">
+                                                        <span class="stars df df-ai-center df-jc-start">
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="p2 p2--bold">3.6<span class="p4">/5</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-or-cons__column" style="--main-color: #F0284A;">
+                                        <div class="pros-or-cons__list">
+                                            <div class="pros-or-cons__item df">
+                                                <span class="pros-or-cons__icon">
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-cons"></use>
+                                                    </svg>
+                                                </span>
+                                                <span class="p1">First welcome deposit bonuses can be profitable</span>
+                                            </div>
+                                            <div class="pros-or-cons__item df">
+                                                <span class="pros-or-cons__icon">
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-cons"></use>
+                                                    </svg>
+                                                </span>
+                                                <span class="p1">You get more money to win more prizes</span>
+                                            </div>
+                                        </div>
+                                        <div class="review-user mt-20">
+                                            <div class="review-user__head df df-ai-center">
+                                                <div style="--main-color: #1985C2;" class="review-user__name h3">R</div>
+                                                <div class="review-user__info">
+                                                    <div class="review-user__title h5">Robert Shved</div>
+                                                    <div class="review-user__stars df df-ai-center">
+                                                        <span class="stars df df-ai-center df-jc-start">
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16" class="active">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                            <svg width="16" height="16">
+                                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="p2 p2--bold">3.6<span class="p4">/5</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="review-bonuses block-description m-40 content-focus" id="review-casino-bonuses" data-scroll_id="review-casino-bonuses" data-attr_key_menu="review-casino-bonuses">
+                            <h2 class="block-description__title mb-10 h2">Monopoly casino Bonuses</h2>
+                            <div class="review-bonuses__list m-15">
+                                <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                    <div class="bonus__left">
+                                        <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="bonus__rating bonus-rating stars df">
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__right df df-ff-column">
+                                        <div class="bonus__top df df-ai-center df-jc-between">
+                                            <div class="bonus__info">
+                                                <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                                <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                                <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                            </div>
+                                            <div class="bonus__row df df-ai-center">
+                                                <div class="bonus__tags tags df df-ai-center">
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Turnover</div>
+                                                        <div class="tags__value p2">35X</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Max w</div>
+                                                        <div class="tags__value p2">∞</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Days valid</div>
+                                                        <div class="tags__value p2">21</div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                            </div>
+                                        </div>
+                                        <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    </div>
+                                </div>
+                                <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                    <div class="bonus__left">
+                                        <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="bonus__rating bonus-rating stars df">
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__right df df-ff-column">
+                                        <div class="bonus__top df df-ai-center df-jc-between">
+                                            <div class="bonus__info">
+                                                <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                                <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                                <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                            </div>
+                                            <div class="bonus__row df df-ai-center">
+                                                <div class="bonus__tags tags df df-ai-center">
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Turnover</div>
+                                                        <div class="tags__value p2">35X</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Max w</div>
+                                                        <div class="tags__value p2">∞</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Days valid</div>
+                                                        <div class="tags__value p2">21</div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                            </div>
+                                        </div>
+                                        <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    </div>
+                                </div>
+                                <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                    <div class="bonus__left">
+                                        <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="bonus__rating bonus-rating stars df">
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14" class="active">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__right df df-ff-column">
+                                        <div class="bonus__top df df-ai-center df-jc-between">
+                                            <div class="bonus__info">
+                                                <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                                <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                                <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                            </div>
+                                            <div class="bonus__row df df-ai-center">
+                                                <div class="bonus__tags tags df df-ai-center">
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Turnover</div>
+                                                        <div class="tags__value p2">35X</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Max w</div>
+                                                        <div class="tags__value p2">∞</div>
+                                                    </div>
+                                                    <div class="tags__item">
+                                                        <div class="tags__title p3">Days valid</div>
+                                                        <div class="tags__value p2">21</div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                            </div>
+                                        </div>
+                                        <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-bonuses__bottom df df-ai-stretch">
+                                <a href="#" class="review-bonuses__btn btn-main blue">All Offers</a>
+                                <div class="review-bonuses__text p3">42 Offers <br> by UK Casinos</div>
+                            </div>
+                        </section>
+                        <section class="review-slots-casino block-description m-40 content-focus" id="review-casino-similar" data-scroll_id="review-casino-similar" data-attr_key_menu="review-casino-similar">
+                            <h2 class="block-description__title h1 mb-10">Slots Monopoly casino</h2>
+                            <div class="block-description__top cms-description-text m-15">
+                                <p>Monopoly casino supports a good range of payment methods for players from around the world. Many currencies are also accepted. Banking options do vary from country to country, so bettors will want to check what options are available in their country.</p>
+                            </div>
+                            <div class="review-slots-casino__cards">
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slot-card block">
+                                    <div class="slot-card__logo df df-ai-stretch">
+                                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                                        <div class="slot-card__hover">
+                                            <div class="slot-card__title h4">Starburst</div>
+                                            <div class="slot-card__provider p3">by Netent</div>
+                                            <div class="slot-card__rtp df df-ai-center df-jc-center">
+                                                <div class="name p4">RTP</div>
+                                                <div class="value p3 p3--semi-bold">94.25%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slot-card__content df df-ff-column">
+                                        <div class="slot-card__title h5">Starburst</div>
+                                        <div class="slot-card__rtp df df-ai-center">
+                                            <div class="name p4">RTP</div>
+                                            <div class="value p3 p3--semi-bold">94.25%</div>
+                                        </div>
+                                        <div class="slot-card__bottom">
+                                            <div class="slot-card__btn btn-main blue">More Details</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                    @@include('./global/section-faq.html')
+                </div>
+                <div>
+                    <aside class="expert-card block pd-15">
+                        <div class="expert-card__stiker" style="background-image: url(./img/svg/stiker/recommend.svg);"></div>
+                        <div class="expert-card__head df df-ai-center mb-15">
+                            <div class="expert-card__logo bg-image" style="background-image: url(./img/png/expert-img-1.png);">
+                                <svg width="18" height="18">
+                                    <use xlink:href="./img/sprites.svg#icon-verified"></use>
+                                </svg>
+                            </div>
+                            <div class="expert-card__info">
+                                <div class="expert-card__name h5 fw700 df df-ai-center">
+                                    Mark Seibert
+                                    <svg width="12" height="12">
+                                        <use xlink:href="./img/sprites.svg#icon-i"></use>
+                                    </svg>
+                                </div>
+                                <div class="expert-card__tag p4 p4--medium">Expert in gambling</div>
+                            </div>
+                        </div>
+                        <div class="expert-card__text p3">With a career leap made from the media expert to a betting advisor worldwide, I do believe I owe this success to the Stakers team. The synergy of working together fosters.</div>
+                        <div class="expert-card__footer">
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">Playing experience:</span>
+                                <span class="expert-card__value p3 p3--bold">6 years</span>
+                            </div>
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">casino reviews:</span>
+                                <span class="expert-card__value p3 p3--bold">320</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="review-aside block mt-20">
+                        <div class="review-aside__banner">
+                            <img src="./img/png/slots-logo.png" alt="" width="260" height="140">
+                        </div>
+                        <div class="review-aside-bonus">
+                            <div class="review-aside-bonus__title h3"><b>150</b> FREE SPINS</div>
+                            <div class="review-aside-bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                            <div class="review-aside-bonus__btn btn-main blue">Play</div>
+                            <div class="apply-bonus">
+                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                    T&amp;CS Apply
+                                    <svg width="10" height="10">
+                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./global/footer.html')
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/index.js"></script>
+<!--<script src="./js/scrollIntoView.js"></script>-->
+</body>
+</html>

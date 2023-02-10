@@ -1588,6 +1588,10 @@
   margin-bottom: 0;
 }
 
+.block-description__title {
+  text-transform: capitalize;
+}
+
 .block-description__title .icon {
   display: block;
   width: 50px;
@@ -2881,6 +2885,30 @@
 .apply-bonus__description {
   display: none;
   margin: 0 0 8px;
+  color: #888888;
+}
+
+.breadcrumbs {
+  margin: 0 -4px;
+}
+
+.breadcrumbs > * {
+  margin: 0 4px;
+}
+
+.breadcrumbs svg {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin-right: 4px;
+}
+
+.breadcrumbs a:hover {
+  color: #1876F0;
+}
+
+.breadcrumbs__last {
+  font-weight: 400;
   color: #888888;
 }
 
@@ -10177,6 +10205,10 @@
   display: none;
 }
 
+.popular-slots .swiper-button-disabled {
+  opacity: 0;
+}
+
 .popular-slots .swiper-button-prev {
   left: -15px;
 }
@@ -10238,6 +10270,10 @@
   width: auto;
   height: auto;
   max-height: 100%;
+}
+
+.slots-all > *:last-child {
+  margin-bottom: 0;
 }
 
 .slots-all__title {
@@ -10331,6 +10367,363 @@
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+
+.review-aside {
+  position: sticky;
+  top: 20px;
+  padding: 6px;
+}
+
+.review-aside__banner {
+  margin: -6px -6px 0;
+  width: calc(100% + 12px);
+  height: 140px;
+}
+
+.review-aside__banner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.review-aside__logo {
+  margin: -33px auto 12px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 3px solid #FFFFFF;
+  padding: 2px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.review-aside__logo img {
+  width: auto;
+  height: auto;
+}
+
+.review-aside__slot-title {
+  max-width: 210px;
+  margin: 0 auto 12px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.review-aside-bonus {
+  padding: 12px;
+  border: 1px solid #EAEEF0;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.review-aside-bonus__title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.review-aside-bonus__title b {
+  color: #F0284A;
+}
+
+.review-aside-bonus__text {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.review-aside-bonus__btn {
+  width: 100%;
+}
+
+.review > *:first-child {
+  margin-top: 0;
+}
+
+.review > *:last-child {
+  margin-bottom: 0;
+}
+
+.review-nav {
+  position: sticky;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100% + 30px);
+  background: #FFFFFF;
+  margin: -20px -15px 40px !important;
+  padding: 0 15px;
+  border-radius: 8px 8px 0 0;
+}
+
+.review-nav__list {
+  border-bottom: 1px solid #EAEEF0;
+}
+
+.review-nav__item {
+  padding: 18px 0;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.review-nav__item:not(:last-child) {
+  margin: 0 24px 0 0;
+}
+
+.review-nav__item:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #1876F0;
+  border-radius: 4px 4px 0px 0px;
+  opacity: 0;
+}
+
+.review-nav__item.review-slots-nav__item--active:before {
+  opacity: 1;
+}
+
+.review-overview .pros-or-cons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.review-overview .pros-or-cons__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+}
+
+.review-overview .pros-or-cons__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+  color: var(--main-color);
+  background: transparent;
+  border: 1.5px solid var(--main-color);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.review-overview .pros-or-cons .review-user__head {
+  margin-bottom: 6px;
+}
+
+.review-overview .pros-or-cons .review-user__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  border-radius: 50%;
+  color: #FFFFFF;
+  margin-right: 8px;
+}
+
+.review-overview .pros-or-cons .review-user__title {
+  margin-bottom: 4px;
+}
+
+.review-overview .pros-or-cons .review-user__stars .stars {
+  margin-right: 6px;
+}
+
+.review-bonuses {
+  background: #F1F5F8;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.review-bonuses__btn {
+  margin-right: 12px;
+}
+
+.review-slots-casino__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+}
+
+.review-slots-banner {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.review-slots-banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.05)), to(rgba(255, 255, 255, 0.05))), rgba(0, 0, 0, 0.5);
+  background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), rgba(0, 0, 0, 0.5);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+}
+
+.review-slots-banner__wrapper {
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.review-slots-banner__logo {
+  width: 220px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.review-slots-banner__info {
+  color: #FFFFFF;
+}
+
+.review-slots-banner__title {
+  margin-bottom: 12px;
+}
+
+.review-slots-banner__rating {
+  margin-bottom: 12px;
+}
+
+.review-slots-banner__rating .stars {
+  margin-right: 8px;
+}
+
+.review-slots-banner__rating .h5 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.review-slots-banner__rating .p2 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.review-slots-banner__provider {
+  margin-bottom: 12px;
+}
+
+.review-slots-banner__provider .name {
+  margin-left: 4px;
+}
+
+.review-slots-banner__cards {
+  padding: 12px;
+  margin: -6px;
+  background: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+
+.review-slots-banner__cards .card {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 6px;
+}
+
+.review-slots-banner__cards .card:not(:last-child) {
+  border-right: 1px solid #EAEEF0;
+}
+
+.review-slots-banner__cards .card__title {
+  color: #888888;
+  margin-bottom: 6px;
+}
+
+.review-slots-banner__cards .card__icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+}
+
+.review-slots-banner__cards .card__value {
+  text-transform: uppercase;
+}
+
+.review-slots-tags__head {
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+.review-slots-tags__head svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.review-slots-tags__content {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #EAEEF0;
+}
+
+.review-slots-tags__content > .review-slots-tags__row:first-child {
+  margin-top: 0;
+}
+
+.review-slots-tags__content > .review-slots-tags__row:last-child {
+  margin-bottom: 0;
+}
+
+.review-slots-tags__name {
+  margin-bottom: 12px;
+}
+
+.review-slots-tags__items {
+  margin: -6px -4px;
+}
+
+.review-slots-tags__item {
+  background: #F1F5F8;
+  border-radius: 50px;
+  padding: 5px 12px;
+  margin: 6px 4px;
+}
+
+.review-slots-players__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.review-slots-players__table thead tr td:not(:first-child) {
+  text-align: right;
+}
+
+.review-slots-players__table tbody tr td:not(:first-child) {
+  text-align: right;
 }
 
 @media only screen and (min-width: 767px) {

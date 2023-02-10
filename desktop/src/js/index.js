@@ -1281,4 +1281,24 @@ window.addEventListener("load", function () {
             },
         });
     }
+
+    let reviewSlots = document.querySelector(".review-slots");
+    if(reviewSlots !== null && header !== null){
+        header.style.position = "static";
+        document.querySelector(".aside-menu").style.top = "20px";
+    }
+    let tagsHead = document.querySelector(".review-slots-tags__head");
+    let tagsContent = document.querySelector(".review-slots-tags__content");
+    if (tagsHead !== null && tagsContent !== null) {
+        tagsHead.addEventListener("click",function (e){
+            if(tagsHead.classList.contains("review-slots-tags__head--active")){
+                fadeOut(tagsContent);
+                tagsHead.classList.toggle("review-slots-tags__head--active");
+            }
+            else{
+                fadeIn(tagsContent);
+                tagsHead.classList.toggle("review-slots-tags__head--active");
+            }
+        });
+    }
 })
