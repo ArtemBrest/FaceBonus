@@ -8717,9 +8717,14 @@
   top: 20px;
   padding: 6px;
   &__banner{
-    margin: -6px -6px 0;
+    margin: -15px -6px 0;
     width: calc(100% + 12px);
     height: 140px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    &.review-aside__banner--casino{
+      background-position: 75%;
+    }
     img{
       width: 100%;
       height: 100%;
@@ -8841,9 +8846,6 @@
       flex-shrink: 0;
     }
     .review-user{
-      &__head{
-        margin-bottom: 6px;
-      }
       &__name{
         display: flex;
         align-items: center;
@@ -8871,6 +8873,9 @@
   background: $grayBg;
   border-radius: 8px;
   padding: 16px;
+  & > *:first-child{
+    margin-top: 0;
+  }
   &__btn{
     margin-right: 12px;
   }
@@ -8934,8 +8939,7 @@
     }
   }
   &__cards{
-    padding: 12px;
-    margin: -6px;
+    padding: 6px;
     background: $white;
     position: relative;
     z-index: 2;
@@ -8948,6 +8952,7 @@
       &__title{
         color: $grayText;
         margin-bottom: 6px;
+        text-transform: capitalize;
       }
       &__icon{
         width: 34px;
@@ -9016,6 +9021,632 @@
             text-align: right;
           }
         }
+      }
+    }
+  }
+}
+
+.review-casino-banner{
+  position: relative;
+  border-radius: 8px;
+  &__info{
+    color: $white;
+    max-width: 560px;
+    position: relative;
+    min-height: 280px;
+    z-index: 2;
+    padding: 10px 25px 20px;
+  }
+  &__img{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 300px;
+  }
+  &__logo{
+    width: 70px;
+    height: 70px;
+    img{
+      width: auto;
+      height: auto;
+    }
+  }
+  &__title{
+    margin-bottom: 20px;
+  }
+  &__tags{
+    margin-left: 16px;
+    .tags{
+      &__title{
+        color: $white;
+      }
+      &__value{
+        color: $white;
+      }
+    }
+  }
+  &__text{
+    opacity: 0.6;
+    margin: auto 0 0;
+  }
+  &__cards{
+    padding: 6px;
+    background: $white;
+    position: relative;
+    z-index: 2;
+    .card{
+      flex: 1 1 auto;
+      margin: 6px;
+      &:not(:last-child){
+        border-right: 1px solid $grayLine;
+      }
+      &__title{
+        color: $grayText;
+        margin-bottom: 6px;
+        text-transform: capitalize;
+      }
+      &__icon{
+        width: 34px;
+        height: 34px;
+        margin-right: 8px;
+      }
+      &__value{
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.review-casino-demographic{
+  .demographic-chart{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    &-item {
+      border-bottom: 1px solid $grayLine;
+      border-left: 1px solid $grayLine;
+      margin-bottom: 12px;
+      padding: 80px 0 50px;
+      &__bar {
+        width: 100%;
+        height: 30px;
+        &:not(:last-child) {
+          margin-bottom: 20px
+        }
+        &:nth-child(2) .value {
+          background: $blue
+        }
+        .value {
+          display: block;
+          height: 100%;
+          background: $green;
+          margin-right: 8px;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+    }
+    &-legend{
+      .item {
+        color: $grayText;
+        &:before {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 12px;
+          flex-shrink: 0;
+          border-radius: 4px;
+          margin-right: 8px;
+          background: $blue;
+        }
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+        &:nth-child(2):before {
+          background: $green;
+        }
+      }
+    }
+  }
+  .uk-map{
+    margin: 0 0 -20px 0!important;
+    & > * {
+      margin-bottom: 20px;
+      flex: 1 1 calc(50% - 30px);
+    }
+    & > *:nth-child(even){
+      margin-left: 30px;
+    }
+    &__iframe{
+      margin-left: 30px;
+    }
+    &-country{
+      fill: $grayBg;
+      stroke: $grayLine;
+      stroke-width: 0.2px;
+      cursor: not-allowed;;
+      &:not([data-local="Ireland"]){
+        cursor: pointer;
+      }
+      &.uk-map-country--selected{
+        fill: $blue;
+        stroke: $white;
+      }
+    }
+    &__info{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 16px;
+    }
+    &-card{
+      padding: 16px;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+      &__top{
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $grayLine;
+      }
+      &__icon{
+        width: 45px;
+        height: 45px;
+        margin-right: 12px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+      }
+      &__text{
+        color: $grayText;
+        span{
+          margin-left: 10px;
+          font-weight: 600;
+          color: $black;
+        }
+        &:not(:last-child){
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+  .uk-country-card{
+    padding: 16px;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+    &__top{
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $grayLine;
+    }
+    &__icon{
+      width: 45px;
+      height: 45px;
+      margin-right: 12px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+    }
+    &__text{
+      color: $grayText;
+      span{
+        margin-left: 10px;
+        font-weight: 600;
+        color: $black;
+      }
+      &:not(:last-child){
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+.review-casino-game{
+  &__group{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+    align-items: center;
+  }
+}
+.review-casino-sports{
+  .sports-info-block{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+    margin: 0 0 0 30px;
+    .sports-item{
+      padding: 12px;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+      min-width: 175px;
+      &__icon{
+        width: 45px;
+        height: 45px;
+        margin: 0 0 0 auto;
+        border-radius: 8px;
+        box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+      }
+      &__title{
+        margin-bottom: 8px;
+      }
+      &__card{
+        &:not(:last-child){
+          margin-right: 20px;
+        }
+      }
+      &__text{
+        color: $grayText;
+      }
+    }
+  }
+}
+.review-casino-review{
+  &__cards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+    .review-user{
+      &:nth-child(1) .review-user__description{
+        border-left: 4px solid $green;
+      }
+      &:nth-child(2) .review-user__description{
+        border-left: 4px solid $red;
+      }
+      &__head{
+        margin-bottom: 16px;
+      }
+      &__name{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 1px solid var(--main-color);
+        background: var(--main-color);
+        border-radius: 50%;
+        color: $white;
+        margin-right: 8px;
+      }
+      &__title{
+        margin-bottom: 4px;
+      }
+      &__stars{
+        .stars{
+          margin-right: 6px;
+        }
+      }
+      &__description{
+        background: $white;
+        border: 1px solid $grayLine;
+        border-radius: 8px;
+        padding: 16px 16px 20px;
+      }
+    }
+  }
+}
+.review-casino-faq{
+  &__wrapper{
+    .item{
+      position: relative;
+      &:not(:last-child){
+        padding-bottom: 40px;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 32px;
+          bottom: -34px;
+          left: 21px;
+          display: block;
+          width: 1px;
+          height: 100%;
+          background: $grayLine;
+        }
+      }
+      &:last-child{
+        .item{
+          &__content{
+            background: $bgTable;
+            border: 1px solid $grayLine;
+            border-radius: 8px;
+            padding: 16px;
+          }
+        }
+      }
+      &__icon{
+        width: 42px;
+        height: 42px;
+        box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        margin-right: 16px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+      }
+      &__title-sub{
+        color: $grayText;
+        margin-bottom: 12px;
+      }
+      &__title{
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+.review-casino-opinion{
+  &__group{
+    background: $white;
+    border: 1px solid $grayLine;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  &__bg{
+    border: 3px solid $white;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    width: 215px;
+    flex-shrink: 0;
+    color: $white;
+  }
+  &__name{
+    max-width: 110px;
+  }
+  &__icon{
+    width: 90px;
+    height: 90px;
+    border: 4px solid $white;
+    border-radius: 50%;
+    margin-left: -45px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    align-self: center;
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__description{
+    align-self: center;
+    svg{
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+    .p1{
+      max-width: 280px;
+      color: $grayText;
+    }
+  }
+  .opinion-bonus{
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    &__logo {
+      margin: 0 auto 12px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: var(--main-color);
+      border: 2px solid $white;
+      padding: 2px;
+      flex-shrink: 0;
+      position: relative;
+      &:before{
+        content: "";
+        display: block;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        border-radius: 50%;
+        border: 1px solid var(--main-color);
+      }
+      img{
+        width: auto;
+        height: auto;
+      }
+    }
+    &__rating{
+      margin: 0 auto 12px;
+    }
+  }
+}
+.review-casino-support{
+  &__group{
+    margin-bottom: 40px;
+  }
+  &__row{
+    padding-bottom: 12px;
+    border-bottom: 1px solid $grayLine;
+    &:not(:last-child){
+      margin-bottom: 12px;
+    }
+  }
+  &__icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    margin-right: 12px;
+  }
+  &__info{
+    width: 100%;
+  }
+  &__link{
+    color: $blue;
+    &:hover{
+      color: $blueHover;
+    }
+  }
+}
+.review-casino-verdict{
+  padding: 16px;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  &__logo {
+    margin: 0 16px 0 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--main-color);
+    border: 2px solid $white;
+    padding: 2px;
+    flex-shrink: 0;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      border-radius: 50%;
+      border: 1px solid var(--main-color);
+    }
+    img{
+      width: auto;
+      height: auto;
+    }
+  }
+  &__head{
+    margin-bottom: 8px;
+  }
+  &__rating{
+    margin-left: 12px;
+    background: rgba(255, 181, 38, 0.1);
+    border-radius: 6px;
+    padding: 5px 10px;
+    svg.active{
+      color: $orange;
+      margin-right: 4px;
+    }
+  }
+}
+.review-casino-other{
+  position: relative;
+  overflow: hidden;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 3;
+  }
+  &__wrapper{
+    position: relative;
+    .swiper-button-next,
+    .swiper-button-prev{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+      background: $white;
+      box-shadow: 0px 2.33333px 2.33333px rgba(0, 0, 0, 0.12), 0px 0px 1.16667px rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+      color: $black;
+      &:after,
+      &:before{
+        display: none;
+      }
+    }
+    .swiper-button-disabled{
+      opacity: 0;
+    }
+    .swiper-button-prev{
+      left: -12px;
+      svg{
+        transform: rotate(90deg);
+      }
+    }
+    .swiper-button-next{
+      right: -12px;
+      svg{
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  &__swiper{
+    max-width: 760px;
+    padding: 3px 0 3px 3px;
+    .swiper-pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+      .swiper-pagination-bullet{
+        width: 10px;
+        height: 10px;
+        margin: 0 3px;
+        opacity: 0.5;
+        background: $white;
+        &.swiper-pagination-bullet-active{
+          width: 12px;
+          height: 12px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .casino-other-slide{
+    width: 230px;
+    height: auto!important;
+    .card{
+      height: 100%;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+      &__logo {
+        margin: 0 auto 8px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--main-color);
+        border: 2px solid $white;
+        padding: 2px;
+        flex-shrink: 0;
+        position: relative;
+        &:before{
+          content: "";
+          display: block;
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          border-radius: 50%;
+          border: 1px solid var(--main-color);
+        }
+        img{
+          width: auto;
+          height: auto;
+        }
+      }
+      &__title{
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      &__row{
+        margin: auto 0 12px;
+      }
+      &-item{
+        flex: 1 1 auto;
+        &:not(:last-child){
+          margin-right: 20px;
+        }
+        &__title{
+          color: $grayText;
+          text-transform: capitalize;
+          margin-bottom: 6px;
+        }
+        &__icon{
+          width: 35px;
+          height: 35px;
+          border-radius: 6px;
+          margin-right: 8px;
+        }
+      }
+      &__btn{
+        width: 100%;
       }
     }
   }

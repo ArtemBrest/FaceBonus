@@ -1282,7 +1282,7 @@ window.addEventListener("load", function () {
         });
     }
 
-    let reviewSlots = document.querySelector(".review-slots");
+    let reviewSlots = document.querySelector(".review--slots");
     if(reviewSlots !== null && header !== null){
         header.style.position = "static";
         document.querySelector(".aside-menu").style.top = "20px";
@@ -1299,6 +1299,137 @@ window.addEventListener("load", function () {
                 fadeIn(tagsContent);
                 tagsHead.classList.toggle("review-slots-tags__head--active");
             }
+        });
+    }
+
+
+    let reviewCasino = document.querySelector(".review--casino");
+    if(reviewCasino !== null && header !== null){
+        header.style.position = "static";
+        document.querySelector(".aside-menu").style.top = "20px";
+    }
+    let unitedKingdomMap = document.getElementById("united-kingdom-map");
+    if(unitedKingdomMap !== null){
+        var clickCountry = function (t){
+            document.querySelectorAll(".uk-map-country").forEach(function (el) {
+                el.setAttribute("class", "uk-map-country");
+            });
+            document.querySelector("#g" + t).setAttribute("class", "uk-map-country uk-map-country--selected");
+            var e = _mapArray.find(function (e) {
+                if (t === e.country.value) return e
+            }), a = document.querySelector(".worldmap__label"), a = (a && a.remove(), document.getElementById("united-kingdom-map")), n = document.querySelector(".uk-country-card");
+            n.className = "uk-country-card block", n.innerHTML = '\n        <div class="uk-country-card__top df df-ai-center p2 mb-10">\n            <div class="uk-country-card__icon bg-image" style="background-image: url(../img/png/icon-153.png);"></div><span class="uk-country-card__name h4">'.concat(e.country.label, '</span>\n        </div>\n        <div class="uk-country-card__text p1">Players from the ').concat(e.country.label,':<span>').concat(new Intl.NumberFormat('uk-UK').format(e.traffic), '</span></div>\n        <div class="uk-country-card__text p1">Share in the total number of UK players: <span>').concat(new Intl.NumberFormat('uk-UK').format(e.share), '%</span>'), n.parentNode.append(n)
+        }
+        document.body.addEventListener("click", function (e){
+            let ukMap = e.target.closest(".uk-map-country");
+            if(ukMap !== null){
+                console.log(ukMap)
+                let id = ukMap.getAttribute("data-local");
+                clickCountry(id);
+            }
+        })
+    }
+    let reviewChart = document.getElementById("review-chart");
+    if(reviewChart !== null){
+        const labelCasino = [];
+        const dataCasino = [];
+        document.querySelectorAll(".review-chart-data").forEach(function (elem, index){
+            let value = elem.getAttribute("data-value");
+            let label = elem.getAttribute("data-label");
+            if(value > 0){
+                labelCasino.push(label)
+                dataCasino.push(value)
+            }
+        })
+        const data = {
+            labels: labelCasino,
+            datasets: [{
+                data: dataCasino,
+                backgroundColor: [
+                    'rgba(174, 31, 209, 0.5)',
+                    'rgba(70, 49, 207, 0.5)',
+                    'rgba(24, 118, 240, 0.5)',
+                    'rgba(15, 151, 94, 0.5)',
+                    'rgba(255, 181, 38, 0.5)',
+                    'rgba(240, 40, 74, 0.5)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(174, 31, 209, 1)',
+                    'rgba(70, 49, 207, 1)',
+                    'rgba(24, 118, 240, 1)',
+                    'rgba(15, 151, 94, 1)',
+                    'rgba(255, 181, 38, 1)',
+                    'rgba(240, 40, 74, 1)'
+                ],
+                borderWidth: 0.5,
+                borderColor: 'rgb(247, 250, 252)',
+                hoverOffset: 0
+            }]
+        };
+        let positionLegend = 'right';
+        if(window.innerWidth < 768){
+            positionLegend = 'bottom';
+        }
+        const chart = new Chart(reviewChart, {
+            type: 'doughnut',
+            data: data,
+            options: {
+                cutout: 75,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: positionLegend,
+                        padding: {
+                            left: 50
+                        },
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded',
+                            boxWidth: 12,
+                            boxHeight: 12,
+                            color: '#222222',
+                        },
+                        onClick: false,
+                        onHover: (evt, legendItem) => {
+                            reviewChart.style.cursor = 'pointer';
+                            const activeElement = {
+                                datasetIndex: 0,
+                                index: legendItem.index
+                            };
+                            chart.setActiveElements([activeElement]); // to also show thick border
+                            chart.tooltip.setActiveElements([activeElement]);
+                            chart.update();
+                        }
+                    },
+                    beforeInit: function(pdChart, options) {
+                        pdChart.legend.beforeFit = function() {
+                            this.width = this.width + 100;
+                        };
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(255, 255, 255, 1)',
+                        titleColor: '#222222',
+                        bodyColor: '#222222',
+                        footerColor: '#222222',
+                        cornerRadius: 8,
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        boxPadding: 8,
+                        usePointStyle: true,
+                    },
+                }
+            }
+        });
+    }
+    let casinoOtherSwiper = document.getElementById("casino-other-swiper");
+    if(casinoOtherSwiper !== null){
+        var swiper = new Swiper(casinoOtherSwiper, {
+            spaceBetween: 16,
+            slidesPerView: "auto",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     }
 })
