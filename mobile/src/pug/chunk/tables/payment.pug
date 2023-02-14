@@ -1,0 +1,40 @@
+section.block-description.block
+    .content-block
+        .toggle-text-container
+            .toggle-text
+                .cms-description-text
+                    h2 Availability of Payment Methods
+                    p Without a deposit you are limited to the free demo games in the casino. If you want to claim a deposit bonus or play with your own money right away, then you need a payment service for the first deposit. You have a large selection in reputable online casinos. In addition to paysafecard casino, where you can pay anonymously, you will find Neteller, Skrill, Trustly and many other service providers.
+                    p Without a deposit you are limited to the free demo games in the casino. If you want to claim a deposit bonus or play with your own money right away, then you need a payment service for the first deposit. You have a large selection in reputable online casinos. In addition to paysafecard casino, where you can pay anonymously, you will find Neteller, Skrill, Trustly and many other service providers.
+            button.toggle-button.d-flex.d-flex-ai-center
+                <svg class="svg-icon">
+                    <use xlink:href="./img/sprites.svg#plus"></use>
+                </svg>
+                |Load More
+    .overflow-table
+        table.table-provider.table-center
+            thead 
+                tr 
+                    td PAYMENT METHOD
+                    td PAYMENT METHOD	
+                    td AVAILABILITY IN CASINOS	
+                    td DEPOSIT / WITHDRAWAL
+                    td FEES
+            tbody
+                each item, index in ['#1F294A', '#222222', '#253B80', '#651B5E', '#83BA3B','#008AC9','#000268','#1D1D1B', '#4D4D4D', '#000000']
+                    tr 
+                        td
+                            .logo.d-flex.d-flex-ai-center.d-flex-jc-center(style="--main-color: "+item+";")
+                                img(src="./img/payment/payment-method-"+index+".png", alt="")
+                        td Kreditkarte
+                        td Nicht in Deutschland
+                        td 
+                            span.d-flex.d-flex-ia-center.d-flex-jc-center.true-or-false
+                                <svg class="svg-icon icon-true" width="16" height="16">
+                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                </svg>
+                                |/
+                                <svg class="svg-icon icon-false" width="16" height="16">
+                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                </svg>
+                        td Sehr selten                

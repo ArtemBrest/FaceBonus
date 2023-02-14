@@ -1,0 +1,36 @@
+section.block-description.block
+    .content-block
+        .toggle-text-container
+            .toggle-text
+                .cms-description-text
+                    h2 Software Provider
+                    p Ohne eine Einzahlung seid ihr im Casino auf die kostenlosen Demo Spiele beschränkt. Möchtet ihr einen Einzahlungsbonus in Anspruch nehmen oder gleich mit eurem eigenen Geld spielen, dann braucht ihr einen Zahlungsdienst für die erste Einzahlung. Dafür habt ihr in seriösen online Casinos eine große Auswahl. Neben paysafecard Casino, in denen ihr anonym zahlen könnt, findet ihr Neteller, Skrill, Trustly und viele andere Dienstleister.
+                    p Ohne eine Einzahlung seid ihr im Casino auf die kostenlosen Demo Spiele beschränkt. Möchtet ihr einen Einzahlungsbonus in Anspruch nehmen oder gleich mit eurem eigenen Geld spielen, dann braucht ihr einen Zahlungsdienst für die erste Einzahlung. Dafür habt ihr in seriösen online Casinos eine große Auswahl. Neben paysafecard Casino, in denen ihr anonym zahlen könnt, findet ihr Neteller, Skrill, Trustly und viele andere Dienstleister.
+            button.toggle-button.d-flex.d-flex-ai-center
+                <svg class="svg-icon">
+                    <use xlink:href="./img/sprites.svg#plus"></use>
+                </svg>
+                |Load More
+    .overflow-table
+        table.table-provider.table-center
+            thead 
+                tr 
+                    td SOFTWARE PROVIDERS
+                    td NUMBER OF SLOTS	
+                    td ROULETTE TABLES	
+                    td BLACKJACK VARIANTS	
+                    td LIVE DEALER TABLES	
+                    td MOST FAMOUS GAME
+            tbody
+                each item, index in ['#24DD3C', '#202020', '#E40707', '#FF7800', '#000000','#3F9AD4','#1A171B','#1A171B']
+                    tr 
+                        td
+                            .logo.d-flex.d-flex-ai-center.d-flex-jc-center(style="--main-color: "+item+";")
+                                img(src="./img/providers/provider-"+index+".png", alt="")
+                        td 456
+                        td 9th
+                        td 11
+                        td 8
+                        td 
+                            a(href="") Immortal romance
+                

@@ -1,0 +1,306 @@
+$sizes: ("xs":360px, "sm":576px, "md":768px, "lg":992px, "xl":1366px, "xxl":1660px);
+@mixin media($minmax, $media) {
+    @each $size,
+    $resolution in $sizes {
+        @if $media==$size {
+            @media only screen and (#{$minmax}-width: $resolution) {
+                @content;
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../font/Inter-Regular.woff2) format("woff2"), url(../font/Inter-Regular.woff) format("woff"), url(../font/Inter-Regular.ttf) format("ttf"), url(../font/Inter-Regular.eot) format("eot");
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "IBMPlexSansCondensed";
+    src: url(../font/IBMPlexSansCondensed-Regular.woff2) format("woff2"), url(../font/IBMPlexSansCondensed-Regular.woff) format("woff"), url(../font/IBMPlexSansCondensed-Regular.ttf) format("ttf"), url(../font/IBMPlexSansCondensed-Regular.eot) format("eot");
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "IBMPlexSansCondensed-Bold";
+    src: url(../font/IBMPlexSansCondensed-Bold.woff2) format("woff2"), url(../font/IBMPlexSansCondensed-Bold.woff) format("woff"), url(../font/IBMPlexSansCondensed-Bold.ttf) format("ttf"), url(../font/IBMPlexSansCondensed-Bold.eot) format("eot");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "IBMPlexSansCondensed-SemiBold";
+    src: url(../font/IBMPlexSansCondensed-SemiBold.woff2) format("woff2"), url(../font/IBMPlexSansCondensed-Regular.woff) format("woff"), url(../font/IBMPlexSansCondensed-SemiBold.ttf) format("ttf"), url(../font/IBMPlexSansCondensed-SemiBold.eot) format("eot");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-ai-center {
+    align-items: center;
+}
+
+.d-flex-ai-stretch {
+    align-items: stretch;
+}
+
+.d-flex-ai-start {
+    align-items: flex-start;
+}
+
+.d-flex-ai-end {
+    align-items: flex-end;
+}
+
+.d-flex-jc-center {
+    justify-content: center;
+}
+
+.d-flex-jc-between {
+    justify-content: space-between;
+}
+
+.d-flex-jc-around {
+    justify-content: space-around;
+}
+
+.d-flex-jc-start {
+    justify-content: flex-start;
+}
+
+.d-flex-jc-end {
+    justify-content: flex-end;
+}
+
+.d-flex-ff-column {
+    flex-flow: column;
+}
+
+.d-flex-ff-column_reveres {
+    flex-flow: column;
+    flex-direction: column-reverse;
+}
+
+.d-flex-ff-row-wrap {
+    flex-flow: row wrap;
+}
+
+.d-flex-ff-row_reverse {
+    flex-flow: row-reverse;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-none {
+    float: none;
+}
+
+.clear-both {
+    clear: both;
+}
+
+@include media("min", "xs") {
+    .d-xs-none {
+        display: none!important;
+    }
+    .d-xs-block {
+        display: block!important;
+    }
+    .d-flex-xs {
+        display: flex!important;
+    }
+    .d-flex-xs-ai-center {
+        align-items: center;
+    }
+    .d-flex-xs-ai-stretch {
+        align-items: stretch;
+    }
+    .d-flex-xs-ai-start {
+        align-items: flex-start;
+    }
+    .d-flex-xs-ai-end {
+        align-items: flex-end;
+    }
+    .d-flex-xs-jc-center {
+        justify-content: center;
+    }
+    .d-flex-xs-jc-between {
+        justify-content: space-between;
+    }
+    .d-flex-xs-jc-around {
+        justify-content: space-around;
+    }
+    .d-flex-xs-jc-start {
+        justify-content: flex-start;
+    }
+    .d-flex-xs-jc-end {
+        justify-content: flex-end;
+    }
+    .d-flex-xs-ff-column {
+        flex-flow: column;
+    }
+    .d-flex-xs-ff-row {
+        flex-flow: row;
+    }
+    .d-flex-xs-ff-row-wrap {
+        flex-flow: row wrap;
+    }
+    .d-flex-xs-ff-row_reverse {
+        flex-flow: row-reverse;
+    }
+    .float-xs-left {
+        float: left;
+    }
+    .float-xs-right {
+        float: right;
+    }
+    .float-xs-none {
+        float: none;
+    }
+}
+
+@include media("min", "md") {
+    .d-md-none {
+        display: none!important;
+    }
+    .d-md-block {
+        display: block!important;
+    }
+    .d-flex-md {
+        display: flex!important;
+    }
+    .d-flex-md-ai-center {
+        align-items: center;
+    }
+    .d-flex-md-ai-stretch {
+        align-items: stretch;
+    }
+    .d-flex-md-ai-start {
+        align-items: flex-start;
+    }
+    .d-flex-md-ai-end {
+        align-items: flex-end;
+    }
+    .d-flex-md-jc-center {
+        justify-content: center;
+    }
+    .d-flex-md-jc-between {
+        justify-content: space-between;
+    }
+    .d-flex-md-jc-around {
+        justify-content: space-around;
+    }
+    .d-flex-md-jc-start {
+        justify-content: flex-start;
+    }
+    .d-flex-md-jc-end {
+        justify-content: flex-end;
+    }
+    .d-flex-md-ff-column {
+        flex-flow: column;
+    }
+    .d-flex-md-ff-row {
+        flex-flow: row;
+    }
+    .d-flex-md-ff-row-wrap {
+        flex-flow: row wrap;
+    }
+    .pd-md-20 {
+        padding: 20px;
+    }
+    .float-md-left {
+        float: left;
+    }
+    .float-md-right {
+        float: right;
+    }
+    .float-md-none {
+        float: none;
+    }
+}
+
+@include media("min", "xl") {
+    .d-xl-block {
+        display: block!important;
+    }
+    .d-xl-none {
+        display: none!important;
+    }
+    .d-flex-xl {
+        display: flex!important;
+    }
+    .d-flex-xl-ai-center {
+        align-items: center;
+    }
+    .d-flex-xl-ai-stretch {
+        align-items: stretch;
+    }
+    .d-flex-xl-ai-start {
+        align-items: flex-start;
+    }
+    .d-flex-xl-ai-end {
+        align-items: flex-end;
+    }
+    .d-flex-xl-jc-center {
+        justify-content: center;
+    }
+    .d-flex-xl-jc-between {
+        justify-content: space-between;
+    }
+    .d-flex-xl-jc-around {
+        justify-content: space-around;
+    }
+    .d-flex-xl-jc-start {
+        justify-content: flex-start;
+    }
+    .d-flex-xl-jc-end {
+        justify-content: flex-end;
+    }
+    .d-flex-xl-ff-column {
+        flex-flow: column;
+    }
+    .d-flex-xl-ff-row {
+        flex-flow: row;
+    }
+    .d-flex-xl-ff-row-wrap {
+        flex-flow: row wrap;
+    }
+    .pd-xl-20 {
+        padding: 20px;
+    }
+    .float-xl-left {
+        float: left;
+    }
+    .float-xl-right {
+        float: right;
+    }
+    .float-xl-none {
+        float: none;
+    }
+}

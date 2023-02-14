@@ -1,0 +1,55 @@
+[{
+        "id": 0,
+        "img": "./img/casino/monopoly.png",
+        "name": "Monopoly casino",
+        "color": "#142A5B",
+        "title": "<b>150</b> FREE SPINS",
+        "preview": "Enjoy 100% up to <b>£50 + 50</b> Free Spins",
+        "tc": "New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply"
+    },
+    {
+        "id": 1,
+        "img": "./img/casino/euro.png",
+        "name": "Casino Euro",
+        "color": "#1F294A",
+        "title": "<b>£30</b> Free Bet",
+        "preview": "Bet £20, <b>Get £10 Free Bet</b> & Join Karamba Battle with £3000 Cash Prize Pool",
+        "tc": "Bet £10 & Get £50 in Free Bets for new customers at Casino Euro. Min deposit requirement. Free Bets are paid as Bet Credits and are Time limits and T&Cs apply."
+    },
+    {
+        "id": 2,
+        "img": "./img/casino/circus.png",
+        "name": "Circus Casino",
+        "color": "#222222",
+        "title": "<b>500</b> Free spins",
+        "preview": "Get up to <b>500 Free Spins</b> on Fluffy Favourites!",
+        "tc": "#ad. Please play responsibly. BeGambleAware.org. New UK players only. 18+. Full Terms Apply. New players only, £10 min fund, £8 max win per 10 spins, max bonus conversion equal to lifetime deposits (up to £250) to real funds, 65x wagering requirements."
+    },
+    {
+        "id": 3,
+        "img": "./img/casino/monopoly.png",
+        "name": "Monopoly casino",
+        "color": "#142A5B",
+        "title": "<b>150</b> FREE SPINS",
+        "preview": "Enjoy 100% up to <b>£50 + 50</b> Free Spins",
+        "tc": "New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply"
+    },
+    {
+        "id": 4,
+        "img": "./img/casino/euro.png",
+        "name": "Casino Euro",
+        "color": "#1F294A",
+        "title": "<b>£30</b> Free Bet",
+        "preview": "Bet £20, Get <b>£10 Free Bet</b> & Join Karamba Battle with £3000 Cash Prize Pool",
+        "tc": "Bet £10 & Get £50 in Free Bets for new customers at Casino Euro. Min deposit requirement. Free Bets are paid as Bet Credits and are Time limits and T&Cs apply."
+    },
+    {
+        "id": 5,
+        "img": "./img/casino/circus.png",
+        "name": "Circus Casino",
+        "color": "#222222",
+        "title": "<b>500</b> Free spins",
+        "preview": "Get up to <b>500 Free Spins</b> on Fluffy Favourites!",
+        "tc": "#ad. Please play responsibly. BeGambleAware.org. New UK players only. 18+. Full Terms Apply. New players only, £10 min fund, £8 max win per 10 spins, max bonus conversion equal to lifetime deposits (up to £250) to real funds, 65x wagering requirements."
+    }
+]

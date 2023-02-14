@@ -1,0 +1,38 @@
+section.welcome-bonuses 
+    .block.content-block
+        .toggle-text-container
+            .toggle-text
+                .cms-description-text
+                    h2 Welcome Bonuses
+                    p Am besten geht das, wenn Sie selbst auch mitmachen und unsere hier vorgestellten Angebote durchforsten. Was unseren virtuellen Casino Bonus-Jahrmarkt so einzigartig macht, ist, dass die Angebote nicht nur von unseren.
+                    p Am besten geht das, wenn Sie selbst auch mitmachen und unsere hier vorgestellten Angebote durchforsten. Was unseren virtuellen Casino Bonus-Jahrmarkt so einzigartig macht, ist, dass die Angebote nicht nur von unseren.
+            button.toggle-button.d-flex.d-flex-ai-center
+                <svg class="svg-icon">
+                    <use xlink:href="./img/sprites.svg#plus"></use>
+                </svg>
+                |Load More
+    .bonuses
+        each item in bonuses
+            .bonus.shadow
+                .d-flex.d-flex-ai-start
+                    a(href="/" style=`background-color: ${item.color}`).bonus__logo.d-flex.d-flex-ai-center
+                        img(src=item.img, alt="")
+                    .bonus__aside
+                        p.h3!=item.preview
+                .bonus__content.p2
+                    p Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.
+                .bonus__bottom
+                    .d-flex.d-flex-ai-center.d-flex-jc-between
+                        .info.d-flex.d-flex-ai-center
+                            .info__column
+                                p.p4.p4--semi-bold Turnover
+                                p.p2.p2--bold 5X
+                            .info__column
+                                p.p4.p4--semi-bold Max W
+                                p.p2.p2--bold ∞
+                            .info__column
+                                p.p4.p4--semi-bold Days Valid
+                                p.p2.p2--bold 21
+                        a(href="").btn-main.blue Claim Bonus
+                    .bonus__tc
+                        p=item.tc

@@ -1,0 +1,100 @@
+section.best-casino
+    .block.content-block
+        .toggle-text-container
+            .toggle-text
+                .cms-description-text
+                    h2 Best Online Casino – Ranked By Highroller Index
+                    p Discover all the top casinos created for highrollers with our sophisticated VIP ranking system. All the key factors that highrollers require when playing at online casinos are assessed and defined within a special points classification. 
+                    p Important financial limits for deposits and withdrawals, stake limits, and bonus limits are reviewed to ensure the casino can accommodate your every need. Then, all those points are channelled into our unique formula to generate our highroller index.
+            button.toggle-button.d-flex.d-flex-ai-center
+                <svg class="svg-icon">
+                    <use xlink:href="./img/sprites.svg#plus"></use>
+                </svg>
+                |Load More
+    each item in bonuses
+        .best-casino__item.bonus.shadow
+            .d-flex.d-flex-ai-center
+                a(href="/" style=`background-color: ${item.color}`).bonus__logo.d-flex.d-flex-ai-center
+                    img(src=item.img, alt="")
+                .bonus__aside
+                    p.h3.casino=item.name
+                    .rating.d-flex.d-flex-ai-center
+                        p.rating__points 
+                            span 4.2/
+                            |5
+                        span.d-flex.d-flex-ai-center
+                            <svg class="svg-icon" fill="#FFB526">
+                                <use xlink:href="/img/sprites.svg#star"></use>
+                            </svg>
+                            <svg class="svg-icon" fill="#FFB526">
+                                <use xlink:href="/img/sprites.svg#star"></use>
+                            </svg>
+                            <svg class="svg-icon" fill="#FFB526">
+                                <use xlink:href="/img/sprites.svg#star"></use>
+                            </svg>
+                            <svg class="svg-icon" fill="#FFB526">
+                                <use xlink:href="/img/sprites.svg#star"></use>
+                            </svg>
+                            <svg class="svg-icon" fill="#EAEEF0">
+                                <use xlink:href="/img/sprites.svg#star"></use>
+                            </svg>
+            .bonus__bottom.tabs-block
+                .tabs.d-flex.d-flex-ai-center
+                    button.tab-item.p1.p1--semi-bold.tab-item--active(data-id="best-casino-pros-"+ item.id +"") Positive
+                    button.tab-item.p1.p1--semi-bold(data-id="best-casino-cons-"+ item.id +"") Negative
+                    button.tab-item.p1.p1--semi-bold(data-id="best-casino-tips-"+ item.id +"") Tip from facebonus
+                .pros-and-cons.comment
+                    .tab-wrap.tab-wrap--active(data-id="best-casino-pros-"+ item.id +"")
+                        .pros-and-cons__positive
+                            ul 
+                                li £2 million maximum winnings limit
+                                li 1x turnover requirements
+                                li No maximum withdrawal limit
+                    .tab-wrap(data-id="best-casino-cons-"+ item.id +"")
+                        .pros-and-cons__negative
+                            ul 
+                                li Negative social buzz
+                                li £20 upper bet limit
+                                li New members only.
+                    .tab-wrap(data-id="best-casino-tips-"+ item.id +"")
+                        .review
+                            .review__head.d-flex.d-flex-ai-center
+                                .review__user(style="background-color:#19C27B;") L
+                                .review__info
+                                    p.review__title Lukas from facebonus
+                                    .rating.d-flex.d-flex-ai-center
+                                        span.d-flex.d-flex-ai-center
+                                            <svg class="svg-icon" fill="#FFB526">
+                                                <use xlink:href="/img/sprites.svg#star"></use>
+                                            </svg>
+                                            <svg class="svg-icon" fill="#FFB526">
+                                                <use xlink:href="/img/sprites.svg#star"></use>
+                                            </svg>
+                                            <svg class="svg-icon" fill="#FFB526">
+                                                <use xlink:href="/img/sprites.svg#star"></use>
+                                            </svg>
+                                            <svg class="svg-icon" fill="#FFB526">
+                                                <use xlink:href="/img/sprites.svg#star"></use>
+                                            </svg>
+                                            <svg class="svg-icon" fill="#EAEEF0">
+                                                <use xlink:href="/img/sprites.svg#star"></use>
+                                            </svg>
+                                span.review__icon 👍
+                            p.review__description.p4 I have only ever seen positive changes at LeoVegas Casino and with their Highroller-friendly playing rules, I can’t see myself changing casinos anytime soon. Quick payouts are always appreciated and I can deposit as much as I like.
+            .best-casino__bonus
+                .d-flex.d-flex-ai-center.d-flex-jc-between
+                    .info
+                        p.p3.p3--semi-bold Welcome Bonus
+                        .d-flex.d-flex-ai-center
+                            <svg class="svg-icon" width="20" height="20">
+                                <use xlink:href="/img/sprites.svg#icon-box"></use>
+                            </svg>
+                            span.h4!=item.title
+                    a(href="/").btn-main.blue Claim bonus
+            .bonus__tc
+                p=item.tc
+    a(href="").best-casino__btn.btn-main
+        <svg width="18" height="18">
+            <use xlink:href="./img/sprites.svg#icon-plus"></use>
+        </svg>
+        |show more

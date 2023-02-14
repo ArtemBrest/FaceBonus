@@ -1,0 +1,17 @@
+extends layout/app
+
+block page
+    - var name = 'casino-bonuses';
+    include chunk/header
+    .content
+        include chunk/navigation/casino-bonuses
+        include chunk/global/filter
+        include chunk/bonuses/bonuses
+        include chunk/bonuses/welcome-bonuses-2
+        include chunk/global/top-10
+        include chunk/global/top-10
+        include chunk/global/how-to
+        include chunk/tables/block-description
+        include chunk/global/faq
+    include chunk/footer
+    include chunk/aside-menu
