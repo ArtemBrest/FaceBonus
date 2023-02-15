@@ -24,9 +24,9 @@ const scss = () => {
         .pipe(shorthand())
         .pipe(gulpCssMediaQueries())
         .pipe(dest(path.scss.dest), { sourcemaps: true })
-        .pipe(rename({ suffix: ".min" }))
-        .pipe(csso())
-        .pipe(dest(path.scss.dest), { sourcemaps: true })
+        //.pipe(rename({ suffix: ".min" }))
+        //.pipe(csso())
+        //.pipe(dest(path.scss.dest), { sourcemaps: true })
 }
 
 module.exports = scss

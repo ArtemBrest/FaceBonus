@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /desktop/node_modules/
+/mobile/node_modules/
 /.pnp
 .pnp.js
 
@@ -12,8 +13,10 @@
 # production
 /build
 /desktop/build
+/mobile/build
 /public
 /desktop/public
+/mobile/public
 
 # misc
 .DS_Store

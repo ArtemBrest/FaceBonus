@@ -15,10 +15,8 @@ const js = () => {
                 message: error.message
             }))
         }))
-        .pipe(babel({
-            ignore: ['./src/js/worldmap.js']
-        }))
-        .pipe(uglify())
+        //.pipe(babel())
+        //.pipe(uglify())
         .pipe(dest(path.js.dest), { sourcemaps: '.' })
 }
 

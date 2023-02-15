@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+@@include('./global/header.html')
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        @@include('./global/aside-menu.html')
+        <div class="content">
+            <div class="grid-columns grid-columns--right">
+                <div class="content">
+                    <section class="mobile-casino-banner block pd-20 m-20">
+                        <div class="mobile-casino-banner__wrapper df df-jc-between">
+                            <div class="mobile-casino-banner__info">
+                                <h1 class="mobile-casino-banner__title h1">Mobile Casino 2022</h1>
+                                <div class="mobile-casino-banner__text p1">Mobile casinos give you the freedom to play anywhere and so you need to be able to rely on the casino you choose to deliver that mobile entertainment every time. We have reviewed out the best mobile casinos in the park, so you can then play on the go with no fuss.</div>
+                            </div>
+                            <div class="mobile-casino-banner__tabs">
+                                <div class="card df df-jc-between df-ff-column" data-id="best-online-casino">
+                                    <div class="card__icon bg-image" style="background-image: url(./img/png/icon-2.1.png);"></div>
+                                    <div class="card__info">
+                                        <div class="card__title p1 p1--semi-bold">How to claim</div>
+                                        <div class="card__text p3">reputable site</div>
+                                    </div>
+                                </div>
+                                <div class="card df df-jc-between df-ff-column" data-id="best-online-casino">
+                                    <div class="card__icon bg-image" style="background-image: url(./img/png/icon-3.1.png);"></div>
+                                    <div class="card__info">
+                                        <div class="card__title p1 p1--semi-bold">5 Thing to know</div>
+                                        <div class="card__text p3">before betting</div>
+                                    </div>
+                                </div>
+                                <div class="card df" data-id="best-online-casino">
+                                    <div class="card__icon bg-image" style="background-image: url(./img/png/icon-65.png);"></div>
+                                    <div class="card__info">
+                                        <div class="card__title p1 p1--semi-bold">The most popular <span>Android Casino</span></div>
+                                        <div class="card__text p3">Best Mobile Casinos in comparison</div>
+                                    </div>
+                                    <div class="card__btn df df-ai-center df-jc-center">
+                                        <svg width="16" height="16">
+                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="casino-tabs casino-tabs--mobile m-20">
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #00AE7A; --rgb-color: 0, 174, 122;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-1"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Best Android Casinos</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #5764D7; --rgb-color: 87, 100, 215;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-2"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Latest iOS Casinos</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #0F975E; --rgb-color: 0, 174, 143;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-3"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Rated Mobile Casinos</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #5764D7; --rgb-color: 87, 100, 215;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-4"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Top Desktop Casinos</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #2095F2; --rgb-color: 32, 149, 242;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-5"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Mobile Bonuses</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                        <div class="card df block" data-id="best-online-casino" style="--main-color: #16AFD0; --rgb-color: 22, 175, 208;">
+                            <div class="card__bg df df-ai-center df-jc-center">
+                                <svg width="32" height="32">
+                                    <use xlink:href="./img/sprites.svg#icon-mobile-6"></use>
+                                </svg>
+                            </div>
+                            <div class="card__info">
+                                <div class="card__title h5">Special Mobile Bonuses</div>
+                                <div class="card__text p3">8 Casinos</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="rating-casinos rating-casinos--other-page m-20" style="--rating-color: #00AE7A; --rating-color-rgb: 0, 174, 122;">
+                        <div class="rating-casinos__top block">
+                            <div class="rating-casinos__head">
+                                <div class="rating-casinos__row df">
+                                    <div class="rating-casinos__icon bg-image" style="background-image: url(./img/png/icon-65.png);"></div>
+                                    <div class="rating-casinos__info">
+                                        <h2 class="rating-casinos__title">Android Mobile Casino</h2>
+                                        <div class="rating-casinos__text p1">Connect to the top Android casinos that have been fully verified at our Winners Casino Lounge. Our dynamic list of top-ranked Android gaming sites delivers seamless casino entertainment and all the biggest casino bonuses that give you the best opportunities to win big no matter where you play.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating-casinos__wrapper">
+                                <div class="rating-casinos__bonuses rating-casinos-bonuses df df-jc-between">
+                                    <div class="rating-casinos-bonuses__left df df-ff-column df-jc-center">
+                                        <div class="rating-casinos-bonuses__box">
+                                            <svg width="39" height="39" class="icon">
+                                                <use xlink:href="./img/sprites.svg#icon-top-3"></use>
+                                            </svg>
+                                            <div class="title h3">Top 3 No Deposit for Tuesday!</div>
+                                            <div class="text p1">Discover Book Of Ra absulutely <b>for free</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-casinos-bonuses__cards">
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="casino-list">
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-description block pd-20 m-20">
+                            <div class="block-description__bottom cms-description-text m-15">
+                                <p>Mobile gaming is now an extension of our daily lives, so it makes sense to play at the casinos that dedicate their time to their mobile platform. Mobile gaming is around to stay, and any gaming site not prepared to take this seriously will not get the appreciation of our community or the membership numbers to keep them in operation. Mobile casinos are a big deal here at WCasino. The casino lists you get from us result from endless discussions, testing, and analysis. Each mobile casino will not get approved until each team member is happy and convinced the experience and the quality of the overall mobile entertainment meets the desired level required to be part of our winner’s lounge.</p>
+                                <p>Take one look, and you will find that all the top online casinos in the Netherlands are 100% mobile-ready sites. In fact, many of them are mobile-first casinos, meaning they have been specifically designed for players to enjoy the games and bonuses on their mobile phones and tablets. Limitless casino play is provided by the extensive network of Wi-Fi access and the latest high-speed mobile data networks across the country. No matter what your go-to game might be, you can take it with you wherever you want to go. Spin the roulette wheel, play a few spins on your favorite progressive jackpot, or enjoy a few quick hands of blackjack. It’s all available on the best mobile online casinos that continue to tune in to your mobile devices with the latest promotions and game releases.</p>
+                                <p>Connect yourself to the mobile airwaves at the Winners Casino Lounge, and you will never have to worry about poor mobile game performance ever again. Use our connections to locate the finest live dealers and smoothest mobile slot games as you take thousands of games with you in your daily activities. Mobile gaming is the ultimate definition of 24/7 entertainment. You never miss a bet, a spin, or any casino action because it’s right there in your hand. So, if mobile gaming suits your lifestyle, browse our dynamic lists for the latest top-rated mobile casino entertainment, with the best games, bonuses, and mobile sites.</p>
+                            </div>
+                        </div>
+                    </section>
+                    @@include('./global/section-top-10.html')
+                    <section class="rating-casinos rating-casinos--other-page m-20" style="--rating-color: #5764D7; --rating-color-rgb: 87, 100, 215;">
+                        <div class="rating-casinos__top block">
+                            <div class="rating-casinos__head">
+                                <div class="rating-casinos__row df">
+                                    <div class="rating-casinos__icon bg-image" style="background-image: url(./img/png/icon-66.png);"></div>
+                                    <div class="rating-casinos__info">
+                                        <h2 class="rating-casinos__title">iOS Mobile Casino</h2>
+                                        <div class="rating-casinos__text p1">Get your Apple devices linked in with the best casinos via the AppStore. We approved the top Apple-friendly online mobile casinos developed by trusted developers and backed up by expert customer support. You can expect iOS-friendly layouts that let you glide through the casinos, play mobile games, and pick up the latest mobile bonuses.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating-casinos__wrapper">
+                                <div class="rating-casinos__bonuses rating-casinos-bonuses df df-jc-between">
+                                    <div class="rating-casinos-bonuses__left df df-ff-column df-jc-center">
+                                        <div class="rating-casinos-bonuses__box">
+                                            <svg width="39" height="39" class="icon">
+                                                <use xlink:href="./img/sprites.svg#icon-top-3"></use>
+                                            </svg>
+                                            <div class="title h3">Top 3 No Deposit for Tuesday!</div>
+                                            <div class="text p1">Discover Book Of Ra absulutely <b>for free</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-casinos-bonuses__cards">
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="casino-list">
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="rating-casinos rating-casinos--other-page m-20" style="--rating-color: #2095F2; --rating-color-rgb: 32, 149, 242;">
+                        <div class="rating-casinos__top block">
+                            <div class="rating-casinos__head">
+                                <div class="rating-casinos__row df">
+                                    <div class="rating-casinos__icon bg-image" style="background-image: url(./img/png/icon-67.png);"></div>
+                                    <div class="rating-casinos__info">
+                                        <h2 class="rating-casinos__title">Desktop Casino</h2>
+                                        <div class="rating-casinos__text p1">Our mobile casino list delivers a collection of mobile device applications for iOS and Android, designed with the latest technology and development strategies. Player-friendly interfaces, practical layouts, and all protected by world-class levels of security for your banking and sensitive data transactions.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating-casinos__wrapper">
+                                <div class="rating-casinos__bonuses rating-casinos-bonuses df df-jc-between">
+                                    <div class="rating-casinos-bonuses__left df df-ff-column df-jc-center">
+                                        <div class="rating-casinos-bonuses__box">
+                                            <svg width="39" height="39" class="icon">
+                                                <use xlink:href="./img/sprites.svg#icon-top-3"></use>
+                                            </svg>
+                                            <div class="title h3">Top 3 No Deposit for Tuesday!</div>
+                                            <div class="text p1">Discover Book Of Ra absulutely <b>for free</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-casinos-bonuses__cards">
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="casino-list">
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="rating-casinos rating-casinos--other-page m-20" style="--rating-color: #16AFD0; --rating-color-rgb: 22, 175, 208;">
+                        <div class="rating-casinos__top block">
+                            <div class="rating-casinos__head">
+                                <div class="rating-casinos__row df">
+                                    <div class="rating-casinos__icon bg-image" style="background-image: url(./img/png/icon-68.png);"></div>
+                                    <div class="rating-casinos__info">
+                                        <h2 class="rating-casinos__title">Mobile Casino</h2>
+                                        <div class="rating-casinos__text p1">Experience the fastest casino game speeds, richest visuals, and the biggest screen estate with our top-rated desktop casinos. We continue to assess the Netherlands casino landscape and filter through the sites to find the ultimate gambling environments available through your internet browser.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating-casinos__wrapper">
+                                <div class="rating-casinos__bonuses rating-casinos-bonuses df df-jc-between">
+                                    <div class="rating-casinos-bonuses__left df df-ff-column df-jc-center">
+                                        <div class="rating-casinos-bonuses__box">
+                                            <svg width="39" height="39" class="icon">
+                                                <use xlink:href="./img/sprites.svg#icon-top-3"></use>
+                                            </svg>
+                                            <div class="title h3">Top 3 No Deposit for Tuesday!</div>
+                                            <div class="text p1">Discover Book Of Ra absulutely <b>for free</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-casinos-bonuses__cards">
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Attractive Welcome Bonus: Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card straightforward-to-page">
+                                            <div class="card__wrapper df df-ff-column df-jc-between">
+                                                <div class="card__top">
+                                                    <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                                    </a>
+                                                    <div class="card__title h3">£30 Bonus</div>
+                                                    <div class="card__text p3">Bet £10 Get £30 Free Bet</div>
+                                                </div>
+                                                <div class="card__bottom">
+                                                    <a href="#" class="card__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div class="apply-bonus">
+                                                <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                                <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                                    T&amp;CS Apply
+                                                    <svg width="10" height="10">
+                                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="casino-list">
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                                <div class="bonus__left">
+                                    <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus__rating bonus-rating stars df">
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" class="active">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg width="14" height="14">
+                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bonus__right df df-ff-column">
+                                    <div class="bonus__top df df-ai-center df-jc-between">
+                                        <div class="bonus__info">
+                                            <div class="bonus__casino p3 fw500">Monopoly casino</div>
+                                            <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                                            <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                                        </div>
+                                        <div class="bonus__row df df-ai-center">
+                                            <div class="bonus__tags tags df df-ai-center">
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Turnover</div>
+                                                    <div class="tags__value p2">35X</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Max w</div>
+                                                    <div class="tags__value p2">∞</div>
+                                                </div>
+                                                <div class="tags__item">
+                                                    <div class="tags__title p3">Days valid</div>
+                                                    <div class="tags__value p2">21</div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                        </div>
+                                    </div>
+                                    <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    @@include('./global/section-info-block-1.html')
+                    <section class="block-description mobile-bonuses block pd-20 m-20">
+                        <h2 class="block-description__title h1 mb-10">Mobile Bonuses</h2>
+                        <div class="block-description__top cms-description-text m-15">
+                            <p>Receiving gifts is always a pleasure for many people, that's why almost every online casino offers its customers a wide range of casino bonuses and promotions. In our guide, we introduce you to all the important types of bonuses and their advantages. Follow our recommendations and tips to make the most of the casino promotions.</p>
+                        </div>
+                        <div class="mobile-bonuses__cards">
+                            <div class="card pd-15 straightforward-to-page">
+                                <div class="card__wrapper df df-ff-column">
+                                    <div class="card__top df df-ai-center">
+                                        <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="card__info df df-ai-center df-ff-column">
+                                            <div class="card__value h2 df df-ai-center df-jc-center">20 fs</div>
+                                            <div class="card__available available df df-ai-center">
+                                                <div class="country bg-image" style="background-image: url(./img/png/uk.png);"></div>
+                                                <span class="p2">Players: <span class="p2 p2--bold">32k</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> FS!</div>
+                                    <div class="card__bottom">
+                                        <div class="card__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                </div>
+                                <div class="apply-bonus">
+                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                        T&amp;CS Apply
+                                        <svg width="10" height="10">
+                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card pd-15 straightforward-to-page">
+                                <div class="card__wrapper df df-ff-column">
+                                    <div class="card__top df df-ai-center">
+                                        <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="card__info df df-ai-center df-ff-column">
+                                            <div class="card__value h2 df df-ai-center df-jc-center">20 fs</div>
+                                            <div class="card__available available df df-ai-center">
+                                                <div class="country bg-image" style="background-image: url(./img/png/uk.png);"></div>
+                                                <span class="p2">Players: <span class="p2 p2--bold">32k</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> FS!</div>
+                                    <div class="card__bottom">
+                                        <div class="card__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                </div>
+                                <div class="apply-bonus">
+                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                        T&amp;CS Apply
+                                        <svg width="10" height="10">
+                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card pd-15 straightforward-to-page">
+                                <div class="card__wrapper df df-ff-column">
+                                    <div class="card__top df df-ai-center">
+                                        <a href="#" class="card__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                            <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                        </a>
+                                        <div class="card__info df df-ai-center df-ff-column">
+                                            <div class="card__value h2 df df-ai-center df-jc-center">20 fs</div>
+                                            <div class="card__available available df df-ai-center">
+                                                <div class="country bg-image" style="background-image: url(./img/png/uk.png);"></div>
+                                                <span class="p2">Players: <span class="p2 p2--bold">32k</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__title h4">Bonus up to <b>£1000</b>!</div>
+                                    <div class="card__bottom">
+                                        <div class="card__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                </div>
+                                <div class="apply-bonus">
+                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                        T&amp;CS Apply
+                                        <svg width="10" height="10">
+                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="mobile-bonuses__btn btn-main">
+                            <svg width="16" height="16">
+                                <use xlink:href="./img/sprites.svg#icon-plus"></use>
+                            </svg>
+                            show more
+                        </a>
+                    </section>
+                    @@include('./global/section-how-to.html')
+                    <section class="block-description block pd-20 m-20">
+                        <h2 class="block-description__title h1 mb-10">Availability of Payment Methods</h2>
+                        <div class="block-description__top cms-description-text m-15">
+                            <p>Without a deposit you are limited to the free demo games in the casino. If you want to claim a deposit bonus or play with your own money right away, then you need a payment service for the first deposit. You have a large selection in reputable online casinos. In addition to paysafecard casino, where you can pay anonymously, you will find Neteller, Skrill, Trustly and many other service providers.</p>
+                        </div>
+                        <table class="table-payment-method">
+                            <thead>
+                            <tr>
+                                <td>payment method</td>
+                                <td>payment method</td>
+                                <td>Availability in casinos</td>
+                                <td>Deposit / Withdrawal</td>
+                                <td>fees</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/payment-method-1.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #222222;">
+                                        <img src="./img/png/payment-method-2.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #253B80;">
+                                        <img src="./img/png/payment-method-3.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #651B5E;">
+                                        <img src="./img/png/payment-method-4.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #83BA3B;">
+                                        <img src="./img/png/payment-method-5.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #008AC9;">
+                                        <img src="./img/png/payment-method-6.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #000268;">
+                                        <img src="./img/png/payment-method-7.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #1D1D1B;">
+                                        <img src="./img/png/payment-method-8.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #4D4D4D;">
+                                        <img src="./img/png/payment-method-9.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="logo df df-ai-center df-jc-center" style="--main-color: #000000;">
+                                        <img src="./img/png/payment-method-10.png" alt="" width="40" height="40">
+                                    </div>
+                                </td>
+                                <td>Kreditkarte</td>
+                                <td>Nicht in Deutschland</td>
+                                <td>
+                                            <span class="df df-ai-center true-or-false">
+                                                <svg class="icon-true" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                                /
+                                                <svg class="icon-false" width="16" height="16">
+                                                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                                                </svg>
+                                            </span>
+                                </td>
+                                <td>Sehr selten</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    @@include('./global/section-top-tips.html')
+                    @@include('./global/section-top-10.html')
+                    <section class="block-description casino-bonuses block pd-20 m-20">
+                        <h2 class="block-description__title h1 m-15 df df-ai-center">Casino Bonuses</h2>
+                        <div class="casino-bonuses__cards">
+                            <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
+                                <div class="bonus-mobile__stiker" style="background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="bonus-mobile__top df df-ai-center mb-15">
+                                    <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus-mobile__info">
+                                        <div class="bonus-mobile__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> Free Spins!</div>
+                                        <div class="bonus-mobile__available available df df-ai-center">
+                                            <div class="country bg-image" style="background-image: url(./img/png/uk.png);">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="p2">Available in UK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bonus-mobile__middle">
+                                    <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
+                                </div>
+                                <div class="bonus-mobile__bottom">
+                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                        <div class="bonus-mobile__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
+                                <div class="bonus-mobile__stiker" style="background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="bonus-mobile__top df df-ai-center mb-15">
+                                    <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus-mobile__info">
+                                        <div class="bonus-mobile__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> Free Spins!</div>
+                                        <div class="bonus-mobile__available available df df-ai-center">
+                                            <div class="country bg-image" style="background-image: url(./img/png/uk.png);">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="p2">Available in UK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bonus-mobile__middle">
+                                    <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available.</div>
+                                </div>
+                                <div class="bonus-mobile__bottom">
+                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                        <div class="bonus-mobile__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
+                                <div class="bonus-mobile__stiker" style="background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="bonus-mobile__top df df-ai-center mb-15">
+                                    <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus-mobile__info">
+                                        <div class="bonus-mobile__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> Free Spins!</div>
+                                        <div class="bonus-mobile__available available df df-ai-center">
+                                            <div class="country bg-image" style="background-image: url(./img/png/uk.png);">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="p2">Available in UK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bonus-mobile__middle">
+                                    <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
+                                </div>
+                                <div class="bonus-mobile__bottom">
+                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                        <div class="bonus-mobile__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                            <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
+                                <div class="bonus-mobile__stiker" style="background-image: url(./img/svg/stiker/best-offer.svg);"></div>
+                                <div class="bonus-mobile__top df df-ai-center mb-15">
+                                    <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                                        <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                                    </a>
+                                    <div class="bonus-mobile__info">
+                                        <div class="bonus-mobile__title h4">Get Welcome Bonus up to <b>£1000</b> and <b>100</b> Free Spins!</div>
+                                        <div class="bonus-mobile__available available df df-ai-center">
+                                            <div class="country bg-image" style="background-image: url(./img/png/uk.png);">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="p2">Available in UK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bonus-mobile__middle">
+                                    <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available.</div>
+                                </div>
+                                <div class="bonus-mobile__bottom">
+                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                        <div class="bonus-mobile__tags tags df df-ai-center">
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Turnover</div>
+                                                <div class="tags__value p2">35X</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Max w</div>
+                                                <div class="tags__value p2">∞</div>
+                                            </div>
+                                            <div class="tags__item">
+                                                <div class="tags__title p3">Days valid</div>
+                                                <div class="tags__value p2">21</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
+                                    </div>
+                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="casino-bonuses__btn btn-main">
+                            <svg width="16" height="16">
+                                <use xlink:href="./img/sprites.svg#icon-plus"></use>
+                            </svg>
+                            show more
+                        </a>
+                        <div class="block-description__bottom cms-description-text m-15">
+                            <p>Some of our members are skeptical about what a mobile casino provides regarding experiences and features? It’s a perfectly valid question to ask, “what can a mobile casino provide me?” so let’s break the mobile casino experience down into the key elements. Firstly, you don’t miss out on anything. Some players believe the mobile version cannot pack all the desktop site features into the small screen. Well, it can, and it does. You get the full casino experience, from the games and bonuses to banking and access to support. Your casino entertainment is guaranteed from start to finish when you choose one of our mobile online casino recommendations.</p>
+                            <p>Accessibility is often a big talking point, but let’s break this down to fully explain it. Technology has advanced so far that you don’t need to download extra bits of software or apps on your phone. You simply access the mobile casino via the URL on your mobile phone’s browser. Apps take up space, but that is never a worry on mobile browser casinos. Get connected via Wi-Fi or your mobile data network, and you can get all that casino gaming right there at your fingertips, giving you that 24/7 accessibility.</p>
+                            <p>Convenience is perhaps the one dominant factor that all our members believe to be the biggest positive of mobile casinos. Our daily lives are so fast-paced that some of us barely have time to sit down at our desktops at the end of a busy day. Mobile casino access provides the perfect answer to our busy lives. Many players don’t even think twice about grabbing their phone or tablet and logging into their favorite mobile casino.</p>
+                            <p>The Winners Casino Lounge has you covered for all your mobile gaming needs, with a constant flow of top-rated mobile casinos approved and ready for you to take across the Netherlands!</p>
+                        </div>
+                    </section>
+                    @@include('./global/section-info-block-2.html')
+                    @@include('./global/section-faq.html')
+                </div>
+                <div>
+                    <aside class="expert-card block pd-15">
+                        <div class="expert-card__stiker" style="background-image: url(./img/svg/stiker/recommend.svg);"></div>
+                        <div class="expert-card__head df df-ai-center mb-15">
+                            <div class="expert-card__logo bg-image" style="background-image: url(./img/png/expert-img-1.png);">
+                                <svg width="18" height="18">
+                                    <use xlink:href="./img/sprites.svg#icon-verified"></use>
+                                </svg>
+                            </div>
+                            <div class="expert-card__info">
+                                <div class="expert-card__name h5 fw700 df df-ai-center">
+                                    Mark Seibert
+                                    <svg width="12" height="12">
+                                        <use xlink:href="./img/sprites.svg#icon-i"></use>
+                                    </svg>
+                                </div>
+                                <div class="expert-card__tag p4 p4--medium">Expert in gambling</div>
+                            </div>
+                        </div>
+                        <div class="expert-card__text p3">With a career leap made from the media expert to a betting advisor worldwide, I do believe I owe this success to the Stakers team. The synergy of working together fosters.</div>
+                        <div class="expert-card__footer">
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">Playing experience:</span>
+                                <span class="expert-card__value p3 p3--bold">6 years</span>
+                            </div>
+                            <div class="expert-card__row df df-ai-center df-jc-between">
+                                <span class="expert-card__title p3 fw500">casino reviews:</span>
+                                <span class="expert-card__value p3 p3--bold">320</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="sticky-wrapper">
+                        @@include('./global/navigation.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./global/footer.html')
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/progressbar.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

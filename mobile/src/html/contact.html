@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.onreadystatechange = function(e) {
+            if(document.readyState=="interactive") {
+                let all = document.getElementsByTagName("*");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    set_ele(all[i]);
+                }
+            }
+        }
+        function check_element(ele) {
+            let all = document.getElementsByTagName("*");
+            let totalElem = all.length;
+            let perInc = 100 / totalElem;
+            let bar = document.getElementById('bar');
+            let progress = document.getElementById('progress');
+            if(ele) {
+                let progressWidth = perInc + Number(document.getElementById("progress_width").value);
+                document.getElementById("progress_width").value = progressWidth;
+                let timerId = setInterval(function(){
+                    if(bar.style.width == "100%") {
+                        clearTimeout(timerId);
+                        let progressId = setInterval(function(){
+                            clearTimeout(progressId);
+                            progress.style.display = 'none';
+                        }, 300);
+                    }
+                    else{
+                        bar.style.width = progressWidth + "%"
+                    }
+                }, 10);
+            }
+            else {
+                set_ele(ele);
+            }
+        }
+        function set_ele(set_element) {
+            check_element(set_element);
+        }
+    </script>
+    <style>
+        .loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #F2F3F6;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading__logo{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__logo img{
+                width: 85%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .loading__wrapper{
+            background: #FFFFFF;
+            border-radius: 3px;
+            width: 440px;
+            height: 8px;
+            position: relative;
+        }
+        @media only screen and (max-width: 767px){
+            .loading__wrapper{
+                width: 90%;
+            }
+        }
+        .bar {
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #1876F0;
+        }
+    </style>
+    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FaceBonus</title>
+</head>
+<body>
+@@include('./global/header.html')
+<div class="container">
+    <div class="grid-columns grid-columns--left">
+        @@include('./global/aside-menu.html')
+        <div class="content">
+            <div class="grid-columns">
+                <div class="content">
+                    <section class="contact block pd-20">
+                        <div class="cms-description-text m-20">
+                            <h1>Contact</h1>
+                            <p>The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly, and that comes down to not understanding that these bonuses are worded to make you feel like you have a strong.</p>
+                        </div>
+                        <form class="contact__form contact-form mb-20" autocomplete="off" id="contact-form">
+                            <div class="contact-form__wrapper">
+                                <div class="contact-form__item">
+                                    <input class="contact-form__input p2" placeholder="Full Name" name="name" id="input-name">
+                                    <label for="input-name" class="contact-form__label">Full Name</label>
+                                </div>
+                                <div class="contact-form__item">
+                                    <input class="contact-form__input p2" placeholder="Email*" name="email" id="input-email">
+                                    <label for="input-email" class="contact-form__label">Email*</label>
+                                </div>
+                                <textarea class="contact-form__input contact-form__input_textarea p2" placeholder="Massage" name="message" id="message"></textarea>
+                            </div>
+                            <button class="contact-form__btn btn-main blue mt-20">Send</button>
+                        </form>
+                        <div class="cms-description-text m-20">
+                            <div class="expert-card block pd-15 float-right">
+                                <div class="expert-card__head df df-ai-center mb-15">
+                                    <div class="expert-card__logo bg-image" style="background-image: url(./img/png/expert-img-1.png);">
+                                        <svg width="18" height="18">
+                                            <use xlink:href="./img/sprites.svg#icon-verified"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="expert-card__info">
+                                        <div class="expert-card__name h5 fw700 df df-ai-center">
+                                            Mark Seibert
+                                            <svg width="12" height="12">
+                                                <use xlink:href="./img/sprites.svg#icon-i"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="expert-card__tag p4 p4--medium">Expert in gambling</div>
+                                    </div>
+                                </div>
+                                <div class="expert-card__description p3 mb-10">With a career leap made from the media expert to a betting advisor worldwide, I do believe I owe this success to the Stakers team. The synergy of working together fosters.</div>
+                                <div class="expert-card__footer">
+                                    <div class="expert-card__row df df-ai-center df-jc-between">
+                                        <span class="expert-card__title p3 fw500">Playing experience:</span>
+                                        <span class="expert-card__value p3 p3--bold">6 years</span>
+                                    </div>
+                                    <div class="expert-card__row df df-ai-center df-jc-between">
+                                        <span class="expert-card__title p3 fw500">casino reviews:</span>
+                                        <span class="expert-card__value p3 p3--bold">320</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="h3">Company Information And Address</h2>
+                            <p>For general questions, comments and suggestions email us at business@esportebet.com. For business inquiries please call our business development representatives at +55 (0)234 525 8423. The online casino bonus is the source of a lot of controversy amongst the staker community, but the real issue comes down to one very simple fact. Those who have no luck with these bonuses are usually not using them correctly, and that comes down. For general questions, comments and suggestions email us at business@esportebet.com. For business inquiries please call our business development representatives at +55 (0)234 525 8423.</p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./global/footer.html')
+<script src="./js/index.js"></script>
+</body>
+</html>

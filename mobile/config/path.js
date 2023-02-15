@@ -10,11 +10,6 @@ module.exports = {
         watch: pathSrc + "/html/**/*.html",
         dest: pathPublic
     },
-    pug: {
-        src: pathSrc + "/pug/*.pug",
-        watch: pathSrc + "/pug/**/*.pug",
-        dest: pathPublic
-    },
     scss: {
         src: pathSrc + "/scss/*.scss",
         watch: pathSrc + "/scss/**/*.scss",
