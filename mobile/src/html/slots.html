@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFFFFF">
     <script>
         document.onreadystatechange = function(e) {
             if(document.readyState=="interactive") {
@@ -92,7 +93,7 @@
             background: #1876F0;
         }
     </style>
-    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
     <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/nouislider.min.css">
@@ -101,1168 +102,641 @@
 </head>
 <body>
 @@include('./global/header.html')
-<div class="container">
-    <div class="grid-columns grid-columns--left">
-        @@include('./global/aside-menu.html')
-        <div class="content">
-            <section class="slots-filter-top block m-20">
-                <div class="slots-filter-top__row df df-ai-center df-jc-between">
-                    <h1 class="slots-filter-top__title h1">Casino Games</h1>
+<section class="slots-filter-top block m-20">
+    <div class="slots-filter-top__row df df-ai-center df-jc-between">
+        <h1 class="slots-filter-top__title h1">Casino Games</h1>
+        <button class="slots-filter-top__btn btn-main">
+            <svg width="18" height="18">
+                <use xlink:href="./img/sprites.svg#icon-filter-btn"></use>
+            </svg>
+            Filters
+        </button>
+    </div>
+    <div class="slots-filter-top__wrapper df df-ai-center df-jc-between">
+        <label class="search-form df df-ai-center">
+            <svg width="20" height="20">
+                <use xlink:href="./img/sprites.svg#icon-search"></use>
+            </svg>
+            <input type="text" name="q" autocomplete="off" class="search-form__input p1" placeholder="Search slot..." value="">
+        </label>
+    </div>
+</section>
+<div class="grid-columns m-15">
+    <div class="content">
+        <section class="providers-logo mb-20">
+            <div class="providers-logo__row df df-ai-center">
+                <a href="#" class="providers-logo__item block df df-ai-center df-jc-center">
+                    <div class="providers-logo__btn h6 df df-ai-center df-jc-center">All games</div>
+                </a>
+                <!--<a href="/slots/slots-all/" class="providers-logo__item block df df-ai-center df-jc-center">
+                    <div class="providers-logo__btn h6">Popular</div>
+                </a>-->
+                <form action="#" method="POST" class="providers-logo__item block">
+                    <input type="checkbox" name="slots-provider[]" value="egt">
+                    <button class="providers-logo__btn df df-ai-center df-jc-center">
+                        <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
+                    </button>
+                </form>
+                <form action="#" method="POST" class="providers-logo__item block">
+                    <input type="checkbox" name="slots-provider[]" value="microgaming">
+                    <button class="providers-logo__btn df df-ai-center df-jc-center">
+                        <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
+                    </button>
+                </form>
+                <form action="#" method="POST" class="providers-logo__item block">
+                    <input type="checkbox" name="slots-provider[]" value="triple-edge-studios">
+                    <button class="providers-logo__btn df df-ai-center df-jc-center">
+                        <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
+                    </button>
+                </form>
+                <form action="#" method="POST" class="providers-logo__item block">
+                    <input type="checkbox" name="slots-provider[]" value="microgaming">
+                    <button class="providers-logo__btn df df-ai-center df-jc-center">
+                        <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
+                    </button>
+                </form>
+                <form action="#" method="POST" class="providers-logo__item block">
+                    <input type="checkbox" name="slots-provider[]" value="triple-edge-studios">
+                    <button class="providers-logo__btn df df-ai-center df-jc-center">
+                        <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="slots-all m-20">
+            <h2 class="slots-all__title h2 mb-10">Most Popular</h2>
+            <div class="popular-slots">
+                <div class="swiper popular-slots__swiper" id="popular-slots-swiper">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide slot-card slot-card--blur block">
+                            <div class="slot-card__logo df df-ai-stretch">
+                                <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                            </div>
+                            <div class="slot-card__content df df-ff-column">
+                                <div class="slot-card__title h5">Starburst</div>
+                                <div class="slot-card__rtp df df-ai-center">
+                                    <div class="name p4">RTP</div>
+                                    <div class="value p3 p3--semi-bold">94.25%</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide slot-card slot-card--blur block">
+                            <div class="slot-card__logo df df-ai-stretch">
+                                <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                            </div>
+                            <div class="slot-card__content df df-ff-column">
+                                <div class="slot-card__title h5">Starburst</div>
+                                <div class="slot-card__rtp df df-ai-center">
+                                    <div class="name p4">RTP</div>
+                                    <div class="value p3 p3--semi-bold">94.25%</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide slot-card slot-card--blur block">
+                            <div class="slot-card__logo df df-ai-stretch">
+                                <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                            </div>
+                            <div class="slot-card__content df df-ff-column">
+                                <div class="slot-card__title h5">Starburst</div>
+                                <div class="slot-card__rtp df df-ai-center">
+                                    <div class="name p4">RTP</div>
+                                    <div class="value p3 p3--semi-bold">94.25%</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide slot-card slot-card--blur block">
+                            <div class="slot-card__logo df df-ai-stretch">
+                                <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                            </div>
+                            <div class="slot-card__content df df-ff-column">
+                                <div class="slot-card__title h5">Starburst</div>
+                                <div class="slot-card__rtp df df-ai-center">
+                                    <div class="name p4">RTP</div>
+                                    <div class="value p3 p3--semi-bold">94.25%</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide slot-card slot-card--blur block">
+                            <div class="slot-card__logo df df-ai-stretch">
+                                <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                            </div>
+                            <div class="slot-card__content df df-ff-column">
+                                <div class="slot-card__title h5">Starburst</div>
+                                <div class="slot-card__rtp df df-ai-center">
+                                    <div class="name p4">RTP</div>
+                                    <div class="value p3 p3--semi-bold">94.25%</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="slots-filter-top__wrapper df df-ai-center df-jc-between">
-                    <label class="search-form df df-ai-center">
-                        <svg width="20" height="20">
-                            <use xlink:href="./img/sprites.svg#icon-search"></use>
+            </div>
+            <h2 class="slots-all__title h2 mb-10">All Slots</h2>
+            <div class="slots-all__wrapper" id="slots-wrapper">
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="slot-card block">
+                    <div class="slot-card__logo df df-ai-stretch">
+                        <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
+                    </div>
+                    <div class="slot-card__content df df-ff-column">
+                        <div class="slot-card__title h5">Starburst</div>
+                        <div class="slot-card__rtp df df-ai-center">
+                            <div class="name p4">RTP</div>
+                            <div class="value p3 p3--semi-bold">96.55%</div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slot-card-placeholder block">
+                    <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
+                        <svg width="72" height="72">
+                            <use xlink:href="./img/sprites.svg#logo-slot"></use>
                         </svg>
-                        <input type="text" name="q" autocomplete="off" class="search-form__input p1" placeholder="Search slot..." value="">
-                    </label>
-                    <div class="slots-filter-top__provider select df">
-                        <label class="select__content df df-ai-center df-jc-between" aria-label="search-provider">
-                            <span data-title="provider" class="select__placeholder p2 df df-ai-center">
-                                <span data-placeholder="Provider" class="text">Provider</span>
-                            </span>
-                            <svg width="16" height="16">
-                                <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                            </svg>
-                        </label>
-                        <div class="filter__modal block" aria-label="search-provider">
-                            <div class="slots-filter-group slots-filter-group--top">
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <button class="slots-filter__btn-clear p1 df df-ai-center">
-                                            <svg width="16" height="16">
-                                                <use xlink:href="./img/sprites.svg#icon-close"></use>
-                                            </svg>
-                                            Any
-                                        </button>
-                                        <div class="slots-filter-top__separator"></div>
-                                        <label data-item_id="91" data-item_title="Yggdrasil" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="yggdrasil" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Yggdrasil</span>
-                                        </label>
-                                        <label data-item_id="92" data-item_title="Red Tiger" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="red-tiger" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Red Tiger</span>
-                                        </label>
-                                        <label data-item_id="101" data-item_title="Playtech" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="playtech" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Playtech</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="slots-filter-top__rtp range select df">
-                        <label class="select__content df df-ai-center df-jc-between" aria-label="search-rtp">
-                            <span data-title="RTP" class="select__placeholder p2 df df-ai-center">
-                                <span data-placeholder="RTP" class="text">RTP</span>
-                            </span>
-                            <svg width="16" height="16">
-                                <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                            </svg>
-                        </label>
-                        <div class="filter__modal block" aria-label="search-rtp">
-                            <div class="slots-filter-group slots-filter-group--top">
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs slots-filter-range__inputs--percent df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="rtp_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="rtp_max">
-                                    </div>
-                                    <div data-id="top-rtp" class="slots-filter-range__slider slots-filter-range__slider--two slots-filter-range__slider--two_rtp-top" data-start="0" data-end="100" data-min="0" data-max="100"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="slot-card-placeholder__content">
+                        <div class="slot-card-placeholder__title"></div>
+                        <div class="slot-card-placeholder__rtp"></div>
                     </div>
-                    <div class="slots-filter-top__volatility select df">
-                        <label class="select__content df df-ai-center df-jc-between" aria-label="search-slots-volatility">
-                            <span data-title="volatility" class="select__placeholder p2 df df-ai-center">
-                                <span data-placeholder="Volatility" class="text">Volatility</span>
-                            </span>
-                            <svg width="16" height="16">
-                                <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                            </svg>
-                        </label>
-                        <div class="filter__modal block" aria-label="search-slots-volatility">
-                            <div class="slots-filter-group slots-filter-group--top">
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <button class="slots-filter__btn-clear df df-ai-center p2">
-                                            <svg width="16" height="16">
-                                                <use xlink:href="./img/sprites.svg#icon-close"></use>
-                                            </svg>
-                                            Any
-                                        </button>
-                                        <div class="slots-filter-top__separator"></div>
-                                        <label data-item_id="low" data-item_title="Low" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="low" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Low</span>
-                                        </label>
-                                        <label data-item_id="med_high" data-item_title="Med-High" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="med_high" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Med-High</span>
-                                        </label>
-                                        <label data-item_id="high" data-item_title="High" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="high" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                               <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">High</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="flare"></div>
+                </div>
+                <div class="slot-card-placeholder block">
+                    <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
+                        <svg width="72" height="72">
+                            <use xlink:href="./img/sprites.svg#logo-slot"></use>
+                        </svg>
                     </div>
-                    <div class="slots-filter-top__type select df">
-                        <label class="select__content df df-ai-center df-jc-between" aria-label="search-slots-type">
-                            <span data-title="game type" class="select__placeholder p2 df df-ai-center">
-                                <span data-placeholder="Game Type" class="text">Game Type</span>
-                            </span>
-                            <svg width="16" height="16">
+                    <div class="slot-card-placeholder__content">
+                        <div class="slot-card-placeholder__title"></div>
+                        <div class="slot-card-placeholder__rtp"></div>
+                    </div>
+                    <div class="flare"></div>
+                </div>
+                <div class="slot-card-placeholder block">
+                    <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
+                        <svg width="72" height="72">
+                            <use xlink:href="./img/sprites.svg#logo-slot"></use>
+                        </svg>
+                    </div>
+                    <div class="slot-card-placeholder__content">
+                        <div class="slot-card-placeholder__title"></div>
+                        <div class="slot-card-placeholder__rtp"></div>
+                    </div>
+                    <div class="flare"></div>
+                </div>
+                <div class="slot-card-placeholder block">
+                    <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
+                        <svg width="72" height="72">
+                            <use xlink:href="./img/sprites.svg#logo-slot"></use>
+                        </svg>
+                    </div>
+                    <div class="slot-card-placeholder__content">
+                        <div class="slot-card-placeholder__title"></div>
+                        <div class="slot-card-placeholder__rtp"></div>
+                    </div>
+                    <div class="flare"></div>
+                </div>
+            </div>
+            <div class="slots-all-pagination" id="slots-pagination">
+                <ul class="pagination df df-ai-center df-jc-center">
+                    <li class="pagination__prev pagination__prev--disable pagination__prev--level1">
+                        <a href="#">
+                            <svg width="12" height="12">
+                                <use xlink:href="./img/sprites.svg#icon-arrow-two"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="pagination__prev pagination__prev--disable pagination__prev--level2">
+                        <a href="#">
+                            <svg width="12" height="12">
                                 <use xlink:href="./img/sprites.svg#icon-arrow"></use>
                             </svg>
+                        </a>
+                    </li>
+                    <li class="pagination__item pagination__item--active">
+                        <span>1</span>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#">2</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#">3</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#">4</a>
+                    </li>
+                    <li class="pagination__next pagination__next--level2">
+                        <a href="#">
+                            <svg width="12" height="12">
+                                <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="pagination__next pagination__next--level1">
+                        <a href="#">
+                            <svg width="12" height="12">
+                                <use xlink:href="./img/sprites.svg#icon-arrow-two"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <form action="#" method="get" class="slots-filter slots-filter--aside slots-filter-mob block" id="filterForm">
+        <input type="hidden" name="q" value="" class="slots-filter__query">
+        <div class="slots-filter-mob__head df df-ai-center df-jc-between">
+            <div class="slots-filter-mob__title h2">Casino Games</div>
+            <button class="slots-filter-mob__close">
+                <svg width="20" height="20">
+                    <use xlink:href="./img/sprites.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="slots-filter__wrapper">
+            <!-- Filter Providers -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Providers
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-provider[]" value="yggdrasil" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Yggdrasil</span>
                         </label>
-                        <div class="filter__modal block" aria-label="search-slots-type">
-                            <div class="slots-filter-group slots-filter-group--top">
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <button class="slots-filter__btn-clear df df-ai-center p2">
-                                            <svg width="16" height="16">
-                                                <use xlink:href="./img/sprites.svg#icon-close"></use>
-                                            </svg>
-                                            Any
-                                        </button>
-                                        <div class="slots-filter-top__separator"></div>
-                                        <label data-item_id="video_slots" data-item_title="Video Slots" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="video_slots" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Video Slots</span>
-                                        </label>
-                                        <label data-item_id="card_games" data-item_title="Card Games" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="card_games" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Card Games</span>
-                                        </label>
-                                        <label data-item_id="other_types" data-item_title="Other Types" class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="other_types" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Other Types</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-provider[]" value="red-tiger" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Red Tiger</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-provider[]" value="playtech" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Playtech</span>
+                        </label>
                     </div>
                 </div>
-            </section>
-            <div class="grid-columns grid-columns--right">
-                <div class="content">
-                    <section class="providers-logo mb-20">
-                        <div class="providers-logo__row df df-ai-center">
-                            <a href="#" class="providers-logo__item block df df-ai-center df-jc-center">
-                                <div class="providers-logo__btn h6 df df-ai-center df-jc-center">All games</div>
-                            </a>
-                            <!--<a href="/slots/slots-all/" class="providers-logo__item block df df-ai-center df-jc-center">
-                                <div class="providers-logo__btn h6">Popular</div>
-                            </a>-->
-                            <form action="#" method="POST" class="providers-logo__item block">
-                                <input type="checkbox" name="slots-provider[]" value="egt">
-                                <button class="providers-logo__btn df df-ai-center df-jc-center">
-                                    <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
-                                </button>
-                            </form>
-                            <form action="#" method="POST" class="providers-logo__item block">
-                                <input type="checkbox" name="slots-provider[]" value="microgaming">
-                                <button class="providers-logo__btn df df-ai-center df-jc-center">
-                                    <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
-                                </button>
-                            </form>
-                            <form action="#" method="POST" class="providers-logo__item block">
-                                <input type="checkbox" name="slots-provider[]" value="triple-edge-studios">
-                                <button class="providers-logo__btn df df-ai-center df-jc-center">
-                                    <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
-                                </button>
-                            </form>
-                            <form action="#" method="POST" class="providers-logo__item block">
-                                <input type="checkbox" name="slots-provider[]" value="microgaming">
-                                <button class="providers-logo__btn df df-ai-center df-jc-center">
-                                    <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
-                                </button>
-                            </form>
-                            <form action="#" method="POST" class="providers-logo__item block">
-                                <input type="checkbox" name="slots-provider[]" value="triple-edge-studios">
-                                <button class="providers-logo__btn df df-ai-center df-jc-center">
-                                    <img src="./img/png/provider-logo-10.png" alt="" class="providers-logo__img">
-                                </button>
-                            </form>
-                        </div>
-                    </section>
-                    <section class="slots-all m-20">
-                        <h2 class="slots-all__title h2 mb-15">Most Popular</h2>
-                        <div class="popular-slots">
-                            <div class="swiper popular-slots__swiper" id="popular-slots-swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="swiper-slide slot-card slot-card--blur block">
-                                        <div class="slot-card__logo df df-ai-stretch">
-                                            <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                            <div class="slot-card__hover">
-                                                <div class="slot-card__title h4">Starburst</div>
-                                                <div class="slot-card__provider p3">by Netent</div>
-                                                <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                                    <div class="name p4">RTP</div>
-                                                    <div class="value p3 p3--semi-bold">94.25%</div>
-                                                </div>
-                                                <div class="slot-card__btn btn-main blue">More Details</div>
-                                            </div>
-                                        </div>
-                                        <div class="slot-card__content df df-ff-column">
-                                            <div class="slot-card__title h5">Starburst</div>
-                                            <div class="slot-card__rtp df df-ai-center">
-                                                <div class="name p4">RTP</div>
-                                                <div class="value p3 p3--semi-bold">94.25%</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="swiper-slide slot-card slot-card--blur block">
-                                        <div class="slot-card__logo df df-ai-stretch">
-                                            <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                            <div class="slot-card__hover">
-                                                <div class="slot-card__title h4">Starburst</div>
-                                                <div class="slot-card__provider p3">by Netent</div>
-                                                <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                                    <div class="name p4">RTP</div>
-                                                    <div class="value p3 p3--semi-bold">94.25%</div>
-                                                </div>
-                                                <div class="slot-card__btn btn-main blue">More Details</div>
-                                            </div>
-                                        </div>
-                                        <div class="slot-card__content df df-ff-column">
-                                            <div class="slot-card__title h5">Starburst</div>
-                                            <div class="slot-card__rtp df df-ai-center">
-                                                <div class="name p4">RTP</div>
-                                                <div class="value p3 p3--semi-bold">94.25%</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="swiper-slide slot-card slot-card--blur block">
-                                        <div class="slot-card__logo df df-ai-stretch">
-                                            <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                            <div class="slot-card__hover">
-                                                <div class="slot-card__title h4">Starburst</div>
-                                                <div class="slot-card__provider p3">by Netent</div>
-                                                <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                                    <div class="name p4">RTP</div>
-                                                    <div class="value p3 p3--semi-bold">94.25%</div>
-                                                </div>
-                                                <div class="slot-card__btn btn-main blue">More Details</div>
-                                            </div>
-                                        </div>
-                                        <div class="slot-card__content df df-ff-column">
-                                            <div class="slot-card__title h5">Starburst</div>
-                                            <div class="slot-card__rtp df df-ai-center">
-                                                <div class="name p4">RTP</div>
-                                                <div class="value p3 p3--semi-bold">94.25%</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="swiper-slide slot-card slot-card--blur block">
-                                        <div class="slot-card__logo df df-ai-stretch">
-                                            <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                            <div class="slot-card__hover">
-                                                <div class="slot-card__title h4">Starburst</div>
-                                                <div class="slot-card__provider p3">by Netent</div>
-                                                <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                                    <div class="name p4">RTP</div>
-                                                    <div class="value p3 p3--semi-bold">94.25%</div>
-                                                </div>
-                                                <div class="slot-card__btn btn-main blue">More Details</div>
-                                            </div>
-                                        </div>
-                                        <div class="slot-card__content df df-ff-column">
-                                            <div class="slot-card__title h5">Starburst</div>
-                                            <div class="slot-card__rtp df df-ai-center">
-                                                <div class="name p4">RTP</div>
-                                                <div class="value p3 p3--semi-bold">94.25%</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="swiper-slide slot-card slot-card--blur block">
-                                        <div class="slot-card__logo df df-ai-stretch">
-                                            <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                            <div class="slot-card__hover">
-                                                <div class="slot-card__title h4">Starburst</div>
-                                                <div class="slot-card__provider p3">by Netent</div>
-                                                <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                                    <div class="name p4">RTP</div>
-                                                    <div class="value p3 p3--semi-bold">94.25%</div>
-                                                </div>
-                                                <div class="slot-card__btn btn-main blue">More Details</div>
-                                            </div>
-                                        </div>
-                                        <div class="slot-card__content df df-ff-column">
-                                            <div class="slot-card__title h5">Starburst</div>
-                                            <div class="slot-card__rtp df df-ai-center">
-                                                <div class="name p4">RTP</div>
-                                                <div class="value p3 p3--semi-bold">94.25%</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next popular-slots-btn-next">
-                                <svg width="16" height="16">
-                                    <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                                </svg>
-                            </div>
-                            <div class="swiper-button-prev popular-slots-btn-prev">
-                                <svg width="16" height="16">
-                                    <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2 class="slots-all__title h2 mb-15">All Slots</h2>
-                        <div class="slots-all__wrapper" id="slots-wrapper">
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-stretch">
-                                    <img src="./img/png/slots-logo.png" alt="" width="180" height="140">
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="slot-card block">
-                                <div class="slot-card__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                    <div class="slot-card__hover">
-                                        <div class="slot-card__title h4">Starburst</div>
-                                        <div class="slot-card__provider p3">by Netent</div>
-                                        <div class="slot-card__rtp df df-ai-center df-jc-center">
-                                            <div class="name p4">RTP</div>
-                                            <div class="value p3 p3--semi-bold">94.25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slot-card__content df df-ff-column">
-                                    <div class="slot-card__title h5">Starburst</div>
-                                    <div class="slot-card__rtp df df-ai-center">
-                                        <div class="name p4">RTP</div>
-                                        <div class="value p3 p3--semi-bold">94.25%</div>
-                                    </div>
-                                    <div class="slot-card__bottom">
-                                        <div class="slot-card__btn btn-main blue">More Details</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="slot-card-placeholder block">
-                                <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                </div>
-                                <div class="slot-card-placeholder__content">
-                                    <div class="slot-card-placeholder__title"></div>
-                                    <div class="slot-card-placeholder__rtp"></div>
-                                </div>
-                                <div class="flare"></div>
-                            </div>
-                            <div class="slot-card-placeholder block">
-                                <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                </div>
-                                <div class="slot-card-placeholder__content">
-                                    <div class="slot-card-placeholder__title"></div>
-                                    <div class="slot-card-placeholder__rtp"></div>
-                                </div>
-                                <div class="flare"></div>
-                            </div>
-                            <div class="slot-card-placeholder block">
-                                <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                </div>
-                                <div class="slot-card-placeholder__content">
-                                    <div class="slot-card-placeholder__title"></div>
-                                    <div class="slot-card-placeholder__rtp"></div>
-                                </div>
-                                <div class="flare"></div>
-                            </div>
-                            <div class="slot-card-placeholder block">
-                                <div class="slot-card-placeholder__logo df df-ai-center df-jc-center">
-                                    <svg width="72" height="72">
-                                        <use xlink:href="./img/sprites.svg#logo-slot"></use>
-                                    </svg>
-                                </div>
-                                <div class="slot-card-placeholder__content">
-                                    <div class="slot-card-placeholder__title"></div>
-                                    <div class="slot-card-placeholder__rtp"></div>
-                                </div>
-                                <div class="flare"></div>
-                            </div>
-                        </div>
-                        <div class="slots-all-pagination" id="slots-pagination">
-                            <ul class="pagination df df-ai-center df-jc-center">
-                                <li class="pagination__prev pagination__prev--disable pagination__prev--level1">
-                                    <a href="#">
-                                        <svg width="12" height="12">
-                                            <use xlink:href="./img/sprites.svg#icon-arrow-two"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="pagination__prev pagination__prev--disable pagination__prev--level2">
-                                    <a href="#">
-                                        <svg width="12" height="12">
-                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="pagination__item pagination__item--active">
-                                    <span>1</span>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">2</a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">3</a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">4</a>
-                                </li>
-                                <li class="pagination__next pagination__next--level2">
-                                    <a href="#">
-                                        <svg width="12" height="12">
-                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="pagination__next pagination__next--level1">
-                                    <a href="#">
-                                        <svg width="12" height="12">
-                                            <use xlink:href="./img/sprites.svg#icon-arrow-two"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+            </div>
+            <!-- Filter Type -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Type
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
                 </div>
-                <div>
-                    <form action="#" method="get" class="slots-filter slots-filter--aside block" id="filterForm">
-                        <input type="hidden" name="q" value="" class="slots-filter__query">
-                        <div class="slots-filter__wrapper">
-                            <!-- Filter Providers -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Providers
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-type[]" value="video_slots" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="yggdrasil" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Yggdrasil</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="red-tiger" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Red Tiger</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-provider[]" value="playtech" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Playtech</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Type -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Type
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Video Slots</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-type[]" value="card_games" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="video_slots" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Video Slots</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="card_games" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Card Games</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-type[]" value="other_types" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Other Types</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Volatility -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Volatility
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Card Games</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-type[]" value="other_types" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="low" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Low</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="med_high" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Med-High</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-volatility[]" value="high" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">High</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter RTP -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    RTP
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Other Types</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Volatility -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Volatility
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-volatility[]" value="low" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs slots-filter-range__inputs--percent df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="rtp_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="rtp_max">
-                                    </div>
-                                    <div data-id="aside-rtp" class="slots-filter-range__slider slots-filter-range__slider--two slots-filter-range__slider--two_rtp-aside" data-start="0" data-end="100" data-min="0" data-max="100"></div>
-                                </div>
-                            </div>
-                            <!-- Filter Themes -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Theme
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Low</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-volatility[]" value="med_high" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-themes[]" value="beach" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Beach</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-themes[]" value="action" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Action</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-themes[]" value="adventure" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Adventure</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Layout -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Layout
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Med-High</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-volatility[]" value="high" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-layout[]" value="5-3" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">5-3</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-layout[]" value="6-7" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">6-7</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-layout[]" value="3-3-4-4-5" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">3-3-4-4-5</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Release Date -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Release Date
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">High</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter RTP -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    RTP
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="range-slider slots-filter-range">
+                    <div class="slots-filter-range__inputs slots-filter-range__inputs--percent df df-ai-center df-jc-between">
+                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="rtp_min">
+                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="rtp_max">
+                    </div>
+                    <div data-id="aside-rtp" class="slots-filter-range__slider slots-filter-range__slider--two slots-filter-range__slider--two_rtp-aside" data-start="0" data-end="100" data-min="0" data-max="100"></div>
+                </div>
+            </div>
+            <!-- Filter Themes -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Theme
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-themes[]" value="beach" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="release_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="release_max">
-                                    </div>
-                                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="1999" data-end="2022" data-min="1999" data-max="2022"></div>
-                                </div>
-                            </div>
-                            <!-- Filter Min Bet -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Min Bet
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Beach</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-themes[]" value="action" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="min_bet_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="min_bet_max">
-                                    </div>
-                                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="5000" data-min="0" data-max="5000"></div>
-                                </div>
-                            </div>
-                            <!-- Filter Max Bet -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Max Bet
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Action</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-themes[]" value="adventure" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="max_bet_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="max_bet_max">
-                                    </div>
-                                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="6000000" data-min="0" data-max="6000000"></div>
-                                </div>
-                            </div>
-                            <!-- Filter Feature -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Feature
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Adventure</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Layout -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Layout
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-layout[]" value="5-3" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="checkbox-list">
-                                    <div class="checkbox-list__scroll df df-ff-column">
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-features[]" value="freespins" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">FreeSpins</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-features[]" value="multiplier" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Multiplier</span>
-                                        </label>
-                                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
-                                            <input type="checkbox" name="slots-features[]" value="respins" class="slots-filter-checkbox__input">
-                                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
-                                                <svg width="16" height="16">
-                                                    <use xlink:href="./img/sprites.svg#icon-check"></use>
-                                                </svg>
-                                            </span>
-                                            <span class="slots-filter-checkbox__label">Respins</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Max Win -->
-                            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
-                                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
-                                    Max Win
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">5-3</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-layout[]" value="6-7" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
                                     <svg width="16" height="16">
-                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
                                     </svg>
-                                </div>
-                                <div class="range-slider slots-filter-range">
-                                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
-                                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="max_win_min">
-                                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="max_win_max">
-                                    </div>
-                                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="25000" data-min="0" data-max="25000"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slots-filter__buttons df df-ff-column">
-                            <button class="slots-filter__apply btn-main blue">Apply filters</button>
-                            <a href="#" class="slots-filter__reset btn-main">Reset filters</a>
-                        </div>
-                    </form>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">6-7</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-layout[]" value="3-3-4-4-5" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">3-3-4-4-5</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Release Date -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Release Date
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="range-slider slots-filter-range">
+                    <div class="slots-filter-range__inputs df df-ai-center df-jc-between">
+                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="release_min">
+                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="release_max">
+                    </div>
+                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="1999" data-end="2022" data-min="1999" data-max="2022"></div>
+                </div>
+            </div>
+            <!-- Filter Min Bet -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Min Bet
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="range-slider slots-filter-range">
+                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
+                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="min_bet_min">
+                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="min_bet_max">
+                    </div>
+                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="5000" data-min="0" data-max="5000"></div>
+                </div>
+            </div>
+            <!-- Filter Max Bet -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Max Bet
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="range-slider slots-filter-range">
+                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
+                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="max_bet_min">
+                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="max_bet_max">
+                    </div>
+                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="6000000" data-min="0" data-max="6000000"></div>
+                </div>
+            </div>
+            <!-- Filter Feature -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Feature
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__scroll df df-ff-column">
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-features[]" value="freespins" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">FreeSpins</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-features[]" value="multiplier" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Multiplier</span>
+                        </label>
+                        <label class="slots-filter-checkbox-item slots-filter-checkbox df df-ai-center">
+                            <input type="checkbox" name="slots-features[]" value="respins" class="slots-filter-checkbox__input">
+                            <span class="slots-filter-checkbox__control df df-ai-center df-jc-center">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="./img/sprites.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+                            <span class="slots-filter-checkbox__label p1">Respins</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Max Win -->
+            <div class="slots-filter-group slots-filter-group--aside slots-filter-group--active">
+                <div class="slots-filter-group__title h5 df df-ai-center df-jc-between">
+                    Max Win
+                    <svg width="16" height="16">
+                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                    </svg>
+                </div>
+                <div class="range-slider slots-filter-range">
+                    <div class="slots-filter-range__inputs slots-filter-range__inputs--money df df-ai-center df-jc-between">
+                        <input class="slots-filter-range__input slots-filter-range__input_min" type="number" name="max_win_min">
+                        <input class="slots-filter-range__input slots-filter-range__input_max" type="number" name="max_win_max">
+                    </div>
+                    <div class="slots-filter-range__slider slots-filter-range__slider--two" data-start="0" data-end="25000" data-min="0" data-max="25000"></div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="slots-filter__buttons df df-ff-column">
+            <button class="slots-filter__apply btn-main blue">Apply filters</button>
+            <a href="#" class="slots-filter__reset btn-main">Reset filters</a>
+        </div>
+    </form>
 </div>
 @@include('./global/footer.html')
 <script src="./js/swiper-bundle.min.js"></script>

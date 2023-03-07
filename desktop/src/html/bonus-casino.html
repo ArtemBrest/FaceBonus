@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#FFFFFF">
     <script>
         document.onreadystatechange = function(e) {
             if(document.readyState=="interactive") {
@@ -92,7 +93,7 @@
             background: #1876F0;
         }
     </style>
-    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
     <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -244,46 +245,33 @@
                                 </div>
                             </div>
                             <div class="casinos-filter__checkbox casinos-filter-checkbox">
-                                <div class="casinos-filter__title h6">Type cashback</div>
+                                <div class="casinos-filter__title h6">Type Bonus</div>
                                 <div class="casinos-filter-checkbox__cards">
-                                    <div class="card">
+                                    <div class="card" style="--main-color: #D32F2F;">
                                         <input type="checkbox" name="n" value="free-spins" id="type-1" class="card__input">
                                         <label for="type-1" class="card__label df df-ai-center df-ff-column">
-                                            <svg width="28" height="28">
-                                                <use xlink:href="./img/sprites.svg#icon-filter-4"></use>
-                                            </svg>
+                                            <span class="card__icon bg-image" style="background-image: url(./img/png/icon-filter-1.png);"></span>
                                             <span class="card__title p4 p4--semi-bold">Cashback</span>
                                         </label>
                                     </div>
-                                    <div class="card">
+                                    <div class="card" style="--main-color: #263238;">
                                         <input type="checkbox" name="n" value="free-spins" id="type-2" class="card__input">
                                         <label for="type-2" class="card__label df df-ai-center df-ff-column">
-                                            <svg width="28" height="28">
-                                                <use xlink:href="./img/sprites.svg#icon-filter-5"></use>
-                                            </svg>
+                                            <span class="card__icon bg-image" style="background-image: url(./img/png/icon-filter-2.png);"></span>
                                             <span class="card__title p4 p4--semi-bold">Risk Free</span>
                                         </label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="casinos-filter__checkbox casinos-filter-checkbox">
-                                <div class="casinos-filter__title h6">Free spins</div>
-                                <div class="casinos-filter-checkbox__cards">
-                                    <div class="card">
+                                    <div class="card" style="--main-color: #C91818;">
                                         <input type="checkbox" name="n" value="free-spins" id="type-3" class="card__input">
                                         <label for="type-3" class="card__label df df-ai-center df-ff-column">
-                                            <svg width="28" height="28">
-                                                <use xlink:href="./img/sprites.svg#icon-filter-6"></use>
-                                            </svg>
+                                            <span class="card__icon bg-image" style="background-image: url(./img/png/icon-filter-3.png);"></span>
                                             <span class="card__title p4 p4--semi-bold">No Deposit</span>
                                         </label>
                                     </div>
-                                    <div class="card">
+                                    <div class="card" style="--main-color: #FFC107;">
                                         <input type="checkbox" name="n" value="free-spins" id="type-4" class="card__input">
                                         <label for="type-4" class="card__label df df-ai-center df-ff-column">
-                                            <svg width="28" height="28">
-                                                <use xlink:href="./img/sprites.svg#icon-filter-7"></use>
-                                            </svg>
+                                            <span class="card__icon bg-image" style="background-image: url(./img/png/icon-filter-4.png);"></span>
                                             <span class="card__title p4 p4--semi-bold">Deposit</span>
                                         </label>
                                     </div>
@@ -325,8 +313,8 @@
                             <a href="#" class="casinos-filter__btn p1 fw500">reset</a>
                         </div>
                     </section>
-                    <section class="casino-list">
-                        <div class="bonus bonus--first block pd-15 m-10 df straightforward-to-page">
+                    <section class="bonuses-list m-20">
+                        <div class="bonus bonus--first block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__stiker bg-image" style="background-image:url(./img/svg/stiker/top-1.svg);"></div>
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
@@ -375,10 +363,10 @@
                                         <a href="#" class="bonus__btn btn-main red">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -426,10 +414,10 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -477,10 +465,10 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -528,10 +516,10 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -579,10 +567,10 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -630,10 +618,10 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
-                        <div class="bonus block pd-15 m-10 df straightforward-to-page">
+                        <div class="bonus block pd-15 m-15 df straightforward-to-page">
                             <div class="bonus__left">
                                 <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
                                     <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
@@ -681,7 +669,7 @@
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
                                 </div>
-                                <div class="bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             </div>
                         </div>
                     </section>
@@ -709,7 +697,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -726,7 +714,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -750,7 +738,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -767,7 +755,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -791,7 +779,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -808,7 +796,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -832,7 +820,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -849,7 +837,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                         </div>
@@ -1072,73 +1060,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card__player card-player df df-ai-center">
-                                                <div class="card-player__country bg-image" style="background-image: url(./img/png/uk.png);"></div>
-                                                <div class="card-player__info">
-                                                    <div class="card-player__value p2 p2--bold">28k</div>
-                                                    <div class="card-player__title p3">Players</div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
-                                    <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
-                                        T&CS Apply
-                                        <svg width="10" height="10">
-                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card pd-15 straightforward-to-page">
-                                <div class="card__wrapper df df-ff-column">
-                                    <div class="card__top df df-ai-center df-jc-center" style="--main-color: #142A5B">
-                                        <img src="./img/png/casino-logo.png" alt="" width="140" height="45">
-                                    </div>
-                                    <div class="card__middle">
-                                        <div class="card__title h4">BGO: bgo Welcome Offer up to 500 Free Spins</div>
-                                        <div class="card__description p2">New stakers enlisting at BGO casino can win up to 500 free spins on the Mega Wheel from a minimum £10 deposit.</div>
-                                    </div>
-                                    <div class="card__bottom">
-                                        <div class="card__row df df-ai-center df-jc-between">
-                                            <a href="#" class="card__btn btn-main blue">Claim Bonus</a>
-                                            <div class="card__support card-support">
-                                                <div class="card-support__title p2 p2--bold">Best support</div>
-                                                <div class="card-support__row df df-ai-center">
-                                                    <div class="card-support__mark"><b>5</b>/5</div>
-                                                    <div class="stars df df-ai-center">
-                                                        <svg width="14" height="14" class="active">
-                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
-                                                        </svg>
-                                                        <svg width="14" height="14" class="active">
-                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
-                                                        </svg>
-                                                        <svg width="14" height="14" class="active">
-                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
-                                                        </svg>
-                                                        <svg width="14" height="14" class="active">
-                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
-                                                        </svg>
-                                                        <svg width="14" height="14" class="active">
-                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card__player card-player df df-ai-center">
-                                                <div class="card-player__country bg-image" style="background-image: url(./img/png/uk.png);"></div>
-                                                <div class="card-player__info">
-                                                    <div class="card-player__value p2 p2--bold">28k</div>
-                                                    <div class="card-player__title p3">Players</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1182,18 +1108,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card__player card-player df df-ai-center">
-                                                <div class="card-player__country bg-image" style="background-image: url(./img/png/uk.png);"></div>
-                                                <div class="card-player__info">
-                                                    <div class="card-player__value p2 p2--bold">28k</div>
-                                                    <div class="card-player__title p3">Players</div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1209,7 +1128,7 @@
                                     </div>
                                     <div class="card__middle">
                                         <div class="card__title h4">BGO: bgo Welcome Offer up to 500 Free Spins</div>
-                                        <div class="card__description p2">New stakers enlisting at BGO casino can win up to 500 free spins on the Mega Wheel from a minimum £10 deposit.</div>
+                                        <div class="card__description p2">New stakers enlisting at BGO casino can win up to 500 free spins on the Mega Wheel from a minimum £10 deposit. Winnings from the spins are subject to a 65x turnover requirement and the spins will expire 24 hours after being credited.</div>
                                     </div>
                                     <div class="card__bottom">
                                         <div class="card__row df df-ai-center df-jc-between">
@@ -1237,18 +1156,59 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card__player card-player df df-ai-center">
-                                                <div class="card-player__country bg-image" style="background-image: url(./img/png/uk.png);"></div>
-                                                <div class="card-player__info">
-                                                    <div class="card-player__value p2 p2--bold">28k</div>
-                                                    <div class="card-player__title p3">Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="apply-bonus">
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
+                                        T&CS Apply
+                                        <svg width="10" height="10">
+                                            <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card pd-15 straightforward-to-page">
+                                <div class="card__wrapper df df-ff-column">
+                                    <div class="card__top df df-ai-center df-jc-center" style="--main-color: #142A5B">
+                                        <img src="./img/png/casino-logo.png" alt="" width="140" height="45">
+                                    </div>
+                                    <div class="card__middle">
+                                        <div class="card__title h4">BGO: bgo Welcome Offer up to 500 Free Spins</div>
+                                        <div class="card__description p2">New stakers enlisting at BGO casino can win up to 500 free spins on the Mega Wheel from a minimum £10 deposit. Winnings from the spins are subject to a 65x turnover requirement and the spins will expire 24 hours after being credited.</div>
+                                    </div>
+                                    <div class="card__bottom">
+                                        <div class="card__row df df-ai-center df-jc-between">
+                                            <a href="#" class="card__btn btn-main blue">Claim Bonus</a>
+                                            <div class="card__support card-support">
+                                                <div class="card-support__title p2 p2--bold">Best support</div>
+                                                <div class="card-support__row df df-ai-center">
+                                                    <div class="card-support__mark"><b>5</b>/5</div>
+                                                    <div class="stars df df-ai-center">
+                                                        <svg width="14" height="14" class="active">
+                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                        </svg>
+                                                        <svg width="14" height="14" class="active">
+                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                        </svg>
+                                                        <svg width="14" height="14" class="active">
+                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                        </svg>
+                                                        <svg width="14" height="14" class="active">
+                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                        </svg>
+                                                        <svg width="14" height="14" class="active">
+                                                            <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1516,7 +1476,7 @@
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1562,7 +1522,7 @@
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1608,7 +1568,7 @@
                                     </div>
                                 </div>
                                 <div class="apply-bonus">
-                                    <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                                    <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                                     <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                         T&CS Apply
                                         <svg width="10" height="10">
@@ -1634,56 +1594,7 @@
                             <p>Another situation where this works is when you have not received any bonuses in a few weeks. Get in touch with the support team and ask why the bonuses have dried up. It won’t always work, but there is never any harm in asking. Just try a little persuasion, mention you are thinking about leaving the casino, and see what support can do for you. Sometimes you need to play the game.</p>
                         </div>
                     </section>
-                    <section class="how-to block pd-20 m-20 content-focus" id="how-to">
-                        <h2 class="how-to__title h1 mb-10">How to Benefit from Online Casino Bonuses?</h2>
-                        <div class="how-to__description cms-description-text mb-15">
-                            <p>Receiving gifts is always a pleasure for many people, that's why almost every online casino offers its customers a wide range of casino bonuses and promotions. In our guide, we introduce you to all the important types of bonuses and their advantages. Follow our recommendations and tips to make the most of the casino promotions.</p>
-                        </div>
-                        <div class="how-to__cards">
-                            <div class="how-to__card how-to-card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-1.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">1. Find a Bonus You Like</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                            <div class="how-to__card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-2.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">2. Read Terms and Check Codes</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                            <div class="how-to__card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-3.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">3. Deposit and Claim the Bonus</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                            <div class="how-to__card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-4.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">4. Play the Games You Enjoy</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                            <div class="how-to__card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-5.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">5. Find a Bonus You Like</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                            <div class="how-to__card">
-                                <div class="how-to-card__img bg-image" style="background-image: url(./img/png/how-to/how-to-bg-6.png);"></div>
-                                <div class="how-to-card__content">
-                                    <p class="how-to-card__title h4">6. Find a Bonus You Like</p>
-                                    <p class="how-to-card__text p1">What type of bonus is it you want to pick? There are many opportunities, including a cashback, sign-up, welcome, or free spins bonus, to name a few. To make it simple for you to find the right bonus, you can use our Bonus Finder tool. Once you have homed in on a specific promotion, it's time to make your deposit and redeem it.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    @@include('./global/section-how-to.html')
                     @@include('./global/section-info-block-2.html')
                     <section class="example block-description block pd-20 m-20">
                         <h2 class="block-description__title h1 mb-10">Casino Bonus Wagering Requirements</h2>
@@ -1766,7 +1677,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -1783,7 +1694,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -1807,7 +1718,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">The welcome package from ComeOn is rewarding those stakers who register an account with a 100% bonus worth up to £200, with a minimum deposit rule of just £10. Therefore, a deposit of £10 would bring in another £10 to your ComeOn account. The most important bonus rule found within the terms and conditions is the 38x bonus wagering requirement, which results in a total of £380 in wagering from a single £10 deposit. Keep in mind that a maximum £8 bet limit is also in place and that you do need to opt-in to claim the offer as well, else that 100% bonus will pass you by.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -1824,7 +1735,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -1848,7 +1759,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">Stakers who sign up for a new account here can claim a 100% welcome bonus package with up to £25 in bonus available. The minimum deposit is £10, so this means that from a £10 deposit you would find an additional bonus amount of £10 in your Casumo account.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -1865,7 +1776,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                             <div class="bonus-mobile block pd-15 df df-ff-column straightforward-to-page">
@@ -1889,7 +1800,7 @@
                                     <div class="bonus-mobile__description p2 mb-10">The welcome package from ComeOn is rewarding those stakers who register an account with a 100% bonus worth up to £200, with a minimum deposit rule of just £10. Therefore, a deposit of £10 would bring in another £10 to your ComeOn account. The most important bonus rule found within the terms and conditions is the 38x bonus wagering requirement, which results in a total of £380 in wagering from a single £10 deposit. Keep in mind that a maximum £8 bet limit is also in place and that you do need to opt-in to claim the offer as well, else that 100% bonus will pass you by.</div>
                                 </div>
                                 <div class="bonus-mobile__bottom">
-                                    <div class="bonus-mobile__row df df-ai-center mb-10">
+                                    <div class="bonus-mobile__row df df-ai-center">
                                         <div class="bonus-mobile__tags tags df df-ai-center">
                                             <div class="tags__item">
                                                 <div class="tags__title p3">Turnover</div>
@@ -1906,7 +1817,7 @@
                                         </div>
                                         <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
                                     </div>
-                                    <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
+                                    <div class="bonus-mobile__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
                                 </div>
                             </div>
                         </div>
@@ -2192,7 +2103,7 @@
                             </div>
                         </div>
                         <div class="apply-bonus">
-                            <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                            <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                 T&CS Apply
                                 <svg width="10" height="10">
@@ -2235,7 +2146,7 @@
                             </div>
                         </div>
                         <div class="apply-bonus">
-                            <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                            <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                 T&CS Apply
                                 <svg width="10" height="10">
@@ -2278,7 +2189,7 @@
                             </div>
                         </div>
                         <div class="apply-bonus">
-                            <div class="apply-bonus__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+                            <div class="apply-bonus__text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
                             <div class="apply-bonus__btn p5 df df-ai-center df-jc-center">
                                 T&CS Apply
                                 <svg width="10" height="10">
@@ -2354,56 +2265,72 @@
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-46.png);"></div>
                                         <div class="card__title h4">Bonus Availability</div>
                                     </div>
-                                    <div class="card__text p2">The first check you should make is that the offer is still live and available to claim. It may seem obvious, but we have seen many casino offers displayed that expired months ago. Most bonus offers are given a set activation period, which could be days, weeks, or months. Deals linked to bonus codes often have limited availability, whereas welcome bonuses are longer active. The dates are often listed near the top of the terms and conditions, although keep in mind the casino has the right to remove any bonus or promotion at any moment during the promo dates.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>The first check you should make is that the offer is still live and available to claim. It may seem obvious, but we have seen many casino offers displayed that expired months ago. Most bonus offers are given a set activation period, which could be days, weeks, or months. Deals linked to bonus codes often have limited availability, whereas welcome bonuses are longer active. The dates are often listed near the top of the terms and conditions, although keep in mind the casino has the right to remove any bonus or promotion at any moment during the promo dates.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-47.png);"></div>
                                         <div class="card__title h4">Country Exclusion</div>
                                     </div>
-                                    <div class="card__text p2">The first check you should make is that the offer is still live and available to claim. It may seem obvious, but we have seen many casino offers displayed that expired months ago. Most bonus offers are given a set activation period, which could be days, weeks, or months. Deals linked to bonus codes often have limited availability, whereas welcome bonuses are longer active. The dates are often listed near the top of the terms and conditions, although keep in mind the casino has the right to remove any bonus or promotion at any moment during the promo dates.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>The first check you should make is that the offer is still live and available to claim. It may seem obvious, but we have seen many casino offers displayed that expired months ago. Most bonus offers are given a set activation period, which could be days, weeks, or months. Deals linked to bonus codes often have limited availability, whereas welcome bonuses are longer active. The dates are often listed near the top of the terms and conditions, although keep in mind the casino has the right to remove any bonus or promotion at any moment during the promo dates.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-48.png);"></div>
                                         <div class="card__title h4">Wagering Requirements</div>
                                     </div>
-                                    <div class="card__text p2">You may see this defined as roller, turnover, or the commonly used wagering requirements. Still, whichever way it is named, it always means the same. This rule is put in place to minimize the threat of bonus abuse and those players looking to take advantage of casino bonuses, also known as “bonus abusers.” We have covered this in great detail already, but it always pays to check to see if the wagering requirements are fair and player-friendly – in other words, the lower the amount, the more chance you have of making a profit.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>You may see this defined as roller, turnover, or the commonly used wagering requirements. Still, whichever way it is named, it always means the same. This rule is put in place to minimize the threat of bonus abuse and those players looking to take advantage of casino bonuses, also known as “bonus abusers.” We have covered this in great detail already, but it always pays to check to see if the wagering requirements are fair and player-friendly – in other words, the lower the amount, the more chance you have of making a profit.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-49.png);"></div>
                                         <div class="card__title h4">Maximum Bet Limits</div>
                                     </div>
-                                    <div class="card__text p2">Maximum bet limits put a restriction on how much players can win from one bet, leading to an overall limit on the amount of profit you can make. Some players fall into the trap of forgetting about this rule and subsequently lose their bonus money altogether when they place a bet over the limit. One misplaced bet can mean you have no right to withdraw your winnings, even if you stayed true to all the other bonus rules. We usually find these maximum bet limits at around the €4 to €6 marker, so only the bigger players tend to feel the effect of this particular bonus rule.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>Maximum bet limits put a restriction on how much players can win from one bet, leading to an overall limit on the amount of profit you can make. Some players fall into the trap of forgetting about this rule and subsequently lose their bonus money altogether when they place a bet over the limit. One misplaced bet can mean you have no right to withdraw your winnings, even if you stayed true to all the other bonus rules. We usually find these maximum bet limits at around the €4 to €6 marker, so only the bigger players tend to feel the effect of this particular bonus rule.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-50.png);"></div>
                                         <div class="card__title h4">Game Eligibility</div>
                                     </div>
-                                    <div class="card__text p2">Knowing which games you can wager on and understanding the different weightings that affect the wagering requirements is another point that many players miss. There may be many games on the excluded list, and this all comes down to the casino and promotion in question. Make a note of the games you can use your bonus money on, and ensure you know the game contribution weightings. This will help you clear your wagering requirements a lot quicker.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>Knowing which games you can wager on and understanding the different weightings that affect the wagering requirements is another point that many players miss. There may be many games on the excluded list, and this all comes down to the casino and promotion in question. Make a note of the games you can use your bonus money on, and ensure you know the game contribution weightings. This will help you clear your wagering requirements a lot quicker.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-51.png);"></div>
                                         <div class="card__title h4">Bonus Amount</div>
                                     </div>
-                                    <div class="card__text p2">Bonus amounts are usually straightforward because most deals are set to 100%, but many differ below and above that mark. Most players like this 100% deal as it makes things easy to track and often means less to wager in terms of the wagering requirements. We like to keep our Weekend Bonus Broadcast as diverse as possible. No matter your gaming style, you can find a bonus deal that suits you when you join us here at the Winners Casino Lounge.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>Bonus amounts are usually straightforward because most deals are set to 100%, but many differ below and above that mark. Most players like this 100% deal as it makes things easy to track and often means less to wager in terms of the wagering requirements. We like to keep our Weekend Bonus Broadcast as diverse as possible. No matter your gaming style, you can find a bonus deal that suits you when you join us here at the Winners Casino Lounge.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-52.png);"></div>
                                         <div class="card__title h4">Maximum Amount</div>
                                     </div>
-                                    <div class="card__text p2">Big bonus amounts are always used to attract players. So it’s no wonder we find big bonus adverts claiming “thousands of bonus money free” as you consider signing up for a new player account. But there is one thing to remember when claiming big bonus amounts. The wagering requirements will also be bigger and so a lot harder to satisfy. You may hear our experts mention that claiming smaller bonuses is the safer option as you have much better chances of making a profit.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>Big bonus amounts are always used to attract players. So it’s no wonder we find big bonus adverts claiming “thousands of bonus money free” as you consider signing up for a new player account. But there is one thing to remember when claiming big bonus amounts. The wagering requirements will also be bigger and so a lot harder to satisfy. You may hear our experts mention that claiming smaller bonuses is the safer option as you have much better chances of making a profit.</p>
+                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card__head df df-ai-center">
                                         <div class="card__icon bg-image" style="background-image: url(./img/png/icon-53.png);"></div>
                                         <div class="card__title h4">Maximum Amount</div>
                                     </div>
-                                    <div class="card__text p2">Knowing how much time you have to use your bonus and satisfy the terms and conditions is another factor that is forgotten about. We like to see casinos providing 30 days to use and satisfy the rules, although there are times when less time is appropriate, but that depends on the bonus offer itself. There are bonus offers with seven-day expiry and sometimes less, and these should be dealt with cautiously. Why? Wagering requirements will be hard to meet in such a short time, and some players don’t always log in every day, meaning some bonuses often get wasted because the time period lapses too quickly.</div>
+                                    <div class="card__description cms-description-text">
+                                        <p>Knowing how much time you have to use your bonus and satisfy the terms and conditions is another factor that is forgotten about. We like to see casinos providing 30 days to use and satisfy the rules, although there are times when less time is appropriate, but that depends on the bonus offer itself. There are bonus offers with seven-day expiry and sometimes less, and these should be dealt with cautiously. Why? Wagering requirements will be hard to meet in such a short time, and some players don’t always log in every day, meaning some bonuses often get wasted because the time period lapses too quickly.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2485,32 +2412,44 @@
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-40.png);"></div>
                                 <div class="card__title h3">Same Device</div>
-                                <div class="card__text p2">Casinos do not like players using more than one account due to the risk of multiple accounts being used to claim one bonus. You can risk losing access to the casino if found with multiple accounts.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Casinos do not like players using more than one account due to the risk of multiple accounts being used to claim one bonus. You can risk losing access to the casino if found with multiple accounts.</p>
+                                </div>
                             </div>
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-41.png);"></div>
                                 <div class="card__title h3">Restricted Countries</div>
-                                <div class="card__text p2">Not every country offers legal online gambling. Casinos are constantly on the lookout for players attempting to sign up and play from restricted countries, which often means closed accounts if found.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Not every country offers legal online gambling. Casinos are constantly on the lookout for players attempting to sign up and play from restricted countries, which often means closed accounts if found.</p>
+                                </div>
                             </div>
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-42.png);"></div>
                                 <div class="card__title h3">Identical Address</div>
-                                <div class="card__text p2">Accessing the online casino from a public space is always something we tell our members to avoid. Using the same IP address as someone else would be considered a violation of the casino rules.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Accessing the online casino from a public space is always something we tell our members to avoid. Using the same IP address as someone else would be considered a violation of the casino rules.</p>
+                                </div>
                             </div>
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-43.png);"></div>
                                 <div class="card__title h3">Player Collusion</div>
-                                <div class="card__text p2">Live casino has introduced the possibility of player collusion, where multiple players work together on card games or table games. Gaining this unfair advantage is not accepted and accounts may get closed.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Live casino has introduced the possibility of player collusion, where multiple players work together on card games or table games. Gaining this unfair advantage is not accepted and accounts may get closed.</p>
+                                </div>
                             </div>
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-44.png);"></div>
                                 <div class="card__title h3">Multiple Accounts</div>
-                                <div class="card__text p2">Setting up multiple accounts is always a serious issue, and the closure of all connected accounts is often the only outcome, along with the loss of any money sitting in those accounts as well.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Setting up multiple accounts is always a serious issue, and the closure of all connected accounts is often the only outcome, along with the loss of any money sitting in those accounts as well.</p>
+                                </div>
                             </div>
                             <div class="card pd-15">
                                 <div class="card__icon bg-image" style="background-image: url(./img/png/icon-45.png);"></div>
                                 <div class="card__title h3">Same IP Address</div>
-                                <div class="card__text p2">Tracking IP addresses is a common job at online casinos due to the fact that only one account should be linked back to one IP address. If an issue is activated, all but one of the accounts may be closed.</div>
+                                <div class="card__description cms-description-text">
+                                    <p>Tracking IP addresses is a common job at online casinos due to the fact that only one account should be linked back to one IP address. If an issue is activated, all but one of the accounts may be closed.</p>
+                                </div>
                             </div>
                         </div>
                     </section>

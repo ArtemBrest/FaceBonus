@@ -420,7 +420,7 @@ window.addEventListener("load", function () {
     }
     const singleBonus = document.querySelector('.review-bonus__wrapper');
     if (singleBonus !== null) {
-        bonusRedirect(singleBonus);
+        //bonusRedirect(singleBonus);
     }
 
 

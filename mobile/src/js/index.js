@@ -110,15 +110,15 @@ window.addEventListener("load", function () {
     let fade = document.getElementById('fade');
     if(headerBtnMenu !== null && mobileMenu !== null && mobileMenuBtnClose !== null){
         headerBtnMenu.addEventListener("click",function (e){
-            mobileMenu.classList.toggle("mobile-menu--open");
+            mobileMenu.classList.add("mobile-menu--open");
             fadeIn(fade);
         })
         mobileMenuBtnClose.addEventListener("click",function (e){
-            mobileMenu.classList.toggle("mobile-menu--open");
+            mobileMenu.classList.remove("mobile-menu--open");
             fadeOut(fade);
         })
         fade.addEventListener("click",function (e){
-            mobileMenu.classList.toggle("mobile-menu--open");
+            mobileMenu.classList.remove("mobile-menu--open");
             fadeOut(fade);
         })
     }
@@ -131,7 +131,9 @@ window.addEventListener("load", function () {
                 elem.classList.toggle("mobile-menu-item--child");
             }
             menuBtn.addEventListener("click",function (e){
-                elem.classList.toggle("mobile-menu-item--active");
+                if(elem.classList.contains("mobile-menu-item--child")) {
+                    elem.classList.toggle("mobile-menu-item--active");
+                }
             })
         })
     }
@@ -154,12 +156,20 @@ window.addEventListener("load", function () {
                     heighEl += toggleTextChild[i].offsetHeight;
                     break
                 } else  if (toggleTextChild[i].tagName === 'IMG') {
-                    heighEl += toggleTextChild[i].offsetHeight + 10;
+                    if (toggleTextChild[i].classList.contains("float-right") || toggleTextChild[i].classList.contains("float-left")) {
+                        continue;
+                    }
+                    else{
+                        heighEl += toggleTextChild[i].offsetHeight + 10;
+                    }
                     //continue;
-                } else  if (toggleTextChild[i].tagName === 'B') {
+                } else  if (toggleTextChild[i].tagName === 'B' || toggleTextChild[i].tagName === 'TD' || toggleTextChild[i].tagName === 'TR' || toggleTextChild[i].tagName === 'THEAD' || toggleTextChild[i].tagName === 'TBODY') {
+                    continue;
+                }
+                else if (toggleTextChild[i].classList.contains("overflow-x-scroll") && toggleTextChild[i].querySelector("table")) {
                     continue;
                 } else {
-                    heighEl += toggleTextChild[i].offsetHeight;
+                    heighEl += toggleTextChild[i].offsetHeight + 10;
                 }
             }
             toggleText.style.maxHeight = heighEl + "px";
@@ -177,7 +187,7 @@ window.addEventListener("load", function () {
             })
         })
     }
-    /*let FormLinks = document.querySelectorAll(".ui-tab-btn");
+    let FormLinks = document.querySelectorAll(".ui-tab-btn");
     let FormPanels = document.querySelectorAll(".ui-collapse");
     if (!isEmptyObject(FormPanels) && !isEmptyObject(FormLinks)) {
         for (let el of FormLinks) {
@@ -197,8 +207,79 @@ window.addEventListener("load", function () {
             });
         }
     }
-
-
+    const CookieService = {
+        setCookie(name, value, days) {
+            let expires = '';
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = '; expires=' + date.toUTCString();
+            }
+            document.cookie = name + '=' + (value || '') + expires + ';';
+        },
+        getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (const cookie of cookies) {
+                if (cookie.indexOf(name + '=') > -1) {
+                    return cookie.split('=')[1];
+                }
+            }
+            return null;
+        }
+    };
+    let registrationPopup = document.getElementById("registration-popup");
+    let registrationPopupClose = document.querySelector(".registration-popup__close");
+    if (!CookieService.getCookie('exitIntentShown')) {
+        fadeIn(registrationPopup)
+    }
+    if(registrationPopup !== null && registrationPopupClose !== null){
+        registrationPopupClose.addEventListener("click", function (el){
+            fadeOut(registrationPopup);
+            CookieService.setCookie('exitIntentShown', true, 30);
+        })
+    }
+    const regexEmail = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
+    const contactFormEmail = document.getElementById('register-email');
+    const registrationPopupForm = document.getElementById('registration-popup-form');
+    if(registrationPopupForm !== null) {
+        registrationPopupForm.addEventListener('keyup', () => {
+            if (regexEmail.test(contactFormEmail.value)) {
+                contactFormEmail.classList.remove("error");
+                contactFormEmail.classList.add("valid");
+            } else {
+                contactFormEmail.classList.remove("valid");
+                contactFormEmail.classList.add("error");
+            }
+        });
+        registrationPopupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!regexEmail.test(contactFormEmail.value)) {
+                return false;
+            } else {
+                const ajax = async () => {
+                    let response = await fetch("https://www.stakers.com/platform//user/register_customer", {
+                        body: {"email":"${mail}","tag":"subscription_br"},
+                        method: "POST",
+                        mode: "cors",
+                    });
+                    let data = await response.json();
+                    if (data.status == 1) {
+                        fadeOut(registrationPopupForm);
+                        fadeIn(document.getElementById("registration-popup-thanks"));
+                    }
+                    else{
+                        //console.log(2)
+                    }
+                };
+                ajax()
+                registrationPopupForm.reset();
+            }
+        });
+    }
+    const singleBonus = document.querySelector('.review-bonus__wrapper');
+    if (singleBonus !== null) {
+        //bonusRedirect(singleBonus);
+    }
     // класс для создание таймера обратного отсчета
     class CountdownTimer {
         constructor(deadline, cbChange, cbComplete) {
@@ -234,11 +315,11 @@ window.addEventListener("load", function () {
     }
 
 
-    let itemMain = document.getElementById("best-casino-main");
-    let itemThumb = document.getElementById("best-casino-sub");
+    let itemMain = document.getElementById("main-banner-main");
+    let itemThumb = document.getElementById("main-banner-sub");
     if (itemMain !== null) {
-        itemThumb = itemThumb.querySelectorAll(".best-casino-slide");
-        itemMain = itemMain.querySelectorAll(".best-casino-slide");
+        itemThumb = itemThumb.querySelectorAll(".main-banner-slide");
+        itemMain = itemMain.querySelectorAll(".main-banner-slide");
         let deadline;
         let date = new Date(Date.now());
         for (let i = 0, k = 1; i < itemThumb.length, i < itemMain.length; i++, k++) {
@@ -246,8 +327,8 @@ window.addEventListener("load", function () {
             let durationTime = itemMain[i].getAttribute("data-delay");
             let elMinutesThumb = itemThumb[i].querySelector(".minutes");
             //let elSecondsThumb = itemThumb[i].querySelector(".seconds");
-            let elMinutesMain = itemMain[i].querySelector(".minutes");
-            let elSecondsMain = itemMain[i].querySelector(".seconds");
+            //let elMinutesMain = itemMain[i].querySelector(".minutes");
+            //let elSecondsMain = itemMain[i].querySelector(".seconds");
             let elMinutesPromo = promoTimer.querySelector(".minutes");
             let elSecondsPromo = promoTimer.querySelector(".seconds");
             let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
@@ -272,8 +353,8 @@ window.addEventListener("load", function () {
                 if(timer.hours > 0){
                     minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
                 }
-                elMinutesMain.textContent = minutes;
-                elSecondsMain.textContent = timer.seconds;
+                //elMinutesMain.textContent = minutes;
+                //elSecondsMain.textContent = timer.seconds;
             }, () => {
                 itemMain[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
 
@@ -302,29 +383,29 @@ window.addEventListener("load", function () {
             });
 
             durationTime = Number(durationTime);
-            let barMain = new ProgressBar.Circle(itemMain[i].querySelector('.best-casino-slide__logo'), {
+            let barMain = new ProgressBar.Circle(itemMain[i].querySelector('.main-banner-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
                 color: '#F0284A',
-                trailColor: '#5A5C5E',
+                trailColor: '#677B81',
                 trailWidth: 3,
-                svgStyle: {width: '115px', height: '115px'},
+                svgStyle: {width: '58px', height: '58px'},
 
             });
             barMain.animate(1.0);
-            let bar = new ProgressBar.Circle(itemThumb[i].querySelector('.best-casino-slide__logo'), {
+            let bar = new ProgressBar.Circle(itemThumb[i].querySelector('.main-banner-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
                 color: '#1876F0',
                 trailColor: '#eee',
                 trailWidth: 3,
-                svgStyle: {width: '48px', height: '48px'},
+                svgStyle: {width: '38px', height: '38px'},
             });
             bar.animate(1.0);
         }
-        let swiperMain = new Swiper(document.getElementById("best-casino-main"), {
+        let swiperMain = new Swiper(document.getElementById("main-banner-main"), {
             spaceBetween: 12,
             effect: "fade",
             loop: true,
@@ -337,11 +418,10 @@ window.addEventListener("load", function () {
                 prevEl: ".swiper-button-prev",
             },
         });
-        let swiperThumb = new Swiper(document.getElementById("best-casino-sub"), {
-            spaceBetween: 16,
+        let swiperThumb = new Swiper(document.getElementById("main-banner-sub"), {
+            spaceBetween: 12,
             slidesPerView: "auto",
             loop: true,
-            allowTouchMove: false,
             autoplay: {
                 delay: 600000,
                 disableOnInteraction: false,
@@ -353,116 +433,40 @@ window.addEventListener("load", function () {
         });
     }
 
-    const CookieService = {
-        setCookie(name, value, days) {
-            let expires = '';
-            if (days) {
-                const date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = '; expires=' + date.toUTCString();
-            }
-            document.cookie = name + '=' + (value || '') + expires + ';';
-        },
-        getCookie(name) {
-            const cookies = document.cookie.split(';');
-            for (const cookie of cookies) {
-                if (cookie.indexOf(name + '=') > -1) {
-                    return cookie.split('=')[1];
-                }
-            }
-            return null;
-        }
-    };
-    let registrationPopup = document.getElementById("registration-popup");
-    let registrationPopupClose = document.querySelector(".registration-popup__close");
-    let exitPopup = document.getElementById('exit-popup');
-    let exitPopupClose = document.querySelector(".exit-popup__close");
-    const mouseEvent = e => {
-        const shouldShowExitIntent = !e.toElement && !e.relatedTarget && e.clientY < 10;
-        if (shouldShowExitIntent) {
-            document.removeEventListener('mouseout', mouseEvent);
-            fadeIn(fade)
-            fadeIn(exitPopup)
-            CookieService.setCookie('exitIntentShown', true, 30);
-        }
-    };
-    if (!CookieService.getCookie('exitIntentShown')) {
-        fadeIn(registrationPopup)
-        document.addEventListener('mouseout', mouseEvent);
-    }
-    const regexEmail = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
-    const contactFormEmail = document.getElementById('register-email');
-    const registrationPopupForm = document.getElementById('registration-popup-form');
-    if(registrationPopupForm !== null) {
-        registrationPopupForm.addEventListener('keyup', () => {
-            if (regexEmail.test(contactFormEmail.value)) {
-                contactFormEmail.classList.remove("error");
-                contactFormEmail.classList.add("valid");
-            } else {
-                contactFormEmail.classList.remove("valid");
-                contactFormEmail.classList.add("error");
-            }
-        });
-        registrationPopupForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            if (!regexEmail.test(contactFormEmail.value)) {
-                return false;
-            } else {
-                const ajax = async () => {
-                    let response = await fetch("https://www.stakers.com/platform//user/register_customer", {
-                        body: {"email":"${mail}","tag":"subscription_br"},
-                        method: "POST",
-                        mode: "cors",
-                    });
-                    let data = await response.json();
-                    if (data.status == 1) {
-                        fadeOut(registrationPopupForm);
-                        fadeOut(document.getElementById("registration-popup-thanks"));
-                    }
-                    else{
-                        //console.log(2)
-                    }
-                };
-                ajax()
-                registrationPopupForm.reset();
-            }
-        });
-    }
-    if(registrationPopup !== null && registrationPopupClose !== null){
-        registrationPopupClose.addEventListener("click", function (el){
-            fadeOut(registrationPopup);
-            CookieService.setCookie('exitIntentShown', true, 30);
-        })
-    }
-    if(exitPopup !== null && exitPopupClose !== null && fade !== null){
-        exitPopupClose.addEventListener("click", function (el){
-            fadeOut(exitPopup);
-            fadeOut(fade);
-            CookieService.setCookie('exitIntentShown', true, 30);
-        })
-        fade.addEventListener("click", function (el){
-            fadeOut(exitPopup);
-            fadeOut(fade);
-            CookieService.setCookie('exitIntentShown', true, 30);
-        })
-    }*/
-
     document.body.addEventListener('click', function(e) {
         if(e.target.closest(".apply-bonus__btn")){
+            //e.preventDefault();
             let applyParent = e.target.closest(".apply-bonus");
             applyParent.classList.toggle("apply-bonus--open");
             return;
         }
-        /*else if (!e.target.closest("a")) {
+        else if (!e.target.closest("a")) {
+            //e.preventDefault();
             const target = e.target.closest('.straightforward-to-page'); //.bonus, .mobile-card, .card, .slots-front-page, .single-casino-banner
             if (!target) return;
             if ((target.hasAttribute('data-to_target')) || (target.hasAttribute('data-to_page'))) {
                 const link = target.getAttribute('data-to_page');
                 window.open(link, '_blank');
             }
-        }*/
+        }
     })
-    /*const bonusTimer = document.getElementById("bonus-timer");
+    let exclusiveBonuses = document.querySelectorAll(".exclusive-bonuses");
+    if(!isEmptyObject(exclusiveBonuses)){
+        exclusiveBonuses.forEach(function (elem){
+            let cards =  elem.querySelectorAll(".card");
+            cards.forEach(function (card){
+                card.addEventListener('click', function(e) {
+                    if(e.target.closest(".card-hint__icon")){
+                        e.preventDefault();
+                        let applyText = card.querySelector(".card__text");
+                        applyText.classList.toggle("card__text--open");
+                        return;
+                    }
+                })
+            })
+        })
+    }
+    const bonusTimer = document.getElementById("bonus-timer");
     if (bonusTimer !== null) {
         const deadline = new Date(bonusTimer.getAttribute("data-time"));
         let timerId = null;
@@ -489,25 +493,17 @@ window.addEventListener("load", function () {
         countdownTimer();
         timerId = setInterval(countdownTimer, 1000);
     }
-    const singleBonus = document.querySelector('.review-bonus__wrapper');
-    if (singleBonus !== null) {
-        bonusRedirect(singleBonus);
-    }
 
-
-    let onlineSlotsSliderFirst = document.getElementById("online-slots-first");
-    let onlineSlotsSliderSecond = document.getElementById("online-slots-second");
-    let onlineSlotsSliderThird = document.getElementById("online-slots-third");
-    if (onlineSlotsSliderFirst !== null) {
-        onlineSlotsSliderFirst = onlineSlotsSliderFirst.querySelectorAll(".online-slots-slide");
-        onlineSlotsSliderSecond = onlineSlotsSliderSecond.querySelectorAll(".online-slots-slide");
-        onlineSlotsSliderThird = onlineSlotsSliderThird.querySelectorAll(".online-slots-slide");
+    
+    let onlineSlotsSlider = document.getElementById("online-slots-swiper");
+    if (onlineSlotsSlider !== null) {
+        onlineSlotsSlider = onlineSlotsSlider.querySelectorAll(".online-slots-slide");
         let deadline;
         let date = new Date(Date.now());
-        for (let i = 0, k = 1; i < onlineSlotsSliderFirst.length; i++, k++) {
-            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
-            let elMinutesFirst = onlineSlotsSliderFirst[i].querySelector(".minutes");
-            let elSecondsFirst = onlineSlotsSliderFirst[i].querySelector(".seconds");
+        for (let i = 0, k = 1; i < onlineSlotsSlider.length; i++, k++) {
+            let durationTime = onlineSlotsSlider[i].getAttribute("data-delay");
+            let elMinutes = onlineSlotsSlider[i].querySelector(".minutes");
+            let elSeconds = onlineSlotsSlider[i].querySelector(".seconds");
             let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
             if (i == 0) {
                 nextTime = Number(600000 - durationTime);
@@ -520,281 +516,30 @@ window.addEventListener("load", function () {
                 if(timer.hours > 0){
                     minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
                 }
-                elMinutesFirst.textContent = minutes;
-                elSecondsFirst.textContent = timer.seconds;
+                //elMinutes.textContent = minutes;
+                //elSeconds.textContent = timer.seconds;
             }, () => {
-                onlineSlotsSliderFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
+                onlineSlotsSlider[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
             });
             durationTime = Number(durationTime);
-            let barFirst = new ProgressBar.Circle(onlineSlotsSliderFirst[i].querySelector('.online-slots-slide__logo'), {
+            let bar = new ProgressBar.Circle(onlineSlotsSlider[i].querySelector('.online-slots-slide__logo'), {
                 strokeWidth: 3,
                 easing: 'linear',
                 duration: nextTime,
                 color: '#F0284A',
-                trailColor: '#5A5C5E',
+                trailColor: '#677B81',
                 trailWidth: 3,
-                svgStyle: {width: '69px', height: '69px'},
+                svgStyle: {width: '58px', height: '58px'},
 
             });
-            barFirst.animate(1.0);
+            bar.animate(1.0);
         }
-        for (let i = 0, k = 1; i < onlineSlotsSliderSecond.length; i++, k++) {
-            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
-            let elMinutesSecond = onlineSlotsSliderSecond[i].querySelector(".minutes");
-            let elSecondsSecond = onlineSlotsSliderSecond[i].querySelector(".seconds");
-            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
-            if (i == 0) {
-                nextTime = Number(600000 - durationTime);
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            } else {
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            }
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                elMinutesSecond.textContent = minutes;
-                elSecondsSecond.textContent = timer.seconds;
-            }, () => {
-                onlineSlotsSliderSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
-            });
-            durationTime = Number(durationTime);
-            let barSecond = new ProgressBar.Circle(onlineSlotsSliderSecond[i].querySelector('.online-slots-slide__logo'), {
-                strokeWidth: 3,
-                easing: 'linear',
-                duration: nextTime,
-                color: '#FFC700',
-                trailColor: '#5A5C5E',
-                trailWidth: 3,
-                svgStyle: {width: '69px', height: '69px'},
-            });
-            barSecond.animate(1.0);
-        }
-        for (let i = 0, k = 2; i < onlineSlotsSliderThird.length; i++, k++) {
-            let durationTime = onlineSlotsSliderFirst[i].getAttribute("data-delay");
-            let elMinutesThird = onlineSlotsSliderThird[i].querySelector(".minutes");
-            let elSecondsThird = onlineSlotsSliderThird[i].querySelector(".seconds");
-            let nextTime = Number(((k - 1) * 600000) + ((k - 1) * 600000 - durationTime));
-            deadline = new Date(Number(date.valueOf()) + nextTime);
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                elMinutesThird.textContent = minutes;
-                elSecondsThird.textContent = timer.seconds;
-            }, () => {
-                onlineSlotsSliderThird[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
-            });
-            durationTime = Number(durationTime);
-            let barThird = new ProgressBar.Circle(onlineSlotsSliderThird[i].querySelector('.online-slots-slide__logo'), {
-                strokeWidth: 3,
-                easing: 'linear',
-                duration: nextTime,
-                color: '#3750D7',
-                trailColor: '#5A5C5E',
-                trailWidth: 3,
-                svgStyle: {width: '69px', height: '69px'},
-            });
-            barThird.animate(1.0);
-        }
-        let swiperFirst = new Swiper(document.getElementById("online-slots-first"), {
-            effect: "fade",
-            loop: true,
-            allowTouchMove: false,
-            autoplay: {
-                delay: 600000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        let swiperSecond = new Swiper(document.getElementById("online-slots-second"), {
-            effect: "fade",
-            loop: true,
-            allowTouchMove: false,
-            autoplay: {
-                delay: 600000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        let swiperThird = new Swiper(document.getElementById("online-slots-third"), {
-            effect: "fade",
-            loop: true,
-            allowTouchMove: false,
-            autoplay: {
-                delay: 600000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    }
-    let bestSlotsSitesSliderFirst = document.getElementById("best-slot-sites-first");
-    let bestSlotsSitesSliderSecond = document.getElementById("best-slot-sites-second");
-    let bestSlotsSitesSliderThumb = document.getElementById("best-slot-sites-sub");
-    if (bestSlotsSitesSliderFirst !== null) {
-        bestSlotsSitesSliderFirst = bestSlotsSitesSliderFirst.querySelectorAll(".best-slot-sites-slide");
-        bestSlotsSitesSliderSecond = bestSlotsSitesSliderSecond.querySelectorAll(".best-slot-sites-slide");
-        bestSlotsSitesSliderThumb = bestSlotsSitesSliderThumb.querySelectorAll(".best-slot-sites-slide");
-        let deadline;
-        let date = new Date(Date.now());
-        for (let i = 0, k = 1; i < bestSlotsSitesSliderFirst.length; i++, k++) {
-            let durationTime = bestSlotsSitesSliderFirst[i].getAttribute("data-delay");
-            let elMinutesFirst = bestSlotsSitesSliderFirst[i].querySelector(".minutes");
-            let elSecondsFirst = bestSlotsSitesSliderFirst[i].querySelector(".seconds");
-            let elMinutesThumb = bestSlotsSitesSliderThumb[i].querySelector(".minutes");
-            let promoTimer = document.getElementById("promo-timer");
-            let elMinutesPromo = promoTimer.querySelector(".minutes");
-            let elSecondsPromo = promoTimer.querySelector(".seconds");
-            //let elSecondsThumb = bestSlotsSitesSliderThumb[i].querySelector(".seconds");
-            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
-            if (i == 0) {
-                nextTime = Number(600000 - durationTime);
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            } else {
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            }
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                elMinutesFirst.textContent = minutes;
-                elSecondsFirst.textContent = timer.seconds;
-            }, () => {
-                bestSlotsSitesSliderFirst[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
-
-                let durationTimePromo = bestSlotsSitesSliderFirst[i+1].getAttribute("data-delay");
-                let deadlinePromo;
-                let nextTimePromo = Number(((i+1) * 600000) + (((i+2) * 600000) - durationTimePromo));
-                deadlinePromo = new Date(Number(date.valueOf()) + nextTimePromo);
-                new CountdownTimer(deadlinePromo, (timer) => {
-                    let minutes = timer.minutes;
-                    if(timer.hours > 0){
-                        minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                    }
-                    elMinutesPromo.textContent = minutes;
-                    elSecondsPromo.textContent = timer.seconds;
-                });
-            });
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                if(i == 0){
-                    elMinutesPromo.textContent = minutes;
-                    elSecondsPromo.textContent = timer.seconds;
-                }
-            });
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                elMinutesThumb.textContent = minutes;
-                //elSecondsThumb.textContent = timer.seconds;
-            }, () => {
-                bestSlotsSitesSliderThumb[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
-            });
-            durationTime = Number(durationTime);
-            let barFirst = new ProgressBar.Circle(bestSlotsSitesSliderFirst[i].querySelector('.best-slot-sites-slide__logo'), {
-                strokeWidth: 3,
-                easing: 'linear',
-                duration: nextTime,
-                color: '#F0284A',
-                trailColor: '#5A5C5E',
-                trailWidth: 3,
-                svgStyle: {width: '69px', height: '69px'},
-
-            });
-            barFirst.animate(1.0);
-            let barSub = new ProgressBar.Circle(bestSlotsSitesSliderThumb[i].querySelector('.best-slot-sites-slide__logo'), {
-                strokeWidth: 3,
-                easing: 'linear',
-                duration: nextTime,
-                color: '#1876F0',
-                trailColor: '#eee',
-                trailWidth: 3,
-                svgStyle: {width: '48px', height: '48px'},
-            });
-            barSub.animate(1.0);
-
-        }
-        for (let i = 0, k = 1; i < bestSlotsSitesSliderSecond.length; i++, k++) {
-            let durationTime = bestSlotsSitesSliderFirst[i].getAttribute("data-delay");
-            let elMinutesSecond = bestSlotsSitesSliderSecond[i].querySelector(".minutes");
-            let elSecondsSecond = bestSlotsSitesSliderSecond[i].querySelector(".seconds");
-            let nextTime = Number(((k - 1) * 600000) + (k * 600000 - durationTime));
-            if (i == 0) {
-                nextTime = Number(600000 - durationTime);
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            } else {
-                deadline = new Date(Number(date.valueOf()) + nextTime);
-            }
-            new CountdownTimer(deadline, (timer) => {
-                let minutes = timer.minutes;
-                if(timer.hours > 0){
-                    minutes = Number(timer.hours) / 10 * 600 + Number(timer.minutes);
-                }
-                elMinutesSecond.textContent = minutes;
-                elSecondsSecond.textContent = timer.seconds;
-            }, () => {
-                bestSlotsSitesSliderSecond[i].parentNode.parentNode.querySelector(".swiper-button-next").click()
-            });
-            durationTime = Number(durationTime);
-            let barSecond = new ProgressBar.Circle(bestSlotsSitesSliderSecond[i].querySelector('.best-slot-sites-slide__logo'), {
-                strokeWidth: 3,
-                easing: 'linear',
-                duration: nextTime,
-                color: '#FFC700',
-                trailColor: '#5A5C5E',
-                trailWidth: 3,
-                svgStyle: {width: '69px', height: '69px'},
-            });
-            barSecond.animate(1.0);
-        }
-        let swiperFirst = new Swiper(document.getElementById("best-slot-sites-first"), {
-            effect: "fade",
-            loop: true,
-            allowTouchMove: false,
-            autoplay: {
-                delay: 600000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        let swiperThumb = new Swiper(document.getElementById("best-slot-sites-sub"), {
-            spaceBetween: 16,
+        let swiper = new Swiper(document.getElementById("online-slots-swiper"), {
+            spaceBetween: 12,
             slidesPerView: "auto",
+            //effect: "fade",
             loop: true,
-            allowTouchMove: false,
-            autoplay: {
-                delay: 600000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        let swiperSecond = new Swiper(document.getElementById("best-slot-sites-second"), {
-            effect: "fade",
-            loop: true,
-            allowTouchMove: false,
+            //allowTouchMove: false,
             autoplay: {
                 delay: 600000,
                 disableOnInteraction: false,
@@ -805,8 +550,6 @@ window.addEventListener("load", function () {
             },
         });
     }
-
-
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -970,10 +713,6 @@ window.addEventListener("load", function () {
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
         });
     }
     let providerSlotsCategory = document.querySelectorAll(".provider-slots-category__head");
@@ -989,23 +728,34 @@ window.addEventListener("load", function () {
     let videoSlotsSliders = document.querySelectorAll(".video-slots-slider__swiper");
     if(!isEmptyObject(videoSlotsSliders)){
         videoSlotsSliders.forEach(function (slider){
-            let swiperBtnNext = slider.parentNode.querySelector(".swiper-button-next");
-            let swiperBtnPrev = slider.parentNode.querySelector(".swiper-button-prev")
             var swiper = new Swiper(slider, {
                 spaceBetween: 16,
                 slidesPerView: "auto",
-                navigation: {
-                    nextEl: swiperBtnNext,
-                    prevEl: swiperBtnPrev,
-                },
             });
         })
-    }*/
+    }
     let slotsWrap = document.getElementById('slots-wrapper');
     let slotsPagination = document.getElementById("slots-pagination");
     let slotsFilter = document.getElementById('filterForm');
+    let slotsPopupFilter = document.querySelector(".slots-filter-mob");
+    let slotsBtnOpen = document.querySelector(".slots-filter-top__btn");
+    let slotsBtnClose = document.querySelector(".slots-filter-mob__close");
     let inputsFilter;
     if(slotsFilter !== null){ //slotsWrap !== null && slotsPagination !== null &&
+        if(slotsPopupFilter !== null && slotsBtnOpen !== null && slotsBtnClose !== null){
+            slotsBtnOpen.addEventListener("click",function (e){
+                slotsPopupFilter.classList.add("slots-filter-mob--open");
+                fadeIn(fade);
+            })
+            slotsBtnClose.addEventListener("click",function (e){
+                slotsPopupFilter.classList.remove("slots-filter-mob--open");
+                fadeOut(fade);
+            })
+            fade.addEventListener("click",function (e){
+                slotsPopupFilter.classList.remove("slots-filter-mob--open");
+                fadeOut(fade);
+            })
+        }
         async function slotsAll(query) {
             let response = await fetch('/wp-admin/admin-ajax.php', {
                 method: 'post',
@@ -1199,11 +949,6 @@ window.addEventListener("load", function () {
                 let inputs = el.closest('.range-slider').querySelectorAll('input[type="number"]');
                 el.noUiSlider.on('update', function (values, handle) {
                     let value = Math.floor(values[handle]);
-                    if (el.getAttribute('data-id') === 'aside-rtp') {
-                        document.querySelector('.slots-filter-range__slider--two_rtp-top').noUiSlider.setHandle(handle, value, true, true);
-                        //document.querySelector('.slots-filter-range__slider_two_rtp-aside').noUiSlider.setHandle(handle, value, true, true);
-                    }
-                    if (el.getAttribute('data-id') === 'top-rtp') {}
                     if(inputs[handle].name == "rtp_min"){
                         allData.slotsRtp[0] = value;
                     }
@@ -1295,68 +1040,30 @@ window.addEventListener("load", function () {
                 })
             })
         }
-        function updateSecondCheckbox(el) {
-            const parent = el.closest('.select');
-            if (parent) {
-                const label = parent.querySelector('.select__content');
-                label.click();
-                label.click();
-            }
-        };
-        let checkboxList = this.document.querySelectorAll('input[type="checkbox"]');
-        if (!isEmptyObject(checkboxList)){
-            checkboxList.forEach(checkbox => {
-                checkbox.addEventListener('change', function change(e) {
-                    const valueCheckbox = this.value;
-                    if (this.checked) {
-                        const secondCheckboxAll = document.querySelectorAll('input[value="' + valueCheckbox + '"]:not(:checked)');
-                        if (!isEmptyObject(secondCheckboxAll)) {
-                            secondCheckboxAll.forEach(function (secondCheckbox){
-                                secondCheckbox.checked = true;
-                                updateSecondCheckbox(secondCheckbox);
-                            })
-                        }
-                    } else {
-                        const secondCheckboxAll = document.querySelectorAll('input[value="' + valueCheckbox + '"]:checked');
-                        if (!isEmptyObject(secondCheckboxAll)) {
-                            secondCheckboxAll.forEach(function (secondCheckbox){
-                                secondCheckbox.checked = false;
-                                updateSecondCheckbox(secondCheckbox);
-                            })
-                        }
-                    }
-                });
-            });
-        }
-        function updateSecond(el) {
-            const parent = el;
-            if (parent) {
-                const label = parent.querySelector('.select__content');
-                label.click();
-                label.click();
-            }
-        };
-        document.querySelectorAll(".select").forEach(function (el){
-            updateSecond(el);
-        })
     }
 
-    /*let popularSlotsSwiper = document.getElementById("popular-slots-swiper");
+    let popularSlotsSwiper = document.getElementById("popular-slots-swiper");
     if(popularSlotsSwiper !== null){
         var swiper = new Swiper(popularSlotsSwiper, {
             slidesPerView: "auto",
-            spaceBetween: 16,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+            spaceBetween: 12,
         });
     }
 
     let reviewSlots = document.querySelector(".review--slots");
     if(reviewSlots !== null && header !== null){
-        header.style.position = "static";
-        document.querySelector(".aside-menu").style.top = "20px";
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 50) {
+                header.querySelector(".header__top").style.position = "fixed";
+                return;
+            }
+            const direction = currentScroll > lastScroll ? scrollDown : scrollUp;
+            if (direction !== currentDirection) {
+                header.querySelector(".header__top").style.position = "static";
+            }
+            lastScroll = currentScroll;
+        });
     }
     let tagsHead = document.querySelector(".review-slots-tags__head");
     let tagsContent = document.querySelector(".review-slots-tags__content");
@@ -1376,8 +1083,26 @@ window.addEventListener("load", function () {
 
     let reviewCasino = document.querySelector(".review--casino");
     if(reviewCasino !== null && header !== null){
-        header.style.position = "static";
-        document.querySelector(".aside-menu").style.top = "20px";
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 50) {
+                header.querySelector(".header__top").style.position = "fixed";
+                return;
+            }
+            const direction = currentScroll > lastScroll ? scrollDown : scrollUp;
+            if (direction !== currentDirection) {
+                header.querySelector(".header__top").style.position = "static";
+            }
+            lastScroll = currentScroll;
+        });
+
+    }
+    let casinoOtherSwiper = document.getElementById("casino-other-swiper");
+    if(casinoOtherSwiper !== null){
+        var swiper = new Swiper(casinoOtherSwiper, {
+            spaceBetween: 12,
+            slidesPerView: "auto",
+        });
     }
     let unitedKingdomMap = document.getElementById("united-kingdom-map");
     if(unitedKingdomMap !== null){
@@ -1389,7 +1114,7 @@ window.addEventListener("load", function () {
             var e = _mapArray.find(function (e) {
                 if (t === e.country.value) return e
             }), a = document.querySelector(".worldmap__label"), a = (a && a.remove(), document.getElementById("united-kingdom-map")), n = document.querySelector(".uk-country-card");
-            n.className = "uk-country-card block", n.innerHTML = '\n        <div class="uk-country-card__top df df-ai-center p2 mb-10">\n            <div class="uk-country-card__icon bg-image" style="background-image: url(../img/png/icon-153.png);"></div><span class="uk-country-card__name h4">'.concat(e.country.label, '</span>\n        </div>\n        <div class="uk-country-card__text p1">Players from the ').concat(e.country.label,':<span>').concat(new Intl.NumberFormat('uk-UK').format(e.traffic), '</span></div>\n        <div class="uk-country-card__text p1">Share in the total number of UK players: <span>').concat(new Intl.NumberFormat('uk-UK').format(e.share), '%</span>'), n.parentNode.append(n)
+            n.className = "uk-country-card block", n.innerHTML = '\n        <div class="uk-country-card__top df df-ai-center">\n            <div class="uk-country-card__icon bg-image" style="background-image: url(../img/png/icon-153.png);"></div><span class="uk-country-card__name h5">'.concat(e.country.label, '</span>\n        </div>\n        <div class="uk-country-card__text p1">Players from the ').concat(e.country.label,':<span>').concat(new Intl.NumberFormat('uk-UK').format(e.traffic), '</span></div>\n        <div class="uk-country-card__text p1">Share in the total number of UK players: <span>').concat(new Intl.NumberFormat('uk-UK').format(e.share), '%</span>'), n.parentNode.append(n)
         }
         document.body.addEventListener("click", function (e){
             let ukMap = e.target.closest(".uk-map-country");
@@ -1402,6 +1127,7 @@ window.addEventListener("load", function () {
     }
     let reviewChart = document.getElementById("review-chart");
     if(reviewChart !== null){
+
         const labelCasino = [];
         const dataCasino = [];
         document.querySelectorAll(".review-chart-data").forEach(function (elem, index){
@@ -1437,10 +1163,7 @@ window.addEventListener("load", function () {
                 hoverOffset: 0
             }]
         };
-        let positionLegend = 'right';
-        if(window.innerWidth < 768){
-            positionLegend = 'bottom';
-        }
+        let positionLegend = 'bottom';
         const chart = new Chart(reviewChart, {
             type: 'doughnut',
             data: data,
@@ -1450,9 +1173,6 @@ window.addEventListener("load", function () {
                     legend: {
                         display: true,
                         position: positionLegend,
-                        padding: {
-                            left: 50
-                        },
                         labels: {
                             usePointStyle: true,
                             pointStyle: 'rectRounded',
@@ -1472,11 +1192,6 @@ window.addEventListener("load", function () {
                             chart.update();
                         }
                     },
-                    beforeInit: function(pdChart, options) {
-                        pdChart.legend.beforeFit = function() {
-                            this.width = this.width + 100;
-                        };
-                    },
                     tooltip: {
                         backgroundColor: 'rgba(255, 255, 255, 1)',
                         titleColor: '#222222',
@@ -1491,16 +1206,51 @@ window.addEventListener("load", function () {
                 }
             }
         });
-    }
-    let casinoOtherSwiper = document.getElementById("casino-other-swiper");
-    if(casinoOtherSwiper !== null){
-        var swiper = new Swiper(casinoOtherSwiper, {
-            spaceBetween: 16,
-            slidesPerView: "auto",
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+        chart.NewLegend = chart.legend.extend({
+            afterFit: function() {
+                this.height = this.height + 50;
             },
         });
-    }*/
+        function createNewLegendAndAttach(chartInstance, legendOpts) {
+            var legend = new Chart.NewLegend({
+                ctx: chartInstance.chart.ctx,
+                options: legendOpts,
+                chart: chartInstance
+            });
+            if (chartInstance.legend) {
+                Chart.layoutService.removeBox(chartInstance, chartInstance.legend);
+                delete chartInstance.newLegend;
+            }
+            chartInstance.newLegend = legend;
+            chart.layoutService.addBox(chartInstance, legend);
+        }
+        chart.plugins.register({
+            beforeInit: function(chartInstance) {
+                var legendOpts = chartInstance.options.legend;
+                if (legendOpts) {
+                    createNewLegendAndAttach(chartInstance, legendOpts);
+                }
+            },
+            beforeUpdate: function(chartInstance) {
+                var legendOpts = chartInstance.options.legend;
+                if (legendOpts) {
+                    legendOpts = Chart.helpers.configMerge(Chart.defaults.global.legend, legendOpts);
+                    if (chartInstance.newLegend) {
+                        chartInstance.newLegend.options = legendOpts;
+                    } else {
+                        createNewLegendAndAttach(chartInstance, legendOpts);
+                    }
+                } else {
+                    Chart.layoutService.removeBox(chartInstance, chartInstance.newLegend);
+                    delete chartInstance.newLegend;
+                }
+            },
+            afterEvent: function(chartInstance, e) {
+                var legend = chartInstance.newLegend;
+                if (legend) {
+                    legend.handleEvent(e);
+                }
+            }
+        });
+    }
 })

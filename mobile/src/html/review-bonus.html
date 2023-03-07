@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFFFFF">
     <script>
         document.onreadystatechange = function(e) {
             if(document.readyState=="interactive") {
@@ -92,120 +93,153 @@
             background: #1876F0;
         }
     </style>
-    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
     <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <title>FaceBonus</title>
 </head>
 <body>
 @@include('./global/header.html')
-<div class="container">
-    <div class="grid-columns grid-columns--left">
-        @@include('./global/aside-menu.html')
-        <div class="content">
-            <section class="review-bonus block pd-20 df df-ff-column">
-                <div class="review-bonus__wrapper df df-ai-center df-jc-center df-ff-column" data-external_link="https://facebonus.co.uk/">
-                    <div class="review-bonus__loader bg-image df df-ai-center df-jc-center" style="background-image: url(./img/png/loader.png);">
-                    </div>
-                    <a href="#" class="review-bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
-                        <img src="./img/png/casino-logo.png" alt="" width="80" height="27">
-                    </a>
-                    <div class="review-bonus__title h1">You are going to win!</div>
-                    <h1 class="review-bonus__title-sub h5">CHECKING BONUS AVAILABILITY AT 10 BET WEB SITE</h1>
-                    <div class="review-bonus__text p1">Please hold for a while, we are making your experience secure</div>
-                    <div class="review-bonus__bottom">
-                        <div class="review-bonus__progress">
-                            <div class="line" style="width: 0" id="review-bonus-line"></div>
-                        </div>
-                        <div class="review-bonus__row df df-ai-center df-jc-between">
-                            <div class="text">Loading...</div>
-                            <div class="text">100%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-bonus-other">
-                    <div class="review-bonus-other__cards">
-                        <div class="bonus-mobile block pd-15 straightforward-to-page">
-                            <div class="bonus-mobile__top df df-ai-center mb-15">
-                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
-                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
-                                </a>
-                                <div class="bonus-mobile__info">
-                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
-                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
-                                </div>
-                            </div>
-                            <div class="bonus-mobile__middle df df-ai-center mb-10">
-                                <div class="bonus-mobile__tags tags df df-ai-center">
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Turnover</div>
-                                        <div class="tags__value p2">35X</div>
-                                    </div>
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Days valid</div>
-                                        <div class="tags__value p2">21</div>
-                                    </div>
-                                </div>
-                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
-                            </div>
-                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
-                        </div>
-                        <div class="bonus-mobile block pd-15 straightforward-to-page">
-                            <div class="bonus-mobile__top df df-ai-center mb-15">
-                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
-                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
-                                </a>
-                                <div class="bonus-mobile__info">
-                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
-                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
-                                </div>
-                            </div>
-                            <div class="bonus-mobile__middle df df-ai-center mb-10">
-                                <div class="bonus-mobile__tags tags df df-ai-center">
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Turnover</div>
-                                        <div class="tags__value p2">35X</div>
-                                    </div>
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Days valid</div>
-                                        <div class="tags__value p2">21</div>
-                                    </div>
-                                </div>
-                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
-                            </div>
-                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
-                        </div>
-                        <div class="bonus-mobile block pd-15 straightforward-to-page">
-                            <div class="bonus-mobile__top df df-ai-center mb-15">
-                                <a href="#" class="bonus-mobile__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
-                                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
-                                </a>
-                                <div class="bonus-mobile__info">
-                                    <div class="bonus-mobile__title h3"><b>£25</b> BONUS</div>
-                                    <div class="bonus-mobile__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
-                                </div>
-                            </div>
-                            <div class="bonus-mobile__middle df df-ai-center mb-10">
-                                <div class="bonus-mobile__tags tags df df-ai-center">
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Turnover</div>
-                                        <div class="tags__value p2">35X</div>
-                                    </div>
-                                    <div class="tags__item">
-                                        <div class="tags__title p3">Days valid</div>
-                                        <div class="tags__value p2">21</div>
-                                    </div>
-                                </div>
-                                <a href="#" class="bonus__btn btn-main blue">Claim Bonus</a>
-                            </div>
-                            <div class="bonus-mobile__description p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&amp;Cs apply</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<section class="review-bonus block m-15">
+    <div class="review-bonus__wrapper df df-ai-center df-jc-center df-ff-column" data-external_link="https://facebonus.co.uk/">
+        <div class="review-bonus__loader bg-image df df-ai-center df-jc-center" style="background-image: url(./img/png/loader.png);"></div>
+        <a href="#" class="review-bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+            <img src="./img/png/casino-logo.png" alt="" width="80" height="27">
+        </a>
+        <div class="review-bonus__title h2">You are going to win!</div>
+        <h1 class="review-bonus__title-sub p1 p1--semi-bold">CHECKING BONUS AVAILABILITY AT 10 BET WEB SITE</h1>
+        <div class="review-bonus__text p1">Please hold for a while, we are making your experience secure</div>
+        <div class="review-bonus__bottom">
+            <div class="review-bonus__progress">
+                <div class="line" style="width: 0" id="review-bonus-line"></div>
+            </div>
+            <div class="review-bonus__row df df-ai-center df-jc-between">
+                <div class="text p3">Loading...</div>
+                <div class="text p3">100%</div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<section class="review-bonus-other df df-ai-stretch m-15">
+    <div class="review-bonus-other__cards review-bonus-other__cards--left">
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+    </div>
+    <div class="review-bonus-other__cards review-bonus-other__cards--right">
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+                <div class="bonus__tags tags df df-ai-center">
+                    <div class="tags__item">
+                        <div class="tags__title p3">Turnover</div>
+                        <div class="tags__value p2">35X</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Max w</div>
+                        <div class="tags__value p2">∞</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Days valid</div>
+                        <div class="tags__value p2">21</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+                <div class="bonus__tags tags df df-ai-center">
+                    <div class="tags__item">
+                        <div class="tags__title p3">Turnover</div>
+                        <div class="tags__value p2">35X</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Max w</div>
+                        <div class="tags__value p2">∞</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Days valid</div>
+                        <div class="tags__value p2">21</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+        <div class="bonus block straightforward-to-page">
+            <div class="bonus__top df df-ai-center mb-15">
+                <a href="#" class="bonus__logo df df-ai-center df-jc-center" style="--main-color: #1F294A;">
+                    <img src="./img/png/casino-logo.png" alt="" width="60" height="20">
+                </a>
+                <div class="bonus__info">
+                    <div class="bonus__title h3"><b>150</b> FREE SPINS</div>
+                    <div class="bonus__text p1">Enjoy 100% up to <b>£50</b> + <b>50</b> Free Spins</div>
+                </div>
+                <div class="bonus__tags tags df df-ai-center">
+                    <div class="tags__item">
+                        <div class="tags__title p3">Turnover</div>
+                        <div class="tags__value p2">35X</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Max w</div>
+                        <div class="tags__value p2">∞</div>
+                    </div>
+                    <div class="tags__item">
+                        <div class="tags__title p3">Days valid</div>
+                        <div class="tags__value p2">21</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus__apply-text p5">New customers. 40 spins on 1st dep. + 160 (20 per day) following 8 days. Valid for 24 h, exp in 30 d. Max win £100 in bonus funds with 20x wagering. Min £20 dep for bonus funds. 40x wagering. T&Cs apply</div>
+        </div>
+    </div>
+</section>
 @@include('./global/footer.html')
 <script src="./js/index.js"></script>
 </body>

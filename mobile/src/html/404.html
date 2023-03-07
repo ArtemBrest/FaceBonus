@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFFFFF">
     <script>
         document.onreadystatechange = function(e) {
             if(document.readyState=="interactive") {
@@ -92,26 +93,23 @@
             background: #1876F0;
         }
     </style>
-    <link rel="stylesheet" href="/font/stylesheet.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
     <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <title>FaceBonus</title>
 </head>
 <body>
 @@include('./global/header.html')
-<div class="container">
-    <div class="grid-columns grid-columns--left">
-        @@include('./global/aside-menu.html')
-        <div class="content">
-           <section class="error-page df df-ai-center df-jc-center df-ff-column">
-               <div class="error-page__content">
-                   <h1 class="error-page__title">404</h1>
-                   <div class="error-page__title-sub h1">Sorry, the page you are looking for could not be found</div>
-                   <div class="error-page__text p1">Did you know that each operator in Stakersland has been examined and researched in detail, from the famous global brands right through to the up-and-coming challengers. Our unique ranking system has been designed to allow you to make quick and easy decisions. Decisions that let you pick out the right bookmaker for you and your betting style and budget.</div>
-                   <a href="/" class="error-page__btn btn-main blue">Back</a>
-               </div>
-           </section>
-        </div>
+<div class="grid-columns m-15">
+    <div class="content">
+        <section class="error-page df df-ai-center df-jc-center df-ff-column">
+            <div class="error-page__content">
+                <h1 class="error-page__title">404</h1>
+                <div class="error-page__title-sub h1">Sorry, the page you are looking for could not be found</div>
+                <div class="error-page__text p1">Did you know that each operator in Stakersland has been examined and researched in detail, from the famous global brands right through to the up-and-coming challengers. Our unique ranking system has been designed to allow you to make quick and easy decisions. Decisions that let you pick out the right bookmaker for you and your betting style and budget.</div>
+                <a href="/" class="error-page__btn btn-main blue">Back</a>
+            </div>
+        </section>
     </div>
 </div>
 @@include('./global/footer.html')

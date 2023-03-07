@@ -125,7 +125,6 @@ h3,
 .h3 {
   font-size: 18px;
   line-height: 120%;
-
 }
 h4,
 .h4 {
@@ -141,7 +140,6 @@ h5,
 }
 h6,
 .h6 {
-  font-weight: 700;
   font-size: 13px;
   line-height: 120%;
 }
@@ -155,6 +153,9 @@ p, .p1 {
   &.p1--semi-bold{
     font-weight: 600;
   }
+  &.p1--medium{
+    font-weight: 500;
+  }
 }
 .p2 {
   font-weight: 400;
@@ -166,6 +167,9 @@ p, .p1 {
   &.p2--semi-bold{
     font-weight: 600;
   }
+  &.p2--medium{
+    font-weight: 500;
+  }
 }
 .p3 {
   font-weight: 400;
@@ -176,6 +180,9 @@ p, .p1 {
   }
   &.p3--semi-bold{
     font-weight: 600;
+  }
+  &.p3--medium{
+    font-weight: 500;
   }
 }
 .p4 {
@@ -201,6 +208,9 @@ p, .p1 {
   }
   &.p5--semi-bold{
     font-weight: 600;
+  }
+  &.p5--medium{
+    font-weight: 500;
   }
 }
 .fw300{
@@ -242,55 +252,20 @@ p, .p1 {
   line-height: 130%;
   color: $blue;
   text-transform: capitalize;
-  &:hover{
-    background: rgba(24, 118, 240, 0.05);
-  }
-  &:focus,
-  &:active{
-    background: $blue;
-    color: $white;
-  }
   &.green{
     background: $green;
     border: 1px solid $green;
     color: $white;
-    &:hover{
-      background: $green;
-      border: 1px solid $green;
-    }
-    &:focus,
-    &:active{
-      background: $green;
-      border: 1px solid $green;
-    }
   }
   &.blue{
     background: $blue;
     border: 1px solid $blue;
     color: $white;
-    &:hover{
-      background: $blueHover;
-      border: 1px solid $blueHover;
-    }
-    &:focus,
-    &:active{
-      background: $blueAccent;
-      border: 1px solid $blueAccent;
-    }
   }
   &.red{
     background: $red;
     border: 1px solid $red;
     color: $white;
-    &:hover{
-      background: $redHover;
-      border: 1px solid $redHover;
-    }
-    &:focus,
-    &:active{
-      background: $redAccent;
-      border: 1px solid $redAccent;
-    }
   }
 }
 .d-none {
@@ -341,8 +316,8 @@ p, .p1 {
 .m-20 {
   margin: 20px 0;
 }
-.m-40{
-  margin: 40px 0;
+.m-30{
+  margin: 30px 0;
 }
 
 .pd-15 {
@@ -469,10 +444,10 @@ table{
   thead{
     tr{
       td{
-        padding: 12px 15px;
+        padding: 10px 12px;
         background: $black;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 11px;
         line-height: 120%;
         text-transform: uppercase;
         color: $white;
@@ -488,9 +463,9 @@ table{
   tbody{
     tr{
       td{
-        padding: 8px 14px;
+        padding: 8px 12px;
         background: $white;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 145%;
         text-transform: capitalize;
         color: $black;
@@ -500,8 +475,8 @@ table{
           }
         }
         & .logo{
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           background: var(--main-color);
           border: 2px solid $white;
@@ -531,15 +506,12 @@ table{
           color: $blue;
           text-transform: none;
         }
-        & p{
-          color: $grayText;
-        }
         & ul{
           li{
             display: flex;
             align-items: center;
             font-weight: 400;
-            font-size: 15px;
+            font-size: 13px;
             line-height: 140%;
             color: $black;
             &:before{
@@ -696,6 +668,10 @@ table{
     }
   }
   img{
+    &:not(.float-left),
+    &:not(.float-right){
+      height: auto;
+    }
     &.float-left{
       margin: 0 12px 0 0;
     }
@@ -707,14 +683,16 @@ table{
     }
   }
   .float-right-table{
-    margin: 0 0 0 30px;
+    float: none;
+    margin: 15px 0;
   }
   .float-left-table{
-    margin: 0 30px 0 0;
+    float: none;
+    margin: 15px 0;
   }
   .expert-card{
-    width: 245px;
-    margin: 0 0 0 30px;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+    margin: 16px 0 0;
   }
 }
 .toggle-text-container{
@@ -722,7 +700,7 @@ table{
     .toggle-text{
       max-height: 100%!important;
     }
-    p:first-child{
+    p{
       -webkit-line-clamp: initial!important;
       display: block!important;
       overflow: unset !important
@@ -753,6 +731,20 @@ table{
       font-size: 14px;
       line-height: 100%;
     }
+  }
+}
+.overflow-x-scroll{
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  padding: 4px 8px 4px 4px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  table{
+    width: 690px;
   }
 }
 @import "./main.scss";

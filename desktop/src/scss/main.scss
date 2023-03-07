@@ -17,57 +17,46 @@
   display: none;
   position: fixed;
   z-index: 9999;
-  top: 5%;
+  top: 50%;
   left: 50%;
   width: 1190px;
-  background: #FFFFFF;
-  border-radius: 3px;
+  background: #F2F3F6;
   padding: 15px;
   overflow: hidden;
-  transform: translateX(-50%);
-  @include media("max", "xl") {
-    width: 100%;
-    top: 0;
-    /*&::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-      background-color: $icon;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $headGreen;
-      border-radius: 3px;
-    }*/
-  }
+  transform: translate(-50%, -50%);
   &__close{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F5F5F5;
+    background: $grayLine;
     position: absolute;
     top: 0;
     right: 0;
     cursor: pointer;
     width: 24px;
     height: 24px;
-    color: $black;
+    color: $grayText;
     border-radius: 50%;
     outline: 0;
     border: 0;
+    &:hover{
+      color: #828587;
+      background: #E1E5E7;
+    }
   }
   &__wrapper{
     display: grid;
-    grid-template-columns: 390px 1fr;
+    grid-template-columns: 400px 1fr;
     grid-gap: 40px;
     position: relative;
-    @include media("max", "xl") {
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
-    }
   }
-  @include media("max", "xl") {
-    &__banner{
-      display: none;
-    }
+  &__banner{
+    width: 400px;
+    height: 430px;
+    margin: -10px 0 0;
+  }
+  &__content{
+    margin: 0 0 10px;
   }
   &__title-sub{
     color: $blue;
@@ -82,6 +71,7 @@
     color: $grayText;
     margin: 0 auto;
   }
+
   .bonus{
     padding: 12px 15px;
   }
@@ -93,11 +83,11 @@
   bottom: 20px;
   right: 20px;
   width: 300px;
-  background: #FFFFFF;
+  background: $white;
   border-radius: 3px;
   padding: 60px 15px 20px;
   &::before {
-    background: #F1F5F8;
+    background: $grayBg;
     content: "";
     position: absolute;
     top: -47px;
@@ -272,6 +262,9 @@
 
   &__menu {
     padding-left: 220px;
+    @include media("max", "xl-middle") {
+      padding: 0;
+    }
   }
 
   &__item {
@@ -374,6 +367,7 @@
   display: flex;
   flex-flow: column;
   overflow-y: auto;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     background: transparent;
     width: 3px;
@@ -449,7 +443,7 @@
     margin: auto 0 0;
   }
   &__helps {
-    margin-top: 30px;
+    margin: 28px -2px 0;
   }
   &__help {
     display: flex;
@@ -457,7 +451,7 @@
     text-transform: capitalize;
     color: $grayText;
     position: relative;
-    margin-right: 2px;
+    margin: 2px;
     &:last-child{
       margin-right: 0;
     }
@@ -537,6 +531,14 @@
     color: $grayText;
   }
 }
+.bonuses-list{
+  & > *:first-child{
+    margin-top: 0;
+  }
+  & > *:last-child{
+    margin-bottom: 0;
+  }
+}
 .bonus {
   position: relative;
   border: 2px solid transparent;
@@ -592,6 +594,8 @@
     display: block;
     width: 25px;
     height: 25px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
     margin: -13px auto -5px;
     z-index: 9;
     position: relative;
@@ -649,7 +653,7 @@
   &__btn {
     margin: 0 0 0 20px;
   }
-  &__description {
+  &__apply-text {
     color: $grayText;
     margin-top: 8px;
   }
@@ -698,6 +702,29 @@
       color: $grayText;
     }
     &__btn{
+      width: 100%;
+    }
+  }
+  &-aside-jackpot{
+    background: #F2F6F9;
+    border-radius: 6px;
+    width: 160px;
+    flex-shrink: 0;
+    padding: 12px 16px;
+    margin: -11px -11px -11px 16px;
+    &__title{
+      color: $grayText;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 5px;
+    }
+    &__value{
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    &__btn{
+      padding: 11px 15px;
+      margin: 0;
       width: 100%;
     }
   }
@@ -766,9 +793,14 @@
   }
   &__info{
     .bonus-mobile{
-        &__btn{
-          margin: 8px 0 0;
-        }
+      &__row{
+        margin: 8px 0 0;
+      }
+      &__btn{
+        padding: 12px;
+        min-width: 120px;
+        margin: 0 12px 0 0;
+      }
     }
   }
   &__title {
@@ -787,6 +819,9 @@
   &__available{
     margin-top: 6px;
   }
+  &__description {
+    color: $grayText;
+  }
   &__bottom{
     margin: auto 0 0;
   }
@@ -799,8 +834,9 @@
       }
     }
   }
-  &__description {
+  &__apply-text {
     color: $grayText;
+    margin-top: 8px;
   }
 }
 .bonus-events{
@@ -883,12 +919,12 @@
     margin-right: 16px;
   }
   &__title{
-    margin-bottom: 6px;
     b {
       color: $red;
     }
   }
-  &__description{
+  &__apply-text{
+    margin-top: 8px;
     color: $grayText;
   }
 }
@@ -901,6 +937,10 @@
     width: 100%;
   }
   &__title {
+    width: 330px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     svg {
       transform: rotate(-90deg);
       margin: 0 0 2px 0;
@@ -971,6 +1011,9 @@
       b {
         color: $red;
       }
+    }
+    &__text{
+      margin-bottom: 12px;
     }
     &__btn {
       width: 100%;
@@ -1067,7 +1110,6 @@
   }
 }
 .front-page-banner {
-  /*box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);*/
   border-radius: 8px;
   position: relative;
   &__title{
@@ -1103,6 +1145,7 @@
   &__right{
     width: 100%;
     .expert-card{
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
       width: 100%;
     }
   }
@@ -1134,11 +1177,11 @@
       &:hover{
         border: 1px solid transparent;
         &:before{
-          border: 2px solid $blue;
+          border: 2px solid $red;
         }
         .card__title,
         .card__text{
-          color: $blue;
+          color: $red;
         }
       }
       &:first-child{
@@ -1228,7 +1271,7 @@
     color: $white;
     border: 3px solid $white;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 10px 8px;
     &:nth-child(1){
       background: $blue;
@@ -1255,6 +1298,7 @@
   &__banner {
     margin-top: -20px;
     margin-bottom: 20px;
+    border-radius: 8px 8px 0px 0px;
   }
 
   &__content {
@@ -1292,30 +1336,32 @@
 
     tbody {
       tr {
+        border-radius: 6px;
+        background: $white;
         td {
           padding: 10px 4px;
-          background: $white;
+          background: transparent;
           font-size: 14px;
           line-height: 145%;
           text-transform: capitalize;
           color: $black;
-          border-radius: 6px;
-
           &:first-child {
             font-weight: 600;
             border-left: 5px solid transparent;
             padding-left: 20px;
+            border-radius: 6px 0 0 6px;
           }
-
+          &:last-child{
+            border-radius: 0 6px 6px 0;
+          }
           & a {
             font-weight: 600;
             color: var(--main-color);
           }
         }
-
         &:hover {
+          position: relative;
           box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
-
           td {
             &:first-child {
               border-left: 5px solid var(--main-color);
@@ -1324,8 +1370,9 @@
         }
 
         &:nth-child(even) {
-          td {
-            background: $bgTable;
+          background: $bgTable;
+          td{
+            background: transparent;
           }
         }
 
@@ -1334,7 +1381,6 @@
             &:first-child {
               border-bottom-left-radius: 8px;
             }
-
             &:last-child {
               border-bottom-right-radius: 8px;
             }
@@ -1475,6 +1521,29 @@
         td:last-child {
           font-weight: 600;
           color: $blue;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td {
+          &:first-child {
+            border-radius: 8px 0 0 8px;
+            border-left: 5px solid transparent;
+          }
+          &:last-child{
+            border-radius: 0 8px 8px 0;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          position: relative;
+          box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
+          td {
+            &:first-child {
+              border-left: 5px solid $blue;
+            }
+          }
         }
       }
     }
@@ -1918,7 +1987,7 @@
         background: $blue;
         border: 2px solid $white;
         box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-        border-radius: 4px;
+        border-radius: 8px;
         color: $white;
         padding: 4px 10px;
         width: 100%;
@@ -1964,16 +2033,11 @@
     &__img {
       border-radius: 8px;
       width: 100%;
-      min-height: 200px;
+      min-height: 208px;
       margin-bottom: 15px;
     }
-
     &__title {
       margin-bottom: 5px;
-    }
-
-    &__text {
-      color: $grayText;
     }
   }
 }
@@ -2018,6 +2082,7 @@
       }
     }
     &__description{
+      margin-top: 8px;
       color: $grayText;
     }
     &__icons{
@@ -2099,6 +2164,9 @@
           font-size: 14px;
           line-height: 140%;
           color: $grayText;
+          &:not(:last-child){
+            margin-bottom: 6px;
+          }
           &:before{
             content: "";
             width: 12px;
@@ -2230,7 +2298,7 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
   }
   &__btn{
     margin: 20px 0 0;
@@ -2251,12 +2319,10 @@
     &__step {
       width: 30px;
       height: 30px;
+      flex-shrink: 0;
       border-radius: 50%;
       margin-right: 12px;
       box-shadow: 0px 0px 0.910568px rgba(0, 0, 0, 0.08), 0px 1.82114px 1.82114px rgba(0, 0, 0, 0.12);
-    }
-    &__description {
-      color: $grayText;
     }
   }
 }
@@ -2270,10 +2336,6 @@
   &-card {
     &__title {
       margin-bottom: 8px;
-    }
-
-    &__description {
-      color: $grayText;
     }
   }
 }
@@ -2327,15 +2389,13 @@
   padding: 8px;
   margin-top: 20px;
   &__banner{
-    width: 260px;
+    width: calc(100% + 22px);
     height: 190px;
     position: relative;
-    top: -20px;
-    left: -8px;
-    right: -8px;
+    margin: -20px -8px 8px;
   }
   &__title{
-    margin: -12px 0 10px;
+    margin: 0 0 10px;
     padding: 0 8px;
   }
   &__list{
@@ -2470,6 +2530,13 @@
       .card{
         text-align: center;
         position: relative;
+        &:hover{
+          .card{
+            &__logo{
+              border: 2px solid var(--rating-color);
+            }
+          }
+        }
         &:not(:last-child):after{
           content: "";
           position: absolute;
@@ -2540,7 +2607,7 @@
   text-align: center;
   margin: 12px 0 0;
   &.apply-bonus--open{
-    .apply-bonus__description{
+    .apply-bonus__text{
       display: block;
     }
   }
@@ -2551,7 +2618,7 @@
       margin-left: 5px;
     }
   }
-  &__description{
+  &__text{
     display: none;
     margin: 0 0 8px;
     color: $grayText;
@@ -2586,6 +2653,9 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 15px;
+    .expert-card{
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 .contact{
@@ -2625,9 +2695,8 @@
       padding: 0 0 0 12px;
       cursor: pointer;
       background: transparent;
-      transition: 0.3s;
       &:focus{
-        border: 1px solid $blue;
+        border: 2px solid $blue;
         background: transparent;
         padding: 20px 0 0 15px;
         &::placeholder {
@@ -2637,17 +2706,16 @@
       }
       &:focus + .contact-form__label{
         opacity: 1;
-        transition: 0.3s;
       }
       &.error{
-        border: 1px solid $red;
+        border: 2px solid $red;
         color: $red;
         & + .contact-form__label{
           color: $red;
         }
       }
       &.valid{
-        border: 1px solid $green;
+        border: 2px solid $green;
         color: $green;
         & + .contact-form__label{
           color: $green;
@@ -2745,6 +2813,17 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 16px;
+    overflow-y: auto;
+    height: 152px;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #EAEEF0;
+      border-radius: 6px;
+    }
   }
   .row{
     &__logo{
@@ -2804,8 +2883,8 @@
       background: $yellow;
       border: 2px solid $white;
       box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.05), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-      border-radius: 6px;
-      padding: 1px 3px 3px;
+      border-radius: 8px;
+      padding: 2px 3px 3px;
       width: 63px;
       height: 50px;
       position: absolute;
@@ -2940,7 +3019,7 @@
     border-radius: 6px;
     padding: 8px 10px 10px;
     .logo{
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       &__img{
         margin-right: 7px;
       }
@@ -2982,8 +3061,8 @@
 }
 .best-casino-banner {
   max-width: 800px;
+  overflow: hidden;
   .swiper-main{
-    top: -20px;
     .swiper-button-next,
     .swiper-button-prev{
       /*opacity: 0;*/
@@ -2997,15 +3076,15 @@
       }
     }
     .best-casino-slide{
-      min-height: 300px;
+      min-height: 290px;
       color: $white;
-      padding: 35px 15px 20px;
+      padding: 30px 15px 20px;
       &__content{
         max-width: 420px;
         height: 100%;
       }
       &__left{
-        margin-right: 15px;
+        margin-right: 22px;
       }
       &__logo {
         width: 100px;
@@ -3033,6 +3112,7 @@
         flex-shrink: 0;
         svg {
           margin: 0 1px;
+          color: rgba(255, 255, 255, 0.5);;
           &:nth-child(1),
           &:nth-child(5) {
             margin-top: -8px;
@@ -3059,9 +3139,8 @@
     }
   }
   &__bottom{
-    padding: 12px 12px 10px;
+    padding: 10px 12px;
     position: relative;
-    margin-top: -20px;
   }
   &__timer{
     padding-bottom: 10px;
@@ -3071,10 +3150,11 @@
     }
     .promo{
       background: rgba(61, 110, 234, 0.05);
-      border: 1px solid $blue;
-      border-radius: 3px;
+      border: 1.5px solid $blue;
+      border-radius: 4px;
       min-width: 90px;
-      padding: 4px 5px;
+      min-height: 21px;
+      padding: 0 5px;
       color: $blue;
       svg{
         margin-right: 5px;
@@ -3108,11 +3188,11 @@
       }
     }
     .swiper-button-prev{
-      left: 0;
+      left: 8px;
       display: none;
     }
     .swiper-button-next{
-      right: 0;
+      right: 8px;
       svg{
         transform: rotate(-90deg);
       }
@@ -3184,15 +3264,30 @@
           z-index: -1;
           opacity: 0;
           &:checked ~ .card__label{
-            border: 1px solid $blue;
+            border: 1px solid transparent;
+            &:before{
+              border: 2px solid $orange;
+            }
           }
         }
         &__label{
+          position: relative;
           background: transparent;
           border: 1px solid $grayLine;
           border-radius: 6px;
           padding: 6px 9px;
           cursor: pointer;
+          &:before{
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            display: block;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            border: 2px solid transparent;
+            border-radius: 6px;
+          }
         }
       }
     }
@@ -3201,7 +3296,7 @@
     margin-left: 30px;
     &__cards{
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(4,1fr);
       grid-gap: 8px;
       .card{
         &__input{
@@ -3209,23 +3304,45 @@
           z-index: -1;
           opacity: 0;
           &:checked ~ .card__label{
-            border: 1px solid $blue;
+            border: 1px solid transparent;
+            &:before{
+              border: 2px solid var(--main-color);
+            }
           }
         }
         &__label{
+          position: relative;
           background: transparent;
           border: 1px solid $grayLine;
           border-radius: 6px;
           padding: 6px 9px;
           cursor: pointer;
           min-width: 120px;
+          &:before{
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            display: block;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            border: 2px solid transparent;
+            border-radius: 6px;
+          }
           &:hover{
-            border: 1px solid $blue;
-            color: $blue;
+            color: var(--main-color);
+            border: 1px solid transparent;
+            &:before{
+              border: 2px solid var(--main-color);
+            }
           }
-          svg{
-            margin-bottom: 6px;
-          }
+        }
+        &__icon{
+          display: block;
+          width: 32px;
+          height: 32px;
+          flex-shrink: 0;
+          margin-bottom: 6px;
         }
       }
     }
@@ -3243,6 +3360,7 @@
         &:checked ~ .card__label{
           border: 1px solid $blue;
           color: $blue;
+          background: rgba(61, 110, 234, 0.05);
           svg{
             color: $blue;
           }
@@ -3332,6 +3450,10 @@
         height: auto;
       }
       .img-win{
+        display: block;
+        width: 32px;
+        height: auto;
+        border-radius: 4px;
         position: absolute;
         bottom: -9px;
         left: 50%;
@@ -3380,7 +3502,7 @@
     margin: 12px 0;
     &--rating{
       .stars{
-        margin-bottom: 8px;
+        margin: 0 8px 8px;
       }
     }
   }
@@ -3430,6 +3552,7 @@
   }
 }
 .block-best-casinos{
+  padding: 20px;
   &-info{
     max-width: 430px;
     margin-right: 40px;
@@ -3447,6 +3570,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 12px;
+    width: 100%;
     .card{
       padding: 12px 6px;
       background: $white;
@@ -3721,8 +3845,10 @@
       padding: 12px;
       background: $white;
       border-radius: 6px;
-      border: 1px solid $grayLine;
       position: relative;
+      &:not(:last-child){
+        border: 1px solid $grayLine;
+      }
       &:before{
         content: "";
         position: absolute;
@@ -3735,16 +3861,18 @@
         border-radius: 6px;
       }
       &:hover{
-        border: 1px solid transparent;
-        &:not(:last-child):before{
-          border: 2px solid $green;
+        &:not(:last-child){
+          border: 1px solid transparent;
+          &:before{
+            border: 2px solid $orange;
+          }
         }
         .card__title,
         .card__text,
         .card__svg{
-          color: $green;
+          color: $orange;
           span{
-            border-bottom: 1px solid $green;
+            border-bottom: 1px solid $orange;
           }
         }
       }
@@ -3921,7 +4049,7 @@
         margin-right: 12px;
       }
       &-support{
-        margin-right: 12px;
+        /*margin-right: 12px;*/
         &__title{
           margin-bottom: 2px;
         }
@@ -4202,9 +4330,6 @@
         margin-right: 8px;
         box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
         border-radius: 50%;
-      }
-      &__text{
-        color: $grayText;
       }
     }
   }
@@ -4550,7 +4675,7 @@
       &__top{
         margin: 0 0 12px;
       }
-      &__description{
+      &__apply-text{
         margin: 0 0 12px;
       }
       &__btn{
@@ -4852,11 +4977,13 @@
     width: 100%;
     .card{
       background: $white;
-      border: 1px solid $grayLine;
       border-radius: 6px;
       padding: 10px;
       transition: all 0.3s;
       position: relative;
+      &:not(:last-child){
+        border: 1px solid $grayLine;
+      }
       &::before{
         content: "";
         position: absolute;
@@ -4869,8 +4996,8 @@
         border: 2px solid transparent;
       }
       &:hover{
-        border: 1px solid transparent;
         &:not(:last-child){
+          border: 1px solid transparent;
           &:before{
             border: 2px solid $green;
           }
@@ -4925,7 +5052,7 @@
   &__cards{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
     .card{
       background: $white;
       box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
@@ -5590,6 +5717,37 @@
         color: inherit;
       }
     }
+    &-hint{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      position: relative;
+      &:hover{
+        .card-hint__text{
+          display: block;
+        }
+      }
+      &__icon{
+        cursor: help;
+        color: $grayText;
+      }
+      &__text{
+        display: none;
+        width: 225px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 2;
+        background: rgba(34, 34, 34, 0.96);
+        box-shadow: 0px 10px 20px rgba(81, 81, 81, 0.05);
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 10px;
+        color: $white;
+      }
+    }
   }
 }
 .slots-table{
@@ -5771,7 +5929,7 @@
       }
       .swiper-button-next{
         opacity: 1!important;
-        right: 50%!important;
+        right: 51%!important;
       }
     }
     .online-slots-slide{
@@ -5813,11 +5971,17 @@
         display: none;
       }
     }
-    .swiper-button-prev svg{
-      transform: rotate(90deg);
+    .swiper-button-prev{
+      left: 8px;
+      svg{
+        transform: rotate(90deg);
+      }
     }
-    .swiper-button-next svg{
-      transform: rotate(-90deg);
+    .swiper-button-next{
+      right: 8px;
+      svg{
+        transform: rotate(-90deg);
+      }
     }
     .online-slots-slide{
       min-height: 220px;
@@ -6471,11 +6635,11 @@
       }
     }
     .swiper-button-prev{
-      left: 0;
+      left: 8px;
       display: none;
     }
     .swiper-button-next{
-      right: 0;
+      right: 8px;
       svg{
         transform: rotate(-90deg);
       }
@@ -6765,11 +6929,6 @@
     font-size: 15px;
     line-height: 130%;
     color: $black;
-    &:hover{
-      background: $black;
-      border: 1px solid $black;
-      color: $orange;
-    }
   }
   &__placeholder-text{
     margin-top: 6px;
@@ -7612,7 +7771,7 @@
       &__top{
         margin: 0 0 12px;
       }
-      &__description{
+      &__apply-text{
         margin: 0 0 12px;
       }
       &__btn{
@@ -7653,6 +7812,7 @@
           padding: 5px;
           text-align: center;
           min-width: 90px;
+          margin-right: 12px;
         }
       }
       &-aside{
@@ -7660,9 +7820,8 @@
       }
     }
   }
-  .bonus-list{
+  .bonuses-list{
     .bonus{
-      margin-bottom: 0;
       &__left{
         margin: 0;
       }
@@ -7682,16 +7841,16 @@
         margin-bottom: 8px;
       }
       .tags{
-        margin-right: 15px;
-        &:last-child{
-          margin-right: 0;
-        }
         &__item{
           background: #F1F8FC;
           border-radius: 6px;
           padding: 5px;
           text-align: center;
           min-width: 90px;
+          margin-right: 12px;
+          &:last-child{
+            margin-right: 0;
+          }
         }
       }
       &-aside{
@@ -7738,6 +7897,10 @@
             padding: 5px;
             text-align: center;
             min-width: 90px;
+            margin-right: 12px;
+            &:last-child{
+              margin-right: 0;
+            }
           }
         }
       }
@@ -8003,6 +8166,8 @@
                   width: 120px;
                 }
                 .provider{
+                  font-size: 13px;
+                  line-height: 145%;
                   width: 100px;
                 }
               }
@@ -8050,6 +8215,7 @@
           img{
             width: 100%;
             height: 100%;
+            border-radius: 8px 8px 0 0;
           }
         }
         &__title{
@@ -8083,13 +8249,13 @@
       opacity: 0;
     }
     .swiper-button-prev{
-      left: -12px;
+      left: 8px;
       svg{
         transform: rotate(90deg);
       }
     }
     .swiper-button-next{
-      right: -12px;
+      right: 8px;
       svg{
         transform: rotate(-90deg);
       }
@@ -8166,9 +8332,16 @@
   }
 }
 .slots-filter{
-  padding: 16px 20px;
+  padding: 16px 20px 0;
   &__buttons{
-    margin: 20px 0 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    margin: 0 -20px;
+    padding: 16px 20px;
+    background: $white;
+    border-radius: 0 0 8px 8px;
+    border-top: 1px solid $grayLine;
     .btn-main{
       width: 100%;
       min-width: 100%;
@@ -8203,8 +8376,11 @@
   &-group{
     padding: 16px 0;
     border-bottom: 1px solid $grayLine;
-    &:first-child{
+    &:first-child {
       padding-top: 0;
+    }
+    &:last-child{
+      border-bottom: none;
     }
     &__title{
       cursor: pointer;
@@ -8289,7 +8465,7 @@
         &:before{
           content: "%";
           position: absolute;
-          z-index: 99;
+          z-index: 9;
           top: 5px;
           left: 8px;
           font-size: 15px;
@@ -8300,7 +8476,7 @@
         &:after{
           content: "%";
           position: absolute;
-          z-index: 99;
+          z-index: 9;
           top: 5px;
           left: 50%;
           transform: translateX(-50%);
@@ -8315,7 +8491,7 @@
         &:before{
           content: "£";
           position: absolute;
-          z-index: 99;
+          z-index: 9;
           top: 5px;
           left: 8px;
           font-size: 15px;
@@ -8326,7 +8502,7 @@
         &:after{
           content: "£";
           position: absolute;
-          z-index: 99;
+          z-index: 9;
           top: 5px;
           left: 50%;
           transform: translateX(-50%);
@@ -8683,6 +8859,9 @@
         line-height: 140%;
         color: $black;
         border-radius: 6px;
+        &:hover{
+          background: #E0E4E6;
+        }
         &.pagination__item--active{
           background: $blue;
           color: $white;
@@ -8723,7 +8902,9 @@
     border-radius: 8px 8px 0 0;
     overflow: hidden;
     &.review-aside__banner--casino{
-      background-position: 75%;
+      margin: -20px -6px 0;
+      width: calc(100% + 18px);
+      height: 190px;
     }
     img{
       width: 100%;
@@ -8800,7 +8981,7 @@
     position: relative;
     text-transform: capitalize;
     &:not(:last-child){
-      margin: 0 24px 0 0;
+      margin: 0 10px 0 0;
     }
     &:before{
       content: "";
@@ -8815,7 +8996,7 @@
       border-radius: 4px 4px 0px 0px;
       opacity: 0;
     }
-    &.review-slots-nav__item--active{
+    &.review-nav__item--active{
       &:before{
         opacity: 1;
       }
@@ -8922,6 +9103,9 @@
     margin-bottom: 12px;
     .stars{
       margin-right: 8px;
+      svg{
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
     .h5{
       font-size: 16px;
@@ -9077,6 +9261,7 @@
     background: $white;
     position: relative;
     z-index: 2;
+    border-radius: 0 0 8px 8px;
     .card{
       flex: 1 1 auto;
       margin: 6px;
@@ -9391,7 +9576,6 @@
     border: 4px solid $white;
     border-radius: 50%;
     margin-left: -45px;
-    margin-right: 10px;
     flex-shrink: 0;
     align-self: center;
     img{

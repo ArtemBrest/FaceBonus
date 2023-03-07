@@ -914,6 +914,8 @@ table tbody tr:last-child td:last-child {
 .cms-description-text .expert-card {
   width: 245px;
   margin: 0 0 0 30px;
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 #fade {
@@ -933,16 +935,15 @@ table tbody tr:last-child td:last-child {
   display: none;
   position: fixed;
   z-index: 9999;
-  top: 5%;
+  top: 50%;
   left: 50%;
   width: 1190px;
-  background: #FFFFFF;
-  border-radius: 3px;
+  background: #F2F3F6;
   padding: 15px;
   overflow: hidden;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .exit-popup__close {
@@ -955,24 +956,39 @@ table tbody tr:last-child td:last-child {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #F5F5F5;
+  background: #EAEEF0;
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
   width: 24px;
   height: 24px;
-  color: #222222;
+  color: #888888;
   border-radius: 50%;
   outline: 0;
   border: 0;
 }
 
+.exit-popup__close:hover {
+  color: #828587;
+  background: #E1E5E7;
+}
+
 .exit-popup__wrapper {
   display: grid;
-  grid-template-columns: 390px 1fr;
+  grid-template-columns: 400px 1fr;
   grid-gap: 40px;
   position: relative;
+}
+
+.exit-popup__banner {
+  width: 400px;
+  height: 430px;
+  margin: -10px 0 0;
+}
+
+.exit-popup__content {
+  margin: 0 0 10px;
 }
 
 .exit-popup__title-sub {
@@ -1374,6 +1390,7 @@ table tbody tr:last-child td:last-child {
   -ms-flex-flow: column;
   flex-flow: column;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .aside-menu::-webkit-scrollbar {
@@ -1463,7 +1480,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .aside-menu__helps {
-  margin-top: 30px;
+  margin: 28px -2px 0;
 }
 
 .aside-menu__help {
@@ -1476,7 +1493,7 @@ table tbody tr:last-child td:last-child {
   text-transform: capitalize;
   color: #888888;
   position: relative;
-  margin-right: 2px;
+  margin: 2px;
 }
 
 .aside-menu__help:last-child {
@@ -1563,6 +1580,14 @@ table tbody tr:last-child td:last-child {
   color: #888888;
 }
 
+.bonuses-list > *:first-child {
+  margin-top: 0;
+}
+
+.bonuses-list > *:last-child {
+  margin-bottom: 0;
+}
+
 .bonus {
   position: relative;
   border: 2px solid transparent;
@@ -1631,6 +1656,9 @@ table tbody tr:last-child td:last-child {
   display: block;
   width: 25px;
   height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
   margin: -13px auto -5px;
   z-index: 9;
   position: relative;
@@ -1701,7 +1729,7 @@ table tbody tr:last-child td:last-child {
   margin: 0 0 0 20px;
 }
 
-.bonus__description {
+.bonus__apply-text {
   color: #888888;
   margin-top: 8px;
 }
@@ -1763,6 +1791,34 @@ table tbody tr:last-child td:last-child {
 }
 
 .bonus-aside__btn {
+  width: 100%;
+}
+
+.bonus-aside-jackpot {
+  background: #F2F6F9;
+  border-radius: 6px;
+  width: 160px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 12px 16px;
+  margin: -11px -11px -11px 16px;
+}
+
+.bonus-aside-jackpot__title {
+  color: #888888;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.bonus-aside-jackpot__value {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.bonus-aside-jackpot__btn {
+  padding: 11px 15px;
+  margin: 0;
   width: 100%;
 }
 
@@ -1834,8 +1890,14 @@ table tbody tr:last-child td:last-child {
   margin-top: -6px;
 }
 
-.bonus-mobile__info .bonus-mobile__btn {
+.bonus-mobile__info .bonus-mobile__row {
   margin: 8px 0 0;
+}
+
+.bonus-mobile__info .bonus-mobile__btn {
+  padding: 12px;
+  min-width: 120px;
+  margin: 0 12px 0 0;
 }
 
 .bonus-mobile__title.p1 b {
@@ -1854,6 +1916,10 @@ table tbody tr:last-child td:last-child {
   margin-top: 6px;
 }
 
+.bonus-mobile__description {
+  color: #888888;
+}
+
 .bonus-mobile__bottom {
   margin: auto 0 0;
 }
@@ -1870,8 +1936,9 @@ table tbody tr:last-child td:last-child {
   margin: 0;
 }
 
-.bonus-mobile__description {
+.bonus-mobile__apply-text {
   color: #888888;
+  margin-top: 8px;
 }
 
 .bonus-events {
@@ -1956,15 +2023,12 @@ table tbody tr:last-child td:last-child {
   margin-right: 16px;
 }
 
-.bonus-events__title {
-  margin-bottom: 6px;
-}
-
 .bonus-events__title b {
   color: #F0284A;
 }
 
-.bonus-events__description {
+.bonus-events__apply-text {
+  margin-top: 8px;
   color: #888888;
 }
 
@@ -1976,6 +2040,14 @@ table tbody tr:last-child td:last-child {
 
 .slots-card-big__info {
   width: 100%;
+}
+
+.slots-card-big__title {
+  width: 330px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 .slots-card-big__title svg {
@@ -2067,6 +2139,10 @@ table tbody tr:last-child td:last-child {
 
 .slots-card-big .slots-card-bonus__title b {
   color: #F0284A;
+}
+
+.slots-card-big .slots-card-bonus__text {
+  margin-bottom: 12px;
 }
 
 .slots-card-big .slots-card-bonus__btn {
@@ -2184,7 +2260,6 @@ table tbody tr:last-child td:last-child {
 }
 
 .front-page-banner {
-  /*box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);*/
   border-radius: 8px;
   position: relative;
 }
@@ -2228,6 +2303,8 @@ table tbody tr:last-child td:last-child {
 }
 
 .block-front-page__right .expert-card {
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -2266,12 +2343,12 @@ table tbody tr:last-child td:last-child {
 }
 
 .block-front-page__cards .card:hover:before {
-  border: 2px solid #1876F0;
+  border: 2px solid #F0284A;
 }
 
 .block-front-page__cards .card:hover .card__title,
 .block-front-page__cards .card:hover .card__text {
-  color: #1876F0;
+  color: #F0284A;
 }
 
 .block-front-page__cards .card:first-child {
@@ -2383,7 +2460,7 @@ table tbody tr:last-child td:last-child {
   border: 3px solid #FFFFFF;
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 10px 8px;
 }
 
@@ -2416,6 +2493,7 @@ table tbody tr:last-child td:last-child {
 .top-10-comparison__banner {
   margin-top: -20px;
   margin-bottom: 20px;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .top-10-comparison__content {
@@ -2450,20 +2528,29 @@ table tbody tr:last-child td:last-child {
   border-top-right-radius: 8px;
 }
 
+.top-10-comparison__table tbody tr {
+  border-radius: 6px;
+  background: #FFFFFF;
+}
+
 .top-10-comparison__table tbody tr td {
   padding: 10px 4px;
-  background: #FFFFFF;
+  background: transparent;
   font-size: 14px;
   line-height: 145%;
   text-transform: capitalize;
   color: #222222;
-  border-radius: 6px;
 }
 
 .top-10-comparison__table tbody tr td:first-child {
   font-weight: 600;
   border-left: 5px solid transparent;
   padding-left: 20px;
+  border-radius: 6px 0 0 6px;
+}
+
+.top-10-comparison__table tbody tr td:last-child {
+  border-radius: 0 6px 6px 0;
 }
 
 .top-10-comparison__table tbody tr td a {
@@ -2472,6 +2559,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .top-10-comparison__table tbody tr:hover {
+  position: relative;
   -webkit-box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
 }
@@ -2480,8 +2568,12 @@ table tbody tr:last-child td:last-child {
   border-left: 5px solid var(--main-color);
 }
 
-.top-10-comparison__table tbody tr:nth-child(even) td {
+.top-10-comparison__table tbody tr:nth-child(even) {
   background: #FBFCFD;
+}
+
+.top-10-comparison__table tbody tr:nth-child(even) td {
+  background: transparent;
 }
 
 .top-10-comparison__table tbody tr:last-child td:first-child {
@@ -2648,6 +2740,26 @@ table tbody tr:last-child td:last-child {
 .block-description .table-offer tbody tr td:last-child {
   font-weight: 600;
   color: #1876F0;
+}
+
+.block-description .table-offer tbody tr td:first-child {
+  border-radius: 8px 0 0 8px;
+  border-left: 5px solid transparent;
+}
+
+.block-description .table-offer tbody tr td:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.block-description .table-offer tbody tr:hover {
+  cursor: pointer;
+  position: relative;
+  -webkit-box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.block-description .table-offer tbody tr:hover td:first-child {
+  border-left: 5px solid #1876F0;
 }
 
 .block-description .table-fraud-test tbody tr td {
@@ -3094,7 +3206,7 @@ table tbody tr:last-child td:last-child {
   border: 2px solid #FFFFFF;
   -webkit-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
   box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  border-radius: 8px;
   color: #FFFFFF;
   padding: 4px 10px;
   width: 100%;
@@ -3141,16 +3253,12 @@ table tbody tr:last-child td:last-child {
 .how-to-card__img {
   border-radius: 8px;
   width: 100%;
-  min-height: 200px;
+  min-height: 208px;
   margin-bottom: 15px;
 }
 
 .how-to-card__title {
   margin-bottom: 5px;
-}
-
-.how-to-card__text {
-  color: #888888;
 }
 
 .front-page-best-casino .card__logo {
@@ -3197,6 +3305,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .front-page-best-casino .card__description {
+  margin-top: 8px;
   color: #888888;
 }
 
@@ -3286,6 +3395,10 @@ table tbody tr:last-child td:last-child {
   font-size: 14px;
   line-height: 140%;
   color: #888888;
+}
+
+.front-page-best-casino .card .pros-and-cons ul li:not(:last-child) {
+  margin-bottom: 6px;
 }
 
 .front-page-best-casino .card .pros-and-cons ul li:before {
@@ -3421,7 +3534,7 @@ table tbody tr:last-child td:last-child {
 .casino-bonuses__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 
 .casino-bonuses__btn {
@@ -3447,14 +3560,12 @@ table tbody tr:last-child td:last-child {
 .top-tips-card__step {
   width: 30px;
   height: 30px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   border-radius: 50%;
   margin-right: 12px;
   -webkit-box-shadow: 0px 0px 0.910568px rgba(0, 0, 0, 0.08), 0px 1.82114px 1.82114px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 0.910568px rgba(0, 0, 0, 0.08), 0px 1.82114px 1.82114px rgba(0, 0, 0, 0.12);
-}
-
-.top-tips-card__description {
-  color: #888888;
 }
 
 .faq__cards {
@@ -3465,10 +3576,6 @@ table tbody tr:last-child td:last-child {
 
 .faq-card__title {
   margin-bottom: 8px;
-}
-
-.faq-card__description {
-  color: #888888;
 }
 
 .footer {
@@ -3533,16 +3640,14 @@ table tbody tr:last-child td:last-child {
 }
 
 .navigation__banner {
-  width: 260px;
+  width: calc(100% + 22px);
   height: 190px;
   position: relative;
-  top: -20px;
-  left: -8px;
-  right: -8px;
+  margin: -20px -8px 8px;
 }
 
 .navigation__title {
-  margin: -12px 0 10px;
+  margin: 0 0 10px;
   padding: 0 8px;
 }
 
@@ -3699,6 +3804,10 @@ table tbody tr:last-child td:last-child {
   position: relative;
 }
 
+.rating-casinos-bonuses__cards .card:hover .card__logo {
+  border: 2px solid var(--rating-color);
+}
+
 .rating-casinos-bonuses__cards .card:not(:last-child):after {
   content: "";
   position: absolute;
@@ -3785,7 +3894,7 @@ table tbody tr:last-child td:last-child {
   margin: 12px 0 0;
 }
 
-.apply-bonus.apply-bonus--open .apply-bonus__description {
+.apply-bonus.apply-bonus--open .apply-bonus__text {
   display: block;
 }
 
@@ -3798,7 +3907,7 @@ table tbody tr:last-child td:last-child {
   margin-left: 5px;
 }
 
-.apply-bonus__description {
+.apply-bonus__text {
   display: none;
   margin: 0 0 8px;
   color: #888888;
@@ -3840,6 +3949,11 @@ table tbody tr:last-child td:last-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
+}
+
+.about__team .expert-card {
+  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.08), 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact > *:first-child {
@@ -3884,13 +3998,10 @@ table tbody tr:last-child td:last-child {
   padding: 0 0 0 12px;
   cursor: pointer;
   background: transparent;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .contact-form__input:focus {
-  border: 1px solid #1876F0;
+  border: 2px solid #1876F0;
   background: transparent;
   padding: 20px 0 0 15px;
 }
@@ -3928,13 +4039,10 @@ table tbody tr:last-child td:last-child {
 
 .contact-form__input:focus + .contact-form__label {
   opacity: 1;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .contact-form__input.error {
-  border: 1px solid #F0284A;
+  border: 2px solid #F0284A;
   color: #F0284A;
 }
 
@@ -3943,7 +4051,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .contact-form__input.valid {
-  border: 1px solid #0F975E;
+  border: 2px solid #0F975E;
   color: #0F975E;
 }
 
@@ -4047,6 +4155,19 @@ table tbody tr:last-child td:last-child {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  overflow-y: auto;
+  height: 152px;
+}
+
+.rating-best-casino .list::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+  height: 4px;
+}
+
+.rating-best-casino .list::-webkit-scrollbar-thumb {
+  background: #EAEEF0;
+  border-radius: 6px;
 }
 
 .rating-best-casino .row__logo {
@@ -4123,8 +4244,8 @@ table tbody tr:last-child td:last-child {
   border: 2px solid #FFFFFF;
   -webkit-box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.05), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
   box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.05), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  padding: 1px 3px 3px;
+  border-radius: 8px;
+  padding: 2px 3px 3px;
   width: 63px;
   height: 50px;
   position: absolute;
@@ -4297,7 +4418,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-casino-sidebar__logo .logo {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .best-casino-sidebar__logo .logo__img {
@@ -4355,10 +4476,7 @@ table tbody tr:last-child td:last-child {
 
 .best-casino-banner {
   max-width: 800px;
-}
-
-.best-casino-banner .swiper-main {
-  top: -20px;
+  overflow: hidden;
 }
 
 .best-casino-banner .swiper-main .swiper-button-next,
@@ -4377,9 +4495,9 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-casino-banner .swiper-main .best-casino-slide {
-  min-height: 300px;
+  min-height: 290px;
   color: #FFFFFF;
-  padding: 35px 15px 20px;
+  padding: 30px 15px 20px;
 }
 
 .best-casino-banner .swiper-main .best-casino-slide__content {
@@ -4388,7 +4506,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-casino-banner .swiper-main .best-casino-slide__left {
-  margin-right: 15px;
+  margin-right: 22px;
 }
 
 .best-casino-banner .swiper-main .best-casino-slide__logo {
@@ -4426,6 +4544,7 @@ table tbody tr:last-child td:last-child {
 
 .best-casino-banner .swiper-main .best-casino-slide__rating svg {
   margin: 0 1px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .best-casino-banner .swiper-main .best-casino-slide__rating svg:nth-child(1),
@@ -4454,9 +4573,8 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-casino-banner__bottom {
-  padding: 12px 12px 10px;
+  padding: 10px 12px;
   position: relative;
-  margin-top: -20px;
 }
 
 .best-casino-banner__timer {
@@ -4470,10 +4588,11 @@ table tbody tr:last-child td:last-child {
 
 .best-casino-banner__timer .promo {
   background: rgba(61, 110, 234, 0.05);
-  border: 1px solid #1876F0;
-  border-radius: 3px;
+  border: 1.5px solid #1876F0;
+  border-radius: 4px;
   min-width: 90px;
-  padding: 4px 5px;
+  min-height: 21px;
+  padding: 0 5px;
   color: #1876F0;
 }
 
@@ -4526,12 +4645,12 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-casino-banner .swiper-sub .swiper-button-prev {
-  left: 0;
+  left: 8px;
   display: none;
 }
 
 .best-casino-banner .swiper-sub .swiper-button-next {
-  right: 0;
+  right: 8px;
 }
 
 .best-casino-banner .swiper-sub .swiper-button-next svg {
@@ -4622,15 +4741,32 @@ table tbody tr:last-child td:last-child {
 }
 
 .casinos-filter-socials__cards .card__input:checked ~ .card__label {
-  border: 1px solid #1876F0;
+  border: 1px solid transparent;
+}
+
+.casinos-filter-socials__cards .card__input:checked ~ .card__label:before {
+  border: 2px solid #FFB526;
 }
 
 .casinos-filter-socials__cards .card__label {
+  position: relative;
   background: transparent;
   border: 1px solid #EAEEF0;
   border-radius: 6px;
   padding: 6px 9px;
   cursor: pointer;
+}
+
+.casinos-filter-socials__cards .card__label:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border: 2px solid transparent;
+  border-radius: 6px;
 }
 
 .casinos-filter-checkbox {
@@ -4639,7 +4775,7 @@ table tbody tr:last-child td:last-child {
 
 .casinos-filter-checkbox__cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
 }
 
@@ -4650,10 +4786,15 @@ table tbody tr:last-child td:last-child {
 }
 
 .casinos-filter-checkbox__cards .card__input:checked ~ .card__label {
-  border: 1px solid #1876F0;
+  border: 1px solid transparent;
+}
+
+.casinos-filter-checkbox__cards .card__input:checked ~ .card__label:before {
+  border: 2px solid var(--main-color);
 }
 
 .casinos-filter-checkbox__cards .card__label {
+  position: relative;
   background: transparent;
   border: 1px solid #EAEEF0;
   border-radius: 6px;
@@ -4662,12 +4803,33 @@ table tbody tr:last-child td:last-child {
   min-width: 120px;
 }
 
-.casinos-filter-checkbox__cards .card__label:hover {
-  border: 1px solid #1876F0;
-  color: #1876F0;
+.casinos-filter-checkbox__cards .card__label:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border: 2px solid transparent;
+  border-radius: 6px;
 }
 
-.casinos-filter-checkbox__cards .card__label svg {
+.casinos-filter-checkbox__cards .card__label:hover {
+  color: var(--main-color);
+  border: 1px solid transparent;
+}
+
+.casinos-filter-checkbox__cards .card__label:hover:before {
+  border: 2px solid var(--main-color);
+}
+
+.casinos-filter-checkbox__cards .card__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-bottom: 6px;
 }
 
@@ -4688,6 +4850,7 @@ table tbody tr:last-child td:last-child {
 .casinos-filter__cards .card__input:checked ~ .card__label {
   border: 1px solid #1876F0;
   color: #1876F0;
+  background: rgba(61, 110, 234, 0.05);
 }
 
 .casinos-filter__cards .card__input:checked ~ .card__label svg {
@@ -4796,6 +4959,10 @@ table tbody tr:last-child td:last-child {
 }
 
 .battle-casino__logo .img-win {
+  display: block;
+  width: 32px;
+  height: auto;
+  border-radius: 4px;
   position: absolute;
   bottom: -9px;
   left: 50%;
@@ -4857,7 +5024,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .battle__row--rating .stars {
-  margin-bottom: 8px;
+  margin: 0 8px 8px;
 }
 
 .battle__left,
@@ -4917,6 +5084,10 @@ table tbody tr:last-child td:last-child {
   transform: translateX(-50%);
 }
 
+.block-best-casinos {
+  padding: 20px;
+}
+
 .block-best-casinos-info {
   max-width: 430px;
   margin-right: 40px;
@@ -4938,6 +5109,7 @@ table tbody tr:last-child td:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 12px;
+  width: 100%;
 }
 
 .block-best-casinos__cards .card {
@@ -5282,8 +5454,11 @@ table tbody tr:last-child td:last-child {
   padding: 12px;
   background: #FFFFFF;
   border-radius: 6px;
-  border: 1px solid #EAEEF0;
   position: relative;
+}
+
+.casino-bonus-banner__cards .card:not(:last-child) {
+  border: 1px solid #EAEEF0;
 }
 
 .casino-bonus-banner__cards .card:before {
@@ -5298,24 +5473,24 @@ table tbody tr:last-child td:last-child {
   border-radius: 6px;
 }
 
-.casino-bonus-banner__cards .card:hover {
+.casino-bonus-banner__cards .card:hover:not(:last-child) {
   border: 1px solid transparent;
 }
 
 .casino-bonus-banner__cards .card:hover:not(:last-child):before {
-  border: 2px solid #0F975E;
+  border: 2px solid #FFB526;
 }
 
 .casino-bonus-banner__cards .card:hover .card__title,
 .casino-bonus-banner__cards .card:hover .card__text,
 .casino-bonus-banner__cards .card:hover .card__svg {
-  color: #0F975E;
+  color: #FFB526;
 }
 
 .casino-bonus-banner__cards .card:hover .card__title span,
 .casino-bonus-banner__cards .card:hover .card__text span,
 .casino-bonus-banner__cards .card:hover .card__svg span {
-  border-bottom: 1px solid #0F975E;
+  border-bottom: 1px solid #FFB526;
 }
 
 .casino-bonus-banner__cards .card:last-child {
@@ -5509,7 +5684,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .bonus-casino-free-spins__cards .card-support {
-  margin-right: 12px;
+  /*margin-right: 12px;*/
 }
 
 .bonus-casino-free-spins__cards .card-support__title {
@@ -5831,10 +6006,6 @@ table tbody tr:last-child td:last-child {
   -webkit-box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 1.09268px rgba(0, 0, 0, 0.08), 0px 2.18536px 2.18536px rgba(0, 0, 0, 0.12);
   border-radius: 50%;
-}
-
-.terms-conditions__cards .card__text {
-  color: #888888;
 }
 
 .pros-or-cons {
@@ -6255,7 +6426,7 @@ table tbody tr:last-child td:last-child {
   margin: 0 0 12px;
 }
 
-.new-online-casinos__top .bonus__description {
+.new-online-casinos__top .bonus__apply-text {
   margin: 0 0 12px;
 }
 
@@ -6597,13 +6768,16 @@ table tbody tr:last-child td:last-child {
 
 .mobile-casino-banner__tabs .card {
   background: #FFFFFF;
-  border: 1px solid #EAEEF0;
   border-radius: 6px;
   padding: 10px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
+}
+
+.mobile-casino-banner__tabs .card:not(:last-child) {
+  border: 1px solid #EAEEF0;
 }
 
 .mobile-casino-banner__tabs .card::before {
@@ -6618,7 +6792,7 @@ table tbody tr:last-child td:last-child {
   border: 2px solid transparent;
 }
 
-.mobile-casino-banner__tabs .card:hover {
+.mobile-casino-banner__tabs .card:hover:not(:last-child) {
   border: 1px solid transparent;
 }
 
@@ -6686,7 +6860,7 @@ table tbody tr:last-child td:last-child {
 .mobile-bonuses__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 
 .mobile-bonuses__cards .card {
@@ -7517,6 +7691,46 @@ table tbody tr:last-child td:last-child {
   color: inherit;
 }
 
+.exclusive-bonuses .card-hint {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.exclusive-bonuses .card-hint:hover .card-hint__text {
+  display: block;
+}
+
+.exclusive-bonuses .card-hint__icon {
+  cursor: help;
+  color: #888888;
+}
+
+.exclusive-bonuses .card-hint__text {
+  display: none;
+  width: 225px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 2;
+  background: rgba(34, 34, 34, 0.96);
+  -webkit-box-shadow: 0px 10px 20px rgba(81, 81, 81, 0.05);
+  box-shadow: 0px 10px 20px rgba(81, 81, 81, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
 .slots-table {
   border-radius: 8px;
 }
@@ -7701,7 +7915,7 @@ table tbody tr:last-child td:last-child {
 
 .online-slots-slider__third .swiper-main .swiper-button-next {
   opacity: 1 !important;
-  right: 50% !important;
+  right: 51% !important;
 }
 
 .online-slots-slider__third .online-slots-slide .btn-main--third {
@@ -7758,10 +7972,18 @@ table tbody tr:last-child td:last-child {
   display: none;
 }
 
+.online-slots-slider .swiper-main .swiper-button-prev {
+  left: 8px;
+}
+
 .online-slots-slider .swiper-main .swiper-button-prev svg {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.online-slots-slider .swiper-main .swiper-button-next {
+  right: 8px;
 }
 
 .online-slots-slider .swiper-main .swiper-button-next svg {
@@ -8546,12 +8768,12 @@ table tbody tr:last-child td:last-child {
 }
 
 .best-slot-sites-slider .swiper-sub .swiper-button-prev {
-  left: 0;
+  left: 8px;
   display: none;
 }
 
 .best-slot-sites-slider .swiper-sub .swiper-button-next {
-  right: 0;
+  right: 8px;
 }
 
 .best-slot-sites-slider .swiper-sub .swiper-button-next svg {
@@ -8904,12 +9126,6 @@ table tbody tr:last-child td:last-child {
   font-size: 15px;
   line-height: 130%;
   color: #222222;
-}
-
-.banner-fs__btn:hover {
-  background: #222222;
-  border: 1px solid #222222;
-  color: #FFB526;
 }
 
 .banner-fs__placeholder-text {
@@ -9948,7 +10164,7 @@ table tbody tr:last-child td:last-child {
   margin: 0 0 12px;
 }
 
-.new-online-slots__top .bonus__description {
+.new-online-slots__top .bonus__apply-text {
   margin: 0 0 12px;
 }
 
@@ -9998,56 +10214,50 @@ table tbody tr:last-child td:last-child {
   padding: 5px;
   text-align: center;
   min-width: 90px;
+  margin-right: 12px;
 }
 
 .new-online-slots__bottom .bonus-aside {
   min-width: 190px;
 }
 
-.new-online-slots .bonus-list .bonus {
-  margin-bottom: 0;
-}
-
-.new-online-slots .bonus-list .bonus__left {
+.new-online-slots .bonuses-list .bonus__left {
   margin: 0;
 }
 
-.new-online-slots .bonus-list .bonus__slots {
+.new-online-slots .bonuses-list .bonus__slots {
   margin-right: 12px;
 }
 
-.new-online-slots .bonus-list .bonus__logo-slots {
+.new-online-slots .bonuses-list .bonus__logo-slots {
   width: 105px;
   height: 80px;
 }
 
-.new-online-slots .bonus-list .bonus__logo-slots img {
+.new-online-slots .bonuses-list .bonus__logo-slots img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.new-online-slots .bonus-list .bonus__title {
+.new-online-slots .bonuses-list .bonus__title {
   margin-bottom: 8px;
 }
 
-.new-online-slots .bonus-list .bonus .tags {
-  margin-right: 15px;
-}
-
-.new-online-slots .bonus-list .bonus .tags:last-child {
-  margin-right: 0;
-}
-
-.new-online-slots .bonus-list .bonus .tags__item {
+.new-online-slots .bonuses-list .bonus .tags__item {
   background: #F1F8FC;
   border-radius: 6px;
   padding: 5px;
   text-align: center;
   min-width: 90px;
+  margin-right: 12px;
 }
 
-.new-online-slots .bonus-list .bonus-aside {
+.new-online-slots .bonuses-list .bonus .tags__item:last-child {
+  margin-right: 0;
+}
+
+.new-online-slots .bonuses-list .bonus-aside {
   min-width: 235px;
 }
 
@@ -10097,6 +10307,11 @@ table tbody tr:last-child td:last-child {
   padding: 5px;
   text-align: center;
   min-width: 90px;
+  margin-right: 12px;
+}
+
+.most-played-online-slots__cards .card__row .tags__item:last-child {
+  margin-right: 0;
 }
 
 .most-played-online-slots__cards .card__description {
@@ -10388,6 +10603,8 @@ table tbody tr:last-child td:last-child {
 }
 
 .video-slots-table .slots-table tbody tr td .row__info .provider {
+  font-size: 13px;
+  line-height: 145%;
   width: 100px;
 }
 
@@ -10441,6 +10658,7 @@ table tbody tr:last-child td:last-child {
 .video-slots-slider__swiper .video-slots-slide__logo img {
   width: 100%;
   height: 100%;
+  border-radius: 8px 8px 0 0;
 }
 
 .video-slots-slider__swiper .video-slots-slide__title {
@@ -10488,7 +10706,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .video-slots-slider .swiper-button-prev {
-  left: -12px;
+  left: 8px;
 }
 
 .video-slots-slider .swiper-button-prev svg {
@@ -10498,7 +10716,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .video-slots-slider .swiper-button-next {
-  right: -12px;
+  right: 8px;
 }
 
 .video-slots-slider .swiper-button-next svg {
@@ -10585,11 +10803,18 @@ table tbody tr:last-child td:last-child {
 }
 
 .slots-filter {
-  padding: 16px 20px;
+  padding: 16px 20px 0;
 }
 
 .slots-filter__buttons {
-  margin: 20px 0 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  margin: 0 -20px;
+  padding: 16px 20px;
+  background: #FFFFFF;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #EAEEF0;
 }
 
 .slots-filter__buttons .btn-main {
@@ -10637,6 +10862,10 @@ table tbody tr:last-child td:last-child {
 
 .slots-filter-group:first-child {
   padding-top: 0;
+}
+
+.slots-filter-group:last-child {
+  border-bottom: none;
 }
 
 .slots-filter-group__title {
@@ -10731,7 +10960,7 @@ table tbody tr:last-child td:last-child {
 .slots-filter-range__inputs.slots-filter-range__inputs--percent:before {
   content: "%";
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   top: 5px;
   left: 8px;
   font-size: 15px;
@@ -10743,7 +10972,7 @@ table tbody tr:last-child td:last-child {
 .slots-filter-range__inputs.slots-filter-range__inputs--percent:after {
   content: "%";
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   top: 5px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -10759,7 +10988,7 @@ table tbody tr:last-child td:last-child {
 .slots-filter-range__inputs.slots-filter-range__inputs--money:before {
   content: "£";
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   top: 5px;
   left: 8px;
   font-size: 15px;
@@ -10771,7 +11000,7 @@ table tbody tr:last-child td:last-child {
 .slots-filter-range__inputs.slots-filter-range__inputs--money:after {
   content: "£";
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   top: 5px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -11250,6 +11479,10 @@ table tbody tr:last-child td:last-child {
   border-radius: 6px;
 }
 
+.slots-all-pagination .pagination__item:hover {
+  background: #E0E4E6;
+}
+
 .slots-all-pagination .pagination__item.pagination__item--active {
   background: #1876F0;
   color: #FFFFFF;
@@ -11300,7 +11533,9 @@ table tbody tr:last-child td:last-child {
 }
 
 .review-aside__banner.review-aside__banner--casino {
-  background-position: 75%;
+  margin: -20px -6px 0;
+  width: calc(100% + 18px);
+  height: 190px;
 }
 
 .review-aside__banner img {
@@ -11391,7 +11626,7 @@ table tbody tr:last-child td:last-child {
 }
 
 .review-nav__item:not(:last-child) {
-  margin: 0 24px 0 0;
+  margin: 0 10px 0 0;
 }
 
 .review-nav__item:before {
@@ -11408,7 +11643,7 @@ table tbody tr:last-child td:last-child {
   opacity: 0;
 }
 
-.review-nav__item.review-slots-nav__item--active:before {
+.review-nav__item.review-nav__item--active:before {
   opacity: 1;
 }
 
@@ -11539,6 +11774,10 @@ table tbody tr:last-child td:last-child {
 
 .review-slots-banner__rating .stars {
   margin-right: 8px;
+}
+
+.review-slots-banner__rating .stars svg {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .review-slots-banner__rating .h5 {
@@ -11708,6 +11947,7 @@ table tbody tr:last-child td:last-child {
   background: #FFFFFF;
   position: relative;
   z-index: 2;
+  border-radius: 0 0 8px 8px;
 }
 
 .review-casino-banner__cards .card {
@@ -12080,7 +12320,6 @@ table tbody tr:last-child td:last-child {
   border: 4px solid #FFFFFF;
   border-radius: 50%;
   margin-left: -45px;
-  margin-right: 10px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   -ms-flex-item-align: center;
@@ -12428,51 +12667,26 @@ table tbody tr:last-child td:last-child {
   }
 }
 
-@media only screen and (max-width: 1441px) {
-  .grid-columns--right {
-    grid-template-columns: initial;
+@media only screen and (max-width: 1330px) {
+  .container {
+    width: 100%;
   }
 
   .grid-columns--left {
-    grid-template-columns: initial;
+    grid-template-columns: 160px 1fr;
+    grid-gap: 20px;
   }
 
   .grid-columns--between {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 260px 1fr 260px;
+  }
+
+  .header__menu {
+    padding: 0;
   }
 
   .slots-filter-range .noUi-target {
     margin: 20px 20px 10px !important;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .grid-columns {
-    display: block;
-    grid-gap: 0;
-  }
-
-  .exit-popup {
-    width: 100%;
-    top: 0;
-    /*&::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-      background-color: $icon;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $headGreen;
-      border-radius: 3px;
-    }*/
-  }
-
-  .exit-popup__wrapper {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
-
-  .exit-popup__banner {
-    display: none;
   }
 }
 
